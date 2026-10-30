@@ -2,7 +2,7 @@
   "id": "fist",
   "title": "FIST: Ultra Edition",
   "description": "Unofficial system for FIST: Ultra Edition (Freelance Infantry Strike Team), the paranormal mercenary RPG by CLAYMORE. Draggable traits, roles, gear and enemies that update the operative profile automatically, plus a step-by-step merc builder.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "authors": [
     {
       "name": "FIST system contributors"
@@ -237,7 +237,7 @@
   "background": "systems/fist/assets/fist-background.svg",
   "url": "https://github.com/fernandowrpg/fist-system",
   "manifest": "https://github.com/fernandowrpg/fist-system/releases/latest/download/system.json",
-  "download": "https://github.com/fernandowrpg/fist-system/releases/download/v1.1.0/fist.zip",
+  "download": "https://github.com/fernandowrpg/fist-system/releases/download/v1.1.1/fist.zip",
   "bugs": "https://github.com/fernandowrpg/fist-system/issues",
   "flags": {
     "hotReload": {
