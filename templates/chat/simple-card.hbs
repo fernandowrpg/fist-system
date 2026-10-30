@@ -1,0 +1,13 @@
+<div class="fist-card simple {{#if banner}}outcome-{{banner}}{{/if}}">
+  <header class="card-bar">
+    <span class="card-kicker">{{formula}}</span>
+    <span class="card-label">{{label}}</span>
+  </header>
+  <div class="card-roll">
+    {{> "systems/fist/templates/parts/dice.hbs"}}
+    <div class="card-mods">{{#if flavor}}<span>{{flavor}}</span>{{/if}}</div>
+    <div class="card-total">{{total}}</div>
+  </div>
+  {{#if text}}<div class="card-outcome"><span>{{text}}</span></div>{{/if}}
+  {{#if flags}}<footer class="card-actions"><button type="button" data-fist-action="warDie"><i class="fa-solid fa-dice-d6"></i> {{localize "FIST.WarDie.Add"}}</button></footer>{{/if}}
+</div>

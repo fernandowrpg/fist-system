@@ -1,0 +1,13 @@
+<div class="fist-card item-card type-{{item.type}}">
+  <header class="card-bar">
+    <span class="card-kicker">{{localize (concat "TYPES.Item." item.type)}}{{#if number}} · {{number}}{{/if}}</span>
+    <span class="card-label">{{item.name}}</span>
+  </header>
+  <div class="card-text">
+    {{{body}}}
+    {{#if item.system.itemText}}<p class="trait-item"><i class="fa-solid fa-box"></i> {{item.system.itemText}}</p>{{/if}}
+    {{#if item.system.statText}}<p class="trait-stat"><i class="fa-solid fa-chart-simple"></i> {{item.system.statText}}</p>{{/if}}
+    {{#if item.system.describe}}<p><strong>{{localize "FIST.Role.Describe"}}</strong> {{item.system.describe}}</p><p><strong>{{localize "FIST.Role.Advance"}}</strong> {{item.system.advance}}</p>{{/if}}
+    {{#if item.system.damageLabel}}<p class="trait-stat"><i class="fa-solid fa-burst"></i> {{item.system.damageLabel}} DAMAGE</p>{{/if}}
+  </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "name": "fist-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FIST: Ultra Edition system for Foundry VTT",
+  "type": "module",
+  "scripts": {
+    "build:packs": "node tools/build-packs.mjs"
+  },
+  "devDependencies": {
+    "classic-level": "2.0.0"
+  },
+  "license": "MIT"
+}

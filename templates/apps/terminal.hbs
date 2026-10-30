@@ -1,0 +1,40 @@
+<div class="fist-terminal-screen">
+  <header class="term-head">
+    <span class="term-title">R.E.F. // RANDOM MERC</span>
+    <button type="button" data-action="rerollAll"><i class="fa-solid fa-shuffle"></i> {{localize "FIST.Terminal.RerollAll"}}</button>
+  </header>
+  <div class="terminal-body">
+    <div class="term-line"><span class="k">CODENAME:</span> <strong>{{codename}}</strong> <a data-action="rerollCodename" data-tooltip="{{localize "FIST.Terminal.Reroll"}}"><i class="fa-solid fa-rotate"></i></a></div>
+    <div class="term-line"><span class="k">ROLE:</span> {{#if role}}<strong>{{role.name}}</strong> ({{role.number}}){{else}}—{{/if}} <a data-action="rerollRole"><i class="fa-solid fa-rotate"></i></a></div>
+    <div class="term-line"><span class="k">TRAITS:</span> {{#each traits}}<strong>{{name}}</strong> ({{number}}){{#unless @last}}, {{/unless}}{{/each}}</div>
+
+    <div class="term-attrs">
+      {{#each attributes}}<div><span>{{label}}</span><strong>{{value}}</strong></div>{{/each}}
+    </div>
+
+    {{#if role}}
+    <section class="term-block">
+      <h4><a data-action="openDoc" data-uuid="{{role.uuid}}">{{role.number}}. {{role.name}}</a></h4>
+      <p>{{role.describe}} {{role.advance}}</p>
+    </section>
+    {{/if}}
+    {{#each traits}}
+    <section class="term-block">
+      <h4><a data-action="openDoc" data-uuid="{{uuid}}">{{number}}. {{name}}</a> <a class="reroll" data-action="rerollTrait" data-index="{{@index}}"><i class="fa-solid fa-rotate"></i></a></h4>
+      {{{effect}}}
+      <p class="term-item">▸ {{item}}</p>
+      <p class="term-item">▸ {{stat}}</p>
+    </section>
+    {{/each}}
+
+    {{#if canCreate}}
+    <button type="button" class="term-create" data-action="createMerc"><i class="fa-solid fa-user-plus"></i> {{localize "FIST.Terminal.Create"}}</button>
+    {{/if}}
+
+    <h4 class="term-sub">{{localize "FIST.Terminal.Tables"}}</h4>
+    <div class="term-tables">
+      {{#each tables}}<button type="button" data-action="rollTable" data-uuid="{{uuid}}"><i class="fa-solid fa-table-list"></i> {{name}}</button>{{/each}}
+    </div>
+  </div>
+  <footer class="term-foot">[ONLINE] FIST © CLAYMORE · CC BY-SA 4.0 · generator data: fistref.com</footer>
+</div>

@@ -1,0 +1,297 @@
+{
+  "TYPES": {
+    "Actor": { "merc": "Operativo", "npc": "Inimigo / NPC", "vehicle": "Veículo" },
+    "Item": { "trait": "Trait", "role": "Role", "weapon": "Arma", "armor": "Armadura", "gear": "Item", "tag": "Tag de arma", "ability": "Habilidade especial" }
+  },
+  "FIST": {
+    "Codename": "Codinome",
+    "CodenamePlaceholder": "NÃO ATRIBUÍDO",
+    "Pronouns": "Pronomes",
+    "RealName": "Nome real",
+    "RealNameHint": "Só você sabe. Revele no momento dramático perfeito.",
+    "RealNameReveal": "Clique para revelar (só você vê)",
+    "RealNameEmpty": "[NÃO CONSTA]",
+    "Info": "Informações",
+    "Notes": "Notas de campo",
+    "Inventory": "Inventário",
+    "Encumbrance": "Carregando / limite",
+    "Attr": {
+      "frc": "Forceful", "frcHint": "Força, brutalidade, intimidação",
+      "tac": "Tactical", "tacHint": "Conhecimento, perícia, intelecto",
+      "cre": "Creative", "creHint": "Diplomacia, engano, psiônica",
+      "rfx": "Reflexive", "rfxHint": "Precisão, destreza, mira"
+    },
+    "Sheet": {
+      "Merc": "FIST — Perfil de Operativo", "Npc": "FIST — Ficha de Ameaça", "Vehicle": "FIST — Ficha de Veículo", "Item": "FIST — Cartão de Arquivo",
+      "OperativeProfile": "Operative Profile",
+      "Classified": "CONFIDENCIAL",
+      "Portrait": "RETRATO",
+      "EditPortrait": "Trocar retrato"
+    },
+    "Tab": { "builder": "Criação", "dossier": "Dossiê", "arsenal": "Arsenal", "file": "Arquivo" },
+    "HP": { "Label": "HP", "Hint": "O operativo morre com 0 HP", "Max": "Max HP", "MaxHint": "Capacidade de receber dano" },
+    "Armor": {
+      "Label": "Armor", "Plural": "Armaduras e acessórios", "Hint": "Subtraia do dano recebido",
+      "Breakdown": "Corpo / acessórios / traits",
+      "Accessory": "Acessório", "Shield": "Equipa como arma (escudo)", "Locked": "Não pode ser desequipada",
+      "Shatter": "Quebrar acessório",
+      "ShatterHint": "Destruir {name} para ignorar o dano de um ataque?",
+      "Shattered": "{name} se despedaça, anulando o dano!",
+      "DropHint": "Solte armaduras ou acessórios aqui"
+    },
+    "WarDie": {
+      "Label": "War dice",
+      "Hint": "Sorte e garra, gaste por +1D6",
+      "Spend": "War die gasto",
+      "SpendHint": "Gaste um WAR DIE: role +1D6 e some a qualquer rolagem (de qualquer um).",
+      "Add": "+1D6 War die",
+      "SpentOn": "{name} gasta um WAR DIE na rolagem de {target}",
+      "Bust": "Um dado de explosão deu 1 — a rolagem vira 0!"
+    },
+    "Mission": {
+      "Start": "Nova missão",
+      "Short": "missão",
+      "StartHint": "Começar uma nova missão: HP cheio, itens de uso limitado e AMMO recarregados, e WAR DICE por missão vindos dos traits.",
+      "Started": "{name} foi enviado(a). HP cheio, equipamento reabastecido (+{wd} WAR DICE)."
+    },
+    "Rendezvous": {
+      "Title": "Rendezvous",
+      "Hint": "Uma vez por missão a equipe pode enviar um sinal de rendezvous. No ponto seguro, escolha um:",
+      "rest": "Descansar (cura 1D6)", "restHint": "Recupere 1D6 HP.",
+      "restock": "Reabastecer", "restockHint": "Recarregue um item de uso limitado ou a AMMO de uma arma.",
+      "intel": "Intel", "intelHint": "Receba um fato útil sobre a missão.",
+      "NothingToRestock": "Nada para reabastecer.",
+      "Restocked": "{name} reabastece {item}.",
+      "IntelRequest": "{name} pede INTEL: o referee revela um fato útil sobre a missão."
+    },
+    "Advance": {
+      "Title": "Avançar",
+      "Hint": "Você agiu de acordo com seu role. Escolha uma recompensa:",
+      "DropTrait": "Arraste um novo trait do Traits Index para a ficha."
+    },
+    "Reward": { "item": "Item standard issue", "trait": "Novo trait", "hp": "+1D6 MAX HP", "warDice": "+1D6 WAR DICE" },
+    "Insertion": {
+      "Title": "Inserção",
+      "wrong": "6 ou menos: a inserção dá errado de algum jeito.",
+      "normal": "7-9: inserção normal.",
+      "extra": "10+: entra com um item standard issue extra.",
+      "sixes": "Dois seis: entra com um item standard issue extra e +3 na primeira rolagem."
+    },
+    "Death": { "Message": "{name} caiu. Registre no cemitério de personagens e prepare uma inserção de emergência." },
+    "Roll": {
+      "Risky": "Ação arriscada",
+      "Roll": "Rolar",
+      "Attribute": "Atributo",
+      "Dice": "Dados",
+      "AttrRoll": "Rolagem +{attr}",
+      "ClickToRoll": "Clique para rolar 2D6 + atributo (Shift: sem diálogo)",
+      "Mode": { "normal": "2D6", "best": "3D6, melhores dois", "worst": "3D6, piores dois" },
+      "Situational": "Situação",
+      "Advantage": "Vantagem",
+      "Disadvantage": "Desvantagem",
+      "Assist": "Ajudas",
+      "Bands": "6- falha · 7-9 parcial · 10+ sucesso · dois seis ultra"
+    },
+    "Outcome": {
+      "failure": "Falha", "failureText": "Você não faz o que queria, e algo dá errado.",
+      "partial": "Sucesso parcial", "partialText": "Você consegue, mas com um custo, concessão ou complicação.",
+      "success": "Sucesso", "successText": "Você faz exatamente o que queria, sem dor de cabeça extra.",
+      "ultra": "Ultra sucesso!", "ultraText": "Você faz exatamente o que queria, com um bônus espetacular."
+    },
+    "Damage": {
+      "Label": "Dano",
+      "Roll": "Rolar dano",
+      "Apply": "Aplicar",
+      "ApplyHint": "Aplicar aos tokens selecionados, subtraindo ARMOR",
+      "ApplyRaw": "Ignora armor",
+      "ApplyRawHint": "Aplicar aos tokens selecionados, ignorando ARMOR",
+      "Taken": "{name} recebe {dealt} de dano (ARMOR {armor}). HP: {hp}",
+      "Killed": "{name} recebe {dealt} de dano (ARMOR {armor}) e cai!",
+      "Healed": "{name} recupera {amount} HP. HP: {hp}"
+    },
+    "SuddenDeath": {
+      "Triggered": "Olhos de cobra! Sudden death: todo dano dobrado, armor inútil, até alguém morrer.",
+      "Hint": "Sudden death: dano dobrado, ignora armor"
+    },
+    "Ammo": {
+      "Empty": "{name}: rolou {roll} — sem munição!",
+      "Lower": "{name}: rolou {roll} — AMMO cai para {ammo}.",
+      "Same": "{name}: rolou {roll} — AMMO se mantém em {ammo}."
+    },
+    "Choke": {
+      "Hint": "Role 1D6: com resultado igual ou maior que o CHOKE, o NPC executa a ação listada.",
+      "Behavior": "Ação de choke",
+      "Choked": "CHOKE! {behavior}",
+      "Holds": "Mantém o sangue frio."
+    },
+    "Threat": {
+      "Guidelines": "Níveis de ameaça",
+      "1": "Fácil", "2": "Médio", "3": "Difícil", "4": "Extremo", "5": "Impossível", "6": "Pesadelo"
+    },
+    "Npc": {
+      "ThreatFile": "FICHA DE AMEAÇA",
+      "BossFile": "FICHA DE CHEFE // ALVO PRIORITÁRIO",
+      "Appear": "Aparecem",
+      "RollAppear": "Rolar quantos aparecem",
+      "AppearRoll": "{name}: quantos aparecem",
+      "AttributesHint": "Atributos (só se o NPC precisar rolar como um jogador):",
+      "Intel": "Intel"
+    },
+    "Vehicle": {
+      "File": "FICHA DE VEÍCULO",
+      "Occupants": "Ocupantes",
+      "Fuel": "Usa combustível",
+      "Crash": "Batida",
+      "Weapons": "Armas do veículo",
+      "Explosion": "Teste de explosão",
+      "ExplosionHint": "Ao ser destruído: X-em-1D6 de chance de explodir causando XD6 de DANO (X = ARMOR).",
+      "ExplosionChance": "Explode com {x} ou menos.",
+      "NoExplosion": "Sem armor, sem explosão.",
+      "Explodes": "O veículo explode!"
+    },
+    "Trait": {
+      "Plural": "Traits",
+      "Index": "Traits index",
+      "DropHint": "Arraste traits do Traits Index para cá",
+      "Gained": "{actor} ganha {name}.",
+      "ChooseAttribute": "{name}: escolha um atributo",
+      "ChooseAttributeHint": "Este trait concede +{bonus} em um atributo à sua escolha.",
+      "StatText": "Modificação (como no livro)",
+      "Mods": "Modificadores automáticos",
+      "WarPerMission": "War dice / missão",
+      "WarBonus": "+ por war die",
+      "HpFormula": "MAX HP rolado",
+      "RolledHp": "Resultado de MAX HP",
+      "ChosenBonus": "Bônus em atributo escolhido",
+      "ChosenAttr": "Atributo escolhido",
+      "Conditional": "Modificador situacional (não automatizado)",
+      "Grants": "Itens concedidos",
+      "GrantsHint": "Criados no operativo quando o trait é ganho; removidos junto com ele. Solte armas, armaduras ou itens aqui para adicionar.",
+      "ItemText": "Item (como no livro)",
+      "NewGrant": "Novo item"
+    },
+    "Role": {
+      "Label": "Role",
+      "Index": "Roles index",
+      "None": "Solte um role aqui",
+      "DropHint": "Arraste um role do Roles Index para cá",
+      "Describe": "Descreva:",
+      "Advance": "Avança:",
+      "Answer": "Sua resposta",
+      "Taken": "Role já escolhido",
+      "TakenHint": "{name} já tem o role {role}. Você não pode escolher um role que outra pessoa já tem. Pegar mesmo assim?"
+    },
+    "Weapon": {
+      "Plural": "Armas",
+      "Equipped": "Arma equipada",
+      "Unarmed": "Desarmado",
+      "UnarmedAttack": "Ataque desarmado",
+      "Attack": "Atacar (rolagem arriscada)",
+      "AttackWith": "Atacar com {name}",
+      "Attribute": "Atributo de ataque",
+      "Ranged": "À distância",
+      "FreeSlot": "Não conta como equipada",
+      "DropHint": "Solte armas aqui. Só uma pode ficar equipada por vez."
+    },
+    "Gear": {
+      "Plural": "Itens",
+      "Heal": "Cura (fórmula)",
+      "Heals": "HP recuperado",
+      "WarDice": "War dice concedidos",
+      "DropHint": "Solte itens aqui"
+    },
+    "Ability": { "Plural": "Habilidades especiais", "DropHint": "Mecânicas especiais deste personagem" },
+    "Tag": {
+      "Plural": "Tags de arma",
+      "Choose": "Prender {tag} em qual arma?",
+      "ChooseHint": "Tags modificam uma arma. Escolha uma:",
+      "Added": "{tag} adicionada a {weapon}.",
+      "DropHint": "Solte tags de arma aqui",
+      "DamageBonus": "Bônus de dano",
+      "AttributeBonus": "Bônus de atributo (equipada)",
+      "UsageHint": "Solte esta tag sobre a arma de um operativo (ou na ficha de uma arma) para aplicá-la."
+    },
+    "Item": {
+      "Number": "Número",
+      "Uses": "Usos",
+      "Consumable": "Consumível (some ao usar)",
+      "Equip": "Equipar / desequipar",
+      "Equipped": "Equipado",
+      "Use": "Usar",
+      "ToChat": "Enviar ao chat",
+      "Edit": "Editar",
+      "Delete": "Apagar",
+      "GrantedBy": "Concedido por",
+      "DeleteGranted": "Apagar item de trait?",
+      "DeleteGrantedHint": "{name} foi concedido por um trait e é reposto entre missões. Apagar mesmo assim?"
+    },
+    "Record": { "Missions": "Missões", "Advancements": "Avanços" },
+    "Adjust": {
+      "Title": "Ajustes manuais",
+      "Hint": "Atributos, MAX HP e ARMOR são calculados pelos traits e equipamentos. Use isto só em casos especiais.",
+      "Base": "base",
+      "BaseHp": "MAX HP base",
+      "BonusHp": "MAX HP de recompensas",
+      "Armor": "ARMOR extra"
+    },
+    "Builder": {
+      "Kicker": "// PROTOCOLO DE RECRUTAMENTO",
+      "Title": "Criando mercs",
+      "RandomMerc": "Merc aleatório",
+      "RandomMercHint": "Rolar codinome, role e dois traits aleatórios? Os traits e o role atuais serão substituídos.",
+      "Step": { "sheet": "Pegue a ficha", "traits": "Dois traits", "bonus": "Bônus inicial", "role": "Role", "codename": "Codinome" },
+      "StepOf": "Passo {n} de 5",
+      "Prev": "Voltar",
+      "Next": "Avançar",
+      "SheetIntro": "Você pertence à FIST, uma lendária unidade mercenária renegada. Todo operativo começa da mesma base; os traits são os blocos que te tornam único.",
+      "SheetHint": "Atributos, ARMOR e MAX HP desta ficha se atualizam sozinhos conforme você adiciona traits e equipamentos.",
+      "TraitsIntro": "Escolha dois traits do Traits Index, ou role 2D666. Cada trait concede uma habilidade especial, um item e uma modificação de atributo — tudo aplicado automaticamente.",
+      "TraitsDrop": "Arraste dois traits para cá",
+      "TraitsReady": "Dois traits registrados. Você pode ganhar mais ao avançar.",
+      "RollTrait": "Rolar D666",
+      "BonusIntro": "Escolha um: um item standard issue, +1D6 MAX HP ou +1D6 WAR DICE.",
+      "StandardIssue": "Standard issue",
+      "Roll1D6": "Rolar 1D6",
+      "BonusHp": "Role 1D6 e some ao seu MAX HP.",
+      "BonusWar": "Role 1D6 e comece com essa quantidade de WAR DICE.",
+      "Take": "Pegar",
+      "BonusChosen": "Bônus inicial",
+      "RoleIntro": "Seu role é o que seu personagem sempre quer fazer — e fazer isso o faz avançar. Você não pode escolher um role que outra pessoa já tem.",
+      "RollRole": "Rolar D66",
+      "CodenameIntro": "Escolha um codinome que combine com quem você é e o que faz. Escolha também um nome real, mas não conte a ninguém — nem ao referee — até a oportunidade dramática perfeita.",
+      "RandomCodename": "Aleatório",
+      "Checklist": "Checklist de deploy",
+      "Finish": "Enviar operativo",
+      "FinishHint": "Complete todos os passos para enviar.",
+      "Deployed": "O operativo {name} entrou para a FIST.",
+      "Reopen": "Reabrir a criação"
+    },
+    "Terminal": {
+      "Title": "Terminal FIST R.E.F.",
+      "Open": "FIST R.E.F.",
+      "RerollAll": "Rolar tudo",
+      "Reroll": "Rolar de novo",
+      "Create": "Criar este operativo",
+      "Tables": "Tabelas da intelligence matrix"
+    },
+    "Warn": {
+      "NoOperative": "Selecione ou atribua seu operativo primeiro.",
+      "NoWarDice": "Sem WAR DICE.",
+      "NoTokens": "Selecione (ou mire) pelo menos um token.",
+      "NotOwner": "Você não controla {name}.",
+      "Depleted": "Sem usos restantes.",
+      "NoAmmo": "Sem munição. Reabasteça em um rendezvous ou encontre mais.",
+      "Locked": "Este item não pode ser desequipado.",
+      "NoWeapon": "Este personagem não tem arma para receber a tag.",
+      "TagExists": "Essa arma já tem esta tag.",
+      "CannotHold": "Esta ficha não aceita itens do tipo {type}.",
+      "NoChoke": "Este NPC não tem CHOKE."
+    },
+    "Setting": {
+      "ammoTracking": { "name": "Regra opcional: munição abstrata", "hint": "Armas à distância têm AMMO 6; após cada ataque role 1D6 para ver se cai (p. 73)." },
+      "explodingWarDice": { "name": "Regra opcional: war dice explosivos", "hint": "War dice explodem no 6; se um dado de explosão der 1, a rolagem vira 0 (p. 73)." },
+      "suddenDeath": { "name": "Regra opcional: sudden death", "hint": "Olhos de cobra em combate ativam sudden death: dano dobrado, armor inútil (p. 74)." },
+      "encumbrance": { "name": "Regra opcional: carga", "hint": "Mostra os itens carregados contra MAX HP + FRC ou RFX (p. 73)." }
+    }
+  }
+}

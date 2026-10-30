@@ -1,0 +1,78 @@
+<div class="fist-threat {{#if system.boss}}is-boss{{/if}}">
+  <header class="threat-header">
+    <img class="threat-img" src="{{actor.img}}" alt="" data-action="editImage">
+    <div class="threat-title">
+      <span class="kicker">{{#if system.boss}}{{localize "FIST.Npc.BossFile"}}{{else}}{{localize "FIST.Npc.ThreatFile"}}{{/if}}</span>
+      <input class="threat-name" type="text" name="name" value="{{actor.name}}" {{#unless editable}}disabled{{/unless}}>
+      <div class="threat-meta">
+        <label><span>{{localize "FIST.Npc.Appear"}}</span><input type="text" name="system.appear" value="{{system.appear}}" placeholder="2D6"></label>
+        {{#if system.appear}}<a class="head-btn" data-action="appear" data-tooltip="{{localize "FIST.Npc.RollAppear"}}"><i class="fa-solid fa-users"></i></a>{{/if}}
+        <label class="boss-toggle"><input type="checkbox" name="system.boss" {{checked system.boss}}> BOSS</label>
+      </div>
+    </div>
+  </header>
+
+  <div class="sheet-scroll">
+    <section class="threat-stats">
+      <div class="tstat hp">
+        <span class="tlabel">HP</span>
+        <div class="tval">
+          <a class="adj" data-action="adjust" data-delta="-1"><i class="fa-solid fa-minus"></i></a>
+          <input type="number" name="system.hp.value" value="{{system.hp.value}}" min="0">
+          <span class="sep">/</span>
+          <input type="number" name="system.hp.max" value="{{system.hp.max}}" min="0">
+          <a class="adj" data-action="adjust" data-delta="1"><i class="fa-solid fa-plus"></i></a>
+        </div>
+      </div>
+      <div class="tstat">
+        <span class="tlabel">{{localize "FIST.Armor.Label"}}</span>
+        <div class="tval"><input type="number" name="system.armor" value="{{system.armor}}" min="0"></div>
+      </div>
+      <div class="tstat dmg">
+        <a class="tlabel" data-action="npcDamage"><i class="fa-solid fa-burst"></i> {{localize "FIST.Damage.Label"}}</a>
+        <div class="tval"><input type="text" name="system.damage" value="{{system.damage}}"></div>
+      </div>
+      <div class="tstat choke">
+        <a class="tlabel" data-action="choke" data-tooltip="{{localize "FIST.Choke.Hint"}}"><i class="fa-solid fa-hand"></i> CHOKE</a>
+        <div class="tval">
+          <input type="number" name="system.choke.value" value="{{system.choke.value}}" min="0" max="6">
+          <input type="text" class="wide" name="system.choke.behavior" value="{{system.choke.behavior}}" placeholder="{{localize "FIST.Choke.Behavior"}}">
+        </div>
+      </div>
+    </section>
+
+    <div class="hp-track">{{#each hpSegments}}<span class="seg {{#if filled}}filled{{/if}}"></span>{{/each}}</div>
+
+    <details class="threat-levels">
+      <summary><i class="fa-solid fa-skull"></i> {{localize "FIST.Threat.Guidelines"}}</summary>
+      <div class="threat-grid">
+        {{#each threats}}
+        <a class="threat-btn {{#if active}}active{{/if}}" data-action="threat" data-level="{{level}}">
+          <strong>{{level}}. {{label}}</strong><span>{{hp}} HP · {{armor}} ARM · {{damage}}</span>
+        </a>
+        {{/each}}
+      </div>
+      <div class="npc-attrs">
+        <span class="hint">{{localize "FIST.Npc.AttributesHint"}}</span>
+        {{#each attributes}}
+        <label><a data-action="roll" data-attribute="{{key}}">{{abbr}}</a><input type="number" name="system.attributes.{{key}}.base" value="{{base}}"></label>
+        {{/each}}
+      </div>
+    </details>
+
+    <div class="section-head"><h3>{{localize "FIST.Ability.Plural"}}</h3>{{#if editable}}<a class="head-btn" data-action="itemCreate" data-type="ability"><i class="fa-solid fa-plus"></i></a>{{/if}}</div>
+    <ol class="item-list abilities drop-zone">
+      {{#each abilities}}{{> "systems/fist/templates/parts/item-row.hbs"}}{{/each}}
+      {{#unless abilities.length}}<li class="empty-drop">{{localize "FIST.Ability.DropHint"}}</li>{{/unless}}
+    </ol>
+
+    <div class="section-head"><h3>{{localize "FIST.Inventory"}}</h3>{{#if editable}}<a class="head-btn" data-action="itemCreate" data-type="weapon"><i class="fa-solid fa-plus"></i></a>{{/if}}</div>
+    <ol class="item-list inventory drop-zone">
+      {{#each inventory}}{{> "systems/fist/templates/parts/item-row.hbs"}}{{/each}}
+      {{#unless inventory.length}}<li class="empty-drop">{{localize "FIST.Gear.DropHint"}}</li>{{/unless}}
+    </ol>
+
+    <div class="section-head"><h3>{{localize "FIST.Npc.Intel"}}</h3></div>
+    {{formInput fields.description value=source.description enriched=enrichedDescription toggled=true}}
+  </div>
+</div>

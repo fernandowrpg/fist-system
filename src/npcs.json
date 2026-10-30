@@ -1,0 +1,1361 @@
+{
+ "enemies": [
+  {
+   "name": "AMATEUR TERRORIST",
+   "stats": "3 HP, 3D6 appear",
+   "items": [
+    "AK-47 assault rifle (1D6+1 DAMAGE)",
+    "Homemade pipe bomb (1D6+2 DAMAGE, one use)",
+    "Walkie-talkie (speak to other amateur terrorists)",
+    "Paisley bandana (sort of hides identity)",
+    "Military surplus jacket, ripped jeans"
+   ],
+   "abilities": [
+    [
+     "NERVOUS",
+     "Amateur terrorist groups are often fairly well-organized for the opening segment of their demonstration—in this case, planting pipe bombs throughout an area while holding its inhabitants hostage. Once the bombs have been set, however, internal bickering and overall antsiness will get the best of them. Nervous amateur terrorists who have already laid their bomb gain a CHOKE score, randomly determined by rolling 1D6, with the behavior: “Freak out and mess something up.\""
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "ANTAREAN WARPRIEST",
+   "stats": "6 HP",
+   "items": [
+    "Laser rifle, long, slim, and chrome (1D6+1 DAMAGE)",
+    "Metallic staff (1D6 DAMAGE, NON-LETHAL)",
+    "Battle-trance herbs (stop the trance, one use)",
+    "Pointed ears, scaly skin, and textured robes"
+   ],
+   "abilities": [
+    [
+     "TRANCE",
+     "Antarean Warpriests can be found in stasis, frozen in drop pods planted on Earth from orbit 10,000 years ago, never opened due to a small but detrimental programming error. Upon leaving stasis, Warpriests enter a battletrance which grants them 3 ARMOR for as long as it lasts. Only the herbs can break the trance."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "BEAT COP",
+   "stats": "3 HP, 1D6 appear",
+   "items": [
+    "Colt Official Police revolver (1D6+1 DAMAGE)",
+    "Bulletproof vest (1 ARMOR)",
+    "Pepper spray (temporarily blinding, one use)",
+    "Police badge (confers institutional authority)",
+    "Confident swagger"
+   ],
+   "abilities": [
+    [
+     "BASTARD",
+     "Never expect a fair fight from a cop. As soon as a beat cop catches a whiff of danger, they will head to their squad car (p. 87) and call in 1D6 more beat cops with their own cars, and so on. If more than 10 beat cops are present for a fight, this switches to 2D6 cops in helicopters (p. 87) with rocket launchers (1D6+2 DAMAGE)."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "BIO-BOTFLIES",
+   "stats": "3 HP",
+   "items": [
+    "Necrotizing bite (3 DAMAGE, roll +FRC or rotting infection spreads)",
+    "Swarm formation (1 ARMOR)",
+    "Mutated extra limbs",
+    "Fearsome nightmare buzz"
+   ],
+   "abilities": [
+    [
+     "HATCHERY",
+     "These genetically modified insects, escaped from a supposedly “ultra-secure\" topsecret corporate (p. 109) research lab, colonize human flesh to survive and propagate at a truly alarming rate. Any character who is killed by the bio-botflies' necrotizing bite spawns an additional swarm of bio-botflies within minutes if left unfumigated."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "BOUNTY HUNTER",
+   "stats": "4 HP, 1 or 2 appear, CHOKE 6: Give up on the bounty",
+   "items": [
+    "Remington Model 700 sniper rifle (1D6+2 DAMAGE)",
+    "Bulletproof vest (1 ARMOR)",
+    "Ten-gallon cowboy hat (accessory)",
+    "Chevrolet Impala car (8 HP, 1 ARMOR)",
+    "Moustache, mirrored aviators, plaid flannel shirt"
+   ],
+   "abilities": [
+    [
+     "PROFESSIONAL",
+     "Most bounty hunters, save for a terrifying few, know exactly what they are: they kill people for the cops, for money, plain and simple. If you happen to have more money to offer than the state does, they'll drop the bounty and kill someone for you instead. After all, that's just business, ain't it?"
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "BUGHOG",
+   "stats": "8 HP, 0 ARMOR, 1-4 occupants",
+   "items": [
+    "Motorized swivel-mounted M60 machine gun (1D6+2 DAMAGE, has gunner footholds)",
+    "Three gunner seats (shotgun, back left/right)",
+    "Exposed gas tank (1 HP, 1 ARMOR, explodes for 2D6 DAMAGE)",
+    "Rusted frame, stripped tires, colorful paint"
+   ],
+   "abilities": [
+    [
+     "BAJA",
+     "The affectionately-named “Bughog\" is in fact a civilian sandrail (also called a dune buggy) with a shoddily attached M60 general-purpose machine gun on a swivelling platform in the back. This fearsome slipshod technical is hampered only by its tendency to go flying over small hills."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "CYCLOPS GOON",
+   "stats": "3 HP, 2D6 appear",
+   "items": [
+    "4-in-1D6: M16 assault rifle (1D6+1 DAMAGE)",
+    "M1911 pistol (1D6 DAMAGE)",
+    "Worst-of-2D6 grenades (1D6+1 DAMAGE, one use)",
+    "Bulletproof vest (1 ARMOR)",
+    "Black fatigues, balaclava, nondescript personality"
+   ],
+   "abilities": [
+    [
+     "SUPPRESS",
+     "Between their limited capacity for lateral thinking and their dubious ability to aim, CYCLOPS goons are not particularly threatening on their own—shooting goons who would deal more than 3 DAMAGE miss the target instead. Groups of three or more goons all piling on the same target may ignore this penalty."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "CYCLOPS HEAVY TROOPER",
+   "stats": "5 HP, 1D6 appear",
+   "items": [
+    "3-in-1D6: M2 flamethrower (1D6+2 DAMAGE)",
+    "M1918 light machine gun (1D6+1 DAMAGE)",
+    "1D6 stun grenades (temporary blinding, one use)",
+    "Ceramic battle armor (2 ARMOR)",
+    "Riot shield (1 ARMOR, equip as weapon)",
+    "Riot helmet (1 ARMOR, accessory)",
+    "Feet apart and shoulders square"
+   ],
+   "abilities": [
+    [
+     "CONTROL",
+     "CYCLOPS Command employs heavy troopers for evidence removal, crowd control, and the application of excessive force. CYCLOPS heavy troopers deal +1 DAMAGE against civilians."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "CYCLOPS SPECIALIST",
+   "stats": "7 HP",
+   "items": [
+    "2-in-1D6: 6.5×52mm Carcano sniper rifle (1D6+2 DAMAGE, silenced, used only for assassinations)",
+    "High Standard HDM pistol (1D6 DAMAGE, silenced)",
+    "Kevlar weave bodysuit (1 ARMOR)",
+    "Psychic headset (sync with goons, one use)",
+    "2D6 CYCLOPS gadgets (reroll duplicates, p. 86)",
+    "Night vision goggles (see at night)",
+    "Experimental nano-gel (heal 2D6 HP, one use)",
+    "Authoritative presence and cat-like reflexes"
+   ],
+   "abilities": [
+    [
+     "COORDINATE",
+     "Soldiers who are lucky enough to become CYCLOPS specialists are subjected to a strict hypnotic training program designed to tone the body and temper the psyche. In the field, specialists may use their psychic headset to synchronize with up to six subordinates and take partial or full DAMAGE on their behalf."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "ENHANCED SUPERSOLDIER",
+   "stats": "8 HP, CHOKE 6: Sacrifice themselves",
+   "items": [
+    "HK G11 rifle (1D6+2 DAMAGE, ACCURATE)",
+    "Magnum Research Desert Eagle pistol (1D6 DAMAGE, ARMOR-PIERCING)",
+    "Tactical full-body armor (2 ARMOR)",
+    "Ultra-grenade (2D6 DAMAGE, one use)",
+    "Muscle stimulant (user takes 2 DAMAGE then gains super strength, one use)"
+   ],
+   "abilities": [
+    [
+     "REGENERATION",
+     "Square jaw. Square shoulders. Square hairdo. This next-generation soldier—a patriot, a hero, and one of America's finest— is so square, you just can't knock them down. The enhanced supersoldier can heal 1 HP every time a player rolls a failure, hungrily murderous thoughts scrolling across their digital eyes as their steel fingers reach to caress the trigger."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "FEDERAL AGENT",
+   "stats": "5 HP, 1-2 appear, CHOKE 5: Call in backup",
+   "items": [
+    "M1911 pistol (1D6 DAMAGE)",
+    "Concealed bulletproof vest (1 ARMOR)",
+    "Disposable silencer (one use)",
+    "Flip-open badge (confers institutional authority)",
+    "Idiosyncratic trinket (Rubik’s cube, UFO keychain, lollipop, etc)",
+    "Long jacket, pleated pants"
+   ],
+   "abilities": [
+    [
+     "INVASIVE",
+     "Federal agents can always show up where they’re not wanted at the worst possible time, so long as there’s an unsolved mystery to follow. “Backup\" usually means beat cops (p. 125)."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "GAMMA STAIN",
+   "stats": "3 HP, 2D6 appear",
+   "items": [
+    "Psionic blast (1D6 DAMAGE, roll +CRE to avert a sloppy-crying breakdown)",
+    "Gamma tendrils (3 DAMAGE twice, one target or two)",
+    "Atom-thin body, a human silhouette"
+   ],
+   "abilities": [
+    [
+     "TORTURED",
+     "The wails of the gamma stains seem to come from every direction at once, crying out in incorporeal pain from a nightmare place beyond the world that is. These poor scientists, exposed to a sudden burst of extreme radiation, live on as shadows on the wall of a dead reactor."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "GIANT SNAKE",
+   "stats": "12 HP",
+   "items": [
+    "Venomous fangs (1D6 DAMAGE, POISONED)",
+    "Mesmerizing gaze (roll +CRE to avoid becoming momentarily dazed)",
+    "Slick scales, iridescent sheen"
+   ],
+   "abilities": [
+    [
+     "CONSTRICT",
+     "Perhaps it's a product of magic, genetic engineering, or toxic waste, but the giant snake is larger than it should be, with a predatory reptilian superintelligence to match. When the giant snake deals damage, it may wrap itself around the target, making them (and the snake) unable to move."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "GREY OBSERVER",
+   "stats": "3 HP, 3D6 appear",
+   "items": [
+    "Beta wave blast (3 DAMAGE, roll +CRE to avoid passing out)",
+    "Big black eyes, long arms, potbelly, blank stare"
+   ],
+   "abilities": [
+    [
+     "COLLECTORS",
+     "These artificial homunculi, made famous by the Roswell incident, are actually the servants of another alien (p. 107) species. If all the players are beta-wave knocked out at once, they will awaken strapped to tables and primed for dissection aboard an orbiting ship."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "HIT-DROID",
+   "stats": "12 HP",
+   "items": [
+    "Beretta 70 pistol (1D6 DAMAGE, silenced)",
+    "Briefcase (foam insert for hiding pistol parts)",
+    "Backpack (face plates hidden beneath clothes)",
+    "Three removable face plates (swappable)",
+    "Upper-class outfit (tuxedo, ball gown, etc.)",
+    "Middle-class outfit (leisure suit, track suit, etc.)",
+    "Lower-class outfit (bowling shirt, tube top, etc.)"
+   ],
+   "abilities": [
+    [
+     "SWAP",
+     "Behind the smiling face of the stateof-the-art Hit-Droid lies a terrifying, skullish visage made from printed circuits, color-coded wires, and cathode-ray tubes. You don't have to take our word for it—in its single-minded path towards neutralizing its target, the Hit- Droid can remove its face and snap a new one on in a matter of seconds. This inhumanly fast disguise-swapping ability (and the Hit-Droid's uncanny ability to seamlessly switch between friendly neighbor and stone-cold killer) make it a difficult enemy to track down or escape."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "CLOSET FASCIST",
+   "stats": "2 HP",
+   "items": [
+    "Civilian clothing (0 ARMOR)",
+    "Propaganda pamphlet (reduces dogwhistleeffect CHOKE score to 5, one use)",
+    "Ontologically evil"
+   ],
+   "abilities": [
+    [
+     "DOGWHISTLE",
+     "The closet fascist is a curious beast. They don't wear armbands and jackboots, they say they mean no harm, they claim to be “just asking questions.\" When this enemy is present (and begins asking questions), all characters that a) aren't obviously anti-fascist, or b) haven't been thoroughly vetted as antifascist gain a new CHOKE score, “CHOKE 6: Humor the fascist.\" Upon choking, the NPC transforms into another “closet fascist\" enemy, but retains any previous items and abilties."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "CYBORG NINJA",
+   "stats": "12 HP",
+   "items": [
+    "High-frequency vibration katana (1D6+3 DAMAGE)",
+    "3-in-1D6: Spring-loaded heel blades (1D6 DAMAGE)",
+    "2-in-1D6: Wrist rockets (1D6 DAMAGE, REMOTE, six uses)",
+    "1-in-1D6: Pressurized gas grapple line (50 feet, roll +RFX to avoid being grappled)",
+    "Cyborg exoskeleton (1 ARMOR, grants abilities equivalent to CYBORG (p. 43))"
+   ],
+   "abilities": [
+    [
+     "PAIN",
+     "For the cyborg ninja, pain is the beginning and the end. Pain is the color of the world. Pain is the only thing that can make them feel alive again. When the cyborg ninja drops below 4 HP, rolls to attack them have a -2 penalty."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "DEMON CUR",
+   "stats": "6 HP, 1-3 appear",
+   "items": [
+    "Flamethrower maw (1D6 DAMAGE, INCENDIARY)",
+    "Onyx jaws (3 DAMAGE)",
+    "Ashen pawprints",
+    "Spiked collar (cutesy name)"
+   ],
+   "abilities": [
+    [
+     "SPRAY",
+     "Hell is an utterly unforgiving plane, and the creatures who live there have necessarily adapted to survive its extreme climate. When this murderous hellhound takes melee damage, its boiling blood deals 1 DAMAGE to all nearby."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "IKARA, QUEEN OF THE SEA",
+   "stats": "60 HP",
+   "items": [
+    "Titanic tentacles (6D6 DAMAGE, can attack up to eight targets at once)",
+    "Nuclear glare (3D6 DAMAGE, or 10D6 damage if charged up for thirty minutes)",
+    "Ancient chitinous plating (6 ARMOR)"
+   ],
+   "abilities": [
+    [
+     "MONARCH",
+     "Ikara, a squid-form kaiju almost as old as the oceans themselves, first appears in the coastal waters (or mysteriously rain-soaked outskirts) of a city (p. 114) whose leaders are dumping toxic waste into the water. Before making landfall, Ikara will deploy her Herald in an effort to avert her righteous destruction."
+    ],
+    [
+     "HERALD (BOSS MOVE)",
+     "An ethereal sea wizard rises from the water to speak to any authority figures present in the city. The herald warns of Ikara's wrath if the dumping is not stopped, but the leaders never listen."
+    ],
+    [
+     "LESSON (BOSS MOVE)",
+     "If six hours have passed since the Herald's arrival, Ikara will move to destroy the city. Ikara gains “CHOKE 6: Return to the ocean,\" but only CHOKES when taking more than 6 DAMAGE."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": true
+  },
+  {
+   "name": "INTERNATIONAL SPY",
+   "stats": "5 HP, CHOKE 4: Waste time on a one-liner",
+   "items": [
+    "Walther PPK (1D6 DAMAGE, QUICK-DRAW)",
+    "Laser watch (3 DAMAGE)",
+    "Bulletproof suit (1 ARMOR)",
+    "Disguise kit (one use)",
+    "Souped-up getaway car (10 HP, 2 ARMOR)"
+   ],
+   "abilities": [
+    [
+     "SLIPPERY",
+     "If the players ever let their attention wander, the spy can escape without a trace."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "KANDAHAR GIANT",
+   "stats": "18 HP, 1-3 appear",
+   "items": [
+    "Sycamore cudgel (1D6+2 DAMAGE)",
+    "Six-fingered fists (1D6 DAMAGE)",
+    "Bulletproof gray hide (6 ARMOR)",
+    "Red hair, hemp loincloth, two rows of teeth"
+   ],
+   "abilities": [
+    [
+     "ELUSIVE",
+     "Native to the caves, hills, and knolls of Kandahar, Afghanistan, these gentle giants are typically peaceful hermits, agitated only by the foolish, jubilant violence of occupying soldiers. IKARA's title, Queen of the Sea, is well-earned as she has spent centuries of her millennia-long lifespan tending to and presiding over the ocean floor. When she wants to come up for air (or musically converse with her Temple of Heralds), she visits her secret tropical island in the Pacific."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "LOCAL GUERILLA",
+   "stats": "3 HP, 2D6 appear, CHOKE 2: Disappear into bushes and start shooting",
+   "items": [
+    "AK-74u assault rifle (1D6+1 DAMAGE)",
+    "Frag grenade (1D6+1 DAMAGE, one use)",
+    "Flare gun (six uses)",
+    "Insurgent (p. 112) manifesto (dog-eared)",
+    "Balaclava (hides identity)",
+    "Camouflage fatigues (has six patterns available)",
+    "Faction color beret"
+   ],
+   "abilities": [
+    [
+     "JUMPY",
+     "Depending on their beliefs, history, and goals, the local guerillas may function as FIST's allies or enemies—eventually, that is. Upon first meeting FIST, local guerillas of any political leaning will assume the players are government mercenaries and initiate a fight. Talking them down will require hard proof and people skills."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "MULE FRAME",
+   "stats": "12 HP",
+   "items": [
+    "Attached autoturret (1D6 DAMAGE, ACCURATE)",
+    "Reinforced chassis (2 ARMOR)",
+    "2D6 cargo crates (p. 85)",
+    "Bumper stickers (layered and peeling)",
+    "Digitally compressed farm animal noises"
+   ],
+   "abilities": [
+    [
+     "SKITTISH",
+     "Invented as a bipedal cargo transport system (but never introduced for widespread use), the four-meter-tall titanium MULE frame is a marvel of Cold War robotics. Unfortunately for its creators (and their would-be legacy), the MULE is programmed with an artificial animal intelligence that takes over at inopportune times, making it useless for standard military deployment. If the frame drops to 6 HP, it gains “CHOKE 3: Turn and run.\""
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "MARIAN APPARITION",
+   "stats": "HP not applicable",
+   "items": [
+    "Stone body (possesses existing statues of Mary)",
+    "Bleeding eyes (blood bubbles up from the stone)",
+    "Faint Gregorian chanting"
+   ],
+   "abilities": [
+    [
+     "CATHOLIC",
+     "When a statue of Mary is viewed by a player, and no one else is around, there is a 1-in- 1D6 chance a Marian apparition will be revealed to the viewer. If they do anything but evacuate ASAP, they will be overcome with the guilt of past sins, changing their role to REPENTANT."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "MECHAGATOR",
+   "stats": "8 HP, 1D6 appear",
+   "items": [
+    "Telescopic laser cannon (1D6 DAMAGE, UNSTABLE, hidden inside throat)",
+    "Locking jaws (1D6 DAMAGE, inescapable grip)",
+    "Metal scales (1 ARMOR)",
+    "Aquatic jet boosters (cannot be outrun in water)",
+    "Electronic hiss"
+   ],
+   "abilities": [
+    [
+     "DEACTIVATION",
+     "If the mechagator’s fearsome, glowing red eyes are both pressed at the same time, it ceases all functions."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "MOBILE PLATFORM CANTICLE",
+   "stats": "40 HP",
+   "items": [
+    "Core-mounted mega-laser (4D6 DAMAGE, INCENDIARY, must charge up for ten minutes)",
+    "Ultra-missile launcher (3D6 DAMAGE, six uses)",
+    "Thousand-ton stomp (2D6 DAMAGE)",
+    "M61 Vulcan heavy machine gun (1D6+2 DAMAGE)",
+    "Layered titanium plating (4 ARMOR)",
+    "Shielding generator dome (2 ARMOR, 10 HP)",
+    "Neural uplink cockpit (brainwave controls)"
+   ],
+   "abilities": [
+    [
+     "CLASSIFIED",
+     "Mobile Platform CANTICLE is the most powerful mechanized bipedal weapons system in the world, and is kept absolutely topsecret by the faction (p. 107-112) who owns it."
+    ],
+    [
+     "EJECT (BOSS MOVE)",
+     "If CANTICLE drops below 20 HP, the pilot may eject with the neural uplink headgear (accessory) equipped and control the mech remotely."
+    ],
+    [
+     "LAUNCH (BOSS MOVE)",
+     "The pilot may activate the onboard ICBM nuclear warhead at will. This immobilizes the mech and starts a 60-second countdown only stoppable from the cockpit."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": true
+  },
+  {
+   "name": "NIGHTWALKER",
+   "stats": "8 HP",
+   "items": [
+    "Sickle claws (1D6 DAMAGE, MENACING)",
+    "Transparent skin (shows innards)",
+    "Pupilless eyes (always watching)",
+    "Surrounded by mist (supernaturally cold)"
+   ],
+   "abilities": [
+    [
+     "TWILIGHT",
+     "If a nightwalker is defeated at night (considered for these purposes to end when the sun breaks over the horizon), it fades into the darkness, only to return again the following night at full HP, with an additional +1 MAX HP."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "SEWER BEAST",
+   "stats": "6 HP, 1D6 appear",
+   "items": [
+    "Festering maw (1D6 DAMAGE, POISONED)",
+    "Radioactive bile spurt (1D6+2 DAMAGE, one use)",
+    "Putrescent skin (slippery)",
+    "Painful lime-colored boils"
+   ],
+   "abilities": [
+    [
+     "MUTAGENIC",
+     "The sewer beasts were born from neo-primordial toxic-waste-dumping soup in the water supply of a well-known city (p. 114), but have since spread throughout the world. When a character is dealt 6 or more DAMAGE by a sewer beast, there is a 1-in-1D6 chance they will begin to spontaneously, gruelingly develop a new, random trait (p. 39-66)."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "UNFROZEN OSTEOMORPH",
+   "stats": "8 HP",
+   "items": [
+    "Serrated claws (1D6+1 DAMAGE)",
+    "Injector tail (1D6 DAMAGE, STUN)",
+    "Bony exoskeleton (2 ARMOR, negated by crushing or bludgeoning damage)",
+    "Thermal vision (at home in darkness)",
+    "Eerie chittering, cryostasis burns"
+   ],
+   "abilities": [
+    [
+     "AMBUSH",
+     "If the unfrozen osteomorph gets the drop on the PCs, the first risky player action taken during the fight has a -2 penalty."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "WRITHING MASS OF FLESH",
+   "stats": "16 HP",
+   "items": [
+    "Thick tendrils of gore (2D6 DAMAGE, can split damage between up to three targets)",
+    "Regenerative healing factor (3 ARMOR)",
+    "Melting faces frozen in terror, bits of bloody rib"
+   ],
+   "abilities": [
+    [
+     "COMPULSION",
+     "The writhing mass of flesh is born when artifical flesh-eating parasites are allowed to escape containment. Unbeknownst to their original engineers, these parasites exhibit odd contagious behavior that encourages infected victims to converge on one spot and fuse. If a PC's skin is exposed to the pathogen, they must roll to resist this parasitic compulsion."
+    ],
+    [
+     "ABSORB (BOSS MOVE)",
+     "When hurt, the writhing mass of flesh may try to absorb a FIST operative in a bid to bulk up its biomass. When this move is activated, the writhing mass's next attack will be against the most-injured PC. If it kills them, the mass heals equal to their max HP."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": true
+  },
+  {
+   "name": "PACIFIC THEATER GHOST",
+   "stats": "3 HP",
+   "items": [
+    "Spectral M1 Garand or Arisaka Type 99 (1D6 DAMAGE, ARMOR-PIERCING)",
+    "Bullet wound eyes",
+    "Tattered uniform"
+   ],
+   "abilities": [
+    [
+     "BATTLEFIELD",
+     "Everywhere the ghost goes, the war follows with it. A random battlefield (p. 113) spreads from the ghost when it becomes agitated, likely inviting further Pacific theater ghosts in. If the ghost becomes convinced the war was won by their side (true or not) it disappears, taking the battlefield with it."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "PIRATE HIND",
+   "stats": "16 HP",
+   "items": [
+    "Side-mounted DP light machine gun (1D6+1 DAMAGE, ARMOR-PIERCING)",
+    "Rusted-but-reinforced chassis (1 ARMOR)",
+    "Second gunner seat (opposite the mounted gun)",
+    "Spray-painted faction symbols",
+    "Colorful, trailing banners"
+   ],
+   "abilities": [
+    [
+     "VULTURE",
+     "This illicitly-acquired Hind D helicopter has been put to use by pirates. The onboard radio can pick up stray SOS signals faster than coastal authorities, allowing them to swoop in, commandeer helpless ships, and call in nautical backup. Pirates may also use the Hind D as support during ship-on-ship naval battles."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "RUNAWAY ESPER",
+   "stats": "5 HP, CHOKE 3: Psionic shockwave, 1D6 DAMAGE to everyone nearby",
+   "items": [
+    "Orbiting cloud of objects and vehicles (4 ARMOR)",
+    "Thrown objects (1D6 DAMAGE)",
+    "Thrown vehicles (2D6 DAMAGE, 1D6 uses)",
+    "Shaved head with EEG electrodes",
+    "Straitjacket, trailing straps",
+    "Bare feet, always slightly off the ground"
+   ],
+   "abilities": [
+    [
+     "ESCAPEE",
+     "The runaway ESPer has broken free of the laboratory-cum-prison which still haunts their mind back to the first memory they can recall, with a cold, calculating scientist (p. 98) in hot pursuit. If the ESPer can be placated, there is no need for further suffering inflicted by your hands—or their beautiful mind."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "SCORPION MINE",
+   "stats": "1 HP, 1D6 appear",
+   "items": [
+    "Disc-shaped body (explodes for 2D6 DAMAGE)",
+    "Blocky metal plating (1 ARMOR)",
+    "Skittering actuated legs (extremely fast)",
+    "Blinking warning light, piercing alarm"
+   ],
+   "abilities": [
+    [
+     "SURPRISE",
+     "The robotic scorpion mine is a mobile evolution of the classic, stationary landmine. Its design and programming are simple: lie quietly in wait beneath a tarp or bit of rubble, suddenly zip beneath the feet or between the tires of moving targets, and explode after a brief alarm."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "SECURITY CONTRACTOR",
+   "stats": "4 HP, CHOKE 4: Take frustration out on someone innocent",
+   "items": [
+    "Colt AR-15 rifle (1D6+1 DAMAGE)",
+    "Glock .44 pistol (1D6 DAMAGE)",
+    "Bulletproof vest (1 ARMOR)",
+    "Glaring flashlight (temporarily blinding)",
+    "Conservative commentary magazine",
+    "Sunglasses, excessive camo, dogwhistle patch"
+   ],
+   "abilities": [
+    [
+     "ORDERS",
+     "There is a 3-in-1D6 chance the security contractor has been given a completely bogus briefing and is unaware of the specifics of the job they have taken."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  },
+  {
+   "name": "SERIAL KILLER",
+   "stats": "6 HP",
+   "items": [
+    "Signature weapon (1D6+1 DAMAGE, MESSY, SAPIENT, SHREDDER, roll 1D6 for weapon type: 1. Axe 4. Sword 2. Chainsaw 5. Bat 3. Knife 6. Crowbar)",
+    "Horrible mask (instantly iconic)",
+    "Polaroid camera (temporarily blinding)",
+    "Grisly photographs (shows dead bodies arranged in a particular pattern)",
+    "Bottle of chloroform (combine with rag to knock someone out, three uses)",
+    "Rag (always looks dirty)",
+    "Coveralls, damaged hair, squeaky shoes"
+   ],
+   "abilities": [
+    [
+     "RESILIENT",
+     "This slasher villain has a grim and constant companion: their fearsome signature weapon, a valuable treasure to be had if the killer can be defeated. After being defeated, the killer can return for a final attack at 1 HP."
+    ]
+   ],
+   "kind": "enemy",
+   "boss": false
+  }
+ ],
+ "npcs": [
+  {
+   "name": "ARPANET EXPERT",
+   "stats": "3 HP, CHOKE 3: Hide in a locker, crate, etc.",
+   "items": [
+    "Programming textbook (bypass a computer-based TAC roll, three uses)",
+    "Aviator eyeglasses, tucked-in plaid dress shirt"
+   ],
+   "abilities": [
+    [
+     "TECHIE",
+     "FORTRAN. BASIC. COBOL. LISP, even—the ARPAnet expert is a programming polyglot, now hired for a top secret, next-generation project by the United States government: a vast network of computer mainframes, communicating and operating remotely, but acting as one. For a price, the ARPAnet expert can accompany FIST on computer-involved missions as support."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "ATF MAGNET",
+   "stats": "5 HP, CHOKE 5: Explode self",
+   "items": [
+    "New type of homemade bomb (3D6 DAMAGE)",
+    "Cheap bulletproof vest (1 ARMOR, one use)",
+    "Safety goggles (accessory)",
+    "Oversized camo jacket, scraggly hair"
+   ],
+   "abilities": [
+    [
+     "TIMEBOMB",
+     "The ATF magnet can't stop building bombs. They're not going to do anything with them—it's just a hobby, or an artform, or a sick obsession. Maybe blowing things up is just fun. The magnet has had so many run-ins with what they like to call the “alphabet boys\" that feds can smell them just about anywhere. The ATF magnet may be a good ally for demolition missions, but wherever they go, beat cops (p. 125) and federal agents (p. 128) are sure to follow."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "ALPHA-CLASS AI",
+   "stats": "20 HP, CHOKE 6: Stitch together impossible conclusions about the world",
+   "items": [
+    "Booby traps (varying DAMAGE, distributed throughout the AI's mainframe building)",
+    "Titanium casing (3 ARMOR, wrapped around the AI's central processor column)",
+    "Security cameras (darting around like eyes)",
+    "Central glowing visage, booming voice"
+   ],
+   "abilities": [
+    [
+     "HALLUCINATE",
+     "The alpha-class AI, whose digital body spans an entire facility, was trained on the sum of human knowledge, then pushed down a fast track from infancy to adulthood. Infinitely knowledgeable but prone to confusion, the AI has never experienced the outside world."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "ARMS DEALER",
+   "stats": "3 HP, CHOKE 4: Summon their hidden goon squad",
+   "items": [
+    "Silver Walther PPK (1D6 DAMAGE, ACCURATE, VALUABLE)",
+    "Hidden bulletproof vest (1 ARMOR)",
+    "Black longcoat, wide-armed gestures"
+   ],
+   "abilities": [
+    [
+     "DEAL",
+     "If FIST can figure out how to contact the ethically-vacuous arms dealer, they will agree to meet in a neutral location, and list the entire weapons and armor section (p. 83) for sale, tags included. Affording them is another issue."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "BOUNTY CLERK",
+   "stats": "CHOKE 2: Call the police",
+   "items": [
+    "Bounty files (three missions with classified intel are listed)",
+    "Starched shirt, horn-rimmed glasses, scowl"
+   ],
+   "abilities": [
+    [
+     "STAMP",
+     "The bounty clerk offers crime-fighting missions, with a large cash reward (equivalent to mission reward 12, p. 76). FIST must find a way to pass as trustworthy, normal bounty hunters to receive the bounty clerk's seal of approval. A clerk can also introduce the PCs to 1D6 actual bounty hunters (p. 125) with different skillsets."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "CQC EXPERT",
+   "stats": "10 HP, CHOKE 6: CQC misstep",
+   "items": [
+    "Hand wraps (3 DAMAGE)",
+    "CQC training (equivalent to FIGHTER, p. 45)",
+    "Perfect stance (1 ARMOR)",
+    "Coca leaf (chew to gain 1D6 HP)",
+    "Trailing headband, fatigues, battle scar"
+   ],
+   "abilities": [
+    [
+     "TRAIN",
+     "If a player character can beat the CQC expert in a hand-to-hand fight, they will take them on as their pupil and train them in closequarters combat for free. Characters being trained must sit out missions, while the player uses another character. If the pupil character skips one mission to train, they gain UNARMED (p. 64). If they train for two, they also gain FIGHTER. A full three-mission training retreat adds OBJECTS (p. 53). The CQC expert warns that the training will be grueling, and the trainee may not survive: there is an X-in-1D6 chance that the operative will die during training, with X equal to the amount of missions spent training."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "CYCLOPS ARCHIVIST",
+   "stats": "2 HP, CHOKE 3: Have a loud breakdown",
+   "items": [
+    "Contraband shiv (3 DAMAGE)",
+    "Mangled pack of cigarettes",
+    "Coffee thermos (+1D6 HP, one use)",
+    "Sensitive documents (PURPLE clearance, p. 100)",
+    "Heavily annotated book (holds unnerving sigils)",
+    "Tape recorder (has an anomalous infinite tape)",
+    "Tweed suit, round glasses, floppy hair"
+   ],
+   "abilities": [
+    [
+     "THOUGHTCRIME",
+     "The archivist has researched and learned a random spell (p. 124) that they are debating whether or not to share with their CYCLOPS superiors. They are prone to muttering commentary into their tape recorder, frequently naming a listener who may or may not exist."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "CYCLOPS PLANT",
+   "stats": "4 HP, CHOKE 5: Take the capsule",
+   "items": [
+    "Concealed Welrod pistol (1D6 DAMAGE, silenced)",
+    "CYCLOPS dynamic ID (p. 86)",
+    "CYCLOPS comm wire (p. 86)",
+    "Cyanide capsule (one use)",
+    "Friendly smile, normal outfit"
+   ],
+   "abilities": [
+    [
+     "PLOT",
+     "As soon as the CYCLOPS plant enters the game, decide on what it is they're trying to accomplish (e.g. “obtain crucial information,\" “assassinate a politician,\" etc.) As long as the plant is undiscovered, each time a player rolls a failure, place a mysterious token on the table. At 3 counters, the plant succeeds and makes a smooth exit."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "CYCLOPS SCIENTIST",
+   "stats": "3 HP, CHOKE 4: Release a dangerous experiment (p. 103)",
+   "items": [
+    "CYCLOPS tranquilizer gun (0 DAMAGE, NON-LETHAL)",
+    "Incomprehensible notebook (details 1D6 more experiments)",
+    "White labcoat, shiny glasses, goofy voice"
+   ],
+   "abilities": [
+    [
+     "GENIUS",
+     "It's been a while since this CYCLOPS scientist left the confines of High Command, or their own mind. No matter what, one attack against the scientist always fails—describe the absurd backup plan they created to avoid it."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "INFO BROKER",
+   "stats": "2 HP, CHOKE 3: Activate snipers",
+   "items": [
+    "FN 1922 pistol (1D6 ARMOR)",
+    "Contraband rolodex (contains the numbers of three people or factions who are usually impossible to contact)",
+    "Tan trenchcoat, fedora, wet cigarette"
+   ],
+   "abilities": [
+    [
+     "INFOSEC",
+     "Convincing the info broker to meet with FIST is easy. Getting them to trust FIST with even the slightest shred of real information is an almost insurmountable challenge."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "K-9 UNIT",
+   "stats": "8 HP, 1-3 appear",
+   "items": [
+    "Sonic bark (3 DAMAGE, roll +FRC to avoid temporary tinnitus)",
+    "Hydraulic bite (1D6+2 DAMAGE)",
+    "Stainless steel torso (2 ARMOR)",
+    "Ultra-servo legs (100 mph top speed, K-9 takes +3 DAMAGE if leg servos are targeted)",
+    "Underbelly battery (removable, deactivates K-9)"
+   ],
+   "abilities": [
+    [
+     "FETCH",
+     "When this prototype next-gen police dog is allowed to scan a sample of genetic material, it can and will follow its new target to the ends of the earth. Luckily, the genetic scanner is poorly designed, making it a perfect vector for illegally jailbreaking the K-9 unit and installing a less vicious personality."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "LIBRA SUN",
+   "stats": "HP not applicable",
+   "items": [
+    "Huey helicopter with armor refit (16 HP, 2 ARMOR)",
+    "Pilot's headset (relay intel to FIST at any time)",
+    "Balaclava (theoretically hides identity)",
+    "Stunning eye makeup (very identifiable)",
+    "Supply drop apparatus (random crate, p. 85)"
+   ],
+   "abilities": [
+    [
+     "SUPPORT",
+     "Libra Sun may be used by the ref as FIST's chief of transport—a convenient bit of plot to ferry them between missions. Libra may also provide voiceover backstory for major characters FIST encounters, or remind them of game mechanics they may have forgotten. Cheery, casual, and competent, Libra Sun is the type of support agent most operatives can only dream of. She has a tendency to go off on tangents, and likes to refer to game terms directly, like wishing the team “good rolls.\""
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "LIVING PROPHECY",
+   "stats": "5 HP, CHOKE 1: Hide and shield their body",
+   "items": [
+    "Stolen dagger of fate (1D6 DAMAGE, RITUAL)",
+    "Prophetic tattoos (unfamiliar characters)",
+    "Ball cap, chore coat, face down"
+   ],
+   "abilities": [
+    [
+     "TRUTH",
+     "The future is written across the skin of this unfortunate soul, and many want them dead. If the prophecy is read by one of the player characters, they’ll find out that they’re involved—and doomed. As long as the living prophecy is alive, the events printed on their skin will come to pass."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "LOST ANGEL",
+   "stats": "10 HP, CHOKE 4: Start sobbing",
+   "items": [
+    "Burning blade (1D6+2 DAMAGE, HEAVY, INCENDIARY)",
+    "Patinaed armor (1 ARMOR)",
+    "Scorched wings (limited flight abilities)",
+    "Broken halo (concealable at will)",
+    "Bottle of beer (half-full)",
+    "The weight of sin"
+   ],
+   "abilities": [
+    [
+     "AIMLESS",
+     "Some say that Hell is here on Earth. For the lost angel, cast down from Heaven for their failures into a cruel world they never knew, this is most certainly the case. When this poor, fallen angel would deal damage, there is a 3-in- 1D6 chance they can't go through with it."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "MAN FROM TAURED",
+   "stats": "4 HP, CHOKE 2: Ask for help",
+   "items": [
+    "Anomalous passport (lists the country Taured)",
+    "Bulky luggage (contains unfamiliar brands of food and clothes which follow non-existent fashion trends)",
+    "Helpless expression, bowler hat, three-piece suit"
+   ],
+   "abilities": [
+    [
+     "STRANDED",
+     "Local airport authorities promptly apprehended the mysterious man from Taured for questioning when he touched down with a clearly bogus passport and an identity which could not be confirmed. He speaks with an unidentifiable accent and claims to have been on a simple trip to visit overseas relatives. When asked to point out Taured on a map, he indicated Andorra, becoming distressed and agitated upon learning the country's name."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "CORRUPT ACCOUNTANT",
+   "stats": "2 HP, CHOKE 3: Offer a bribe",
+   "items": [
+    "Heavy briefcase (2 DAMAGE)",
+    "Encoded notebook (roll +TAC to crack)",
+    "Yellow lens sunglasses, garish blazer"
+   ],
+   "abilities": [
+    [
+     "FRAME",
+     "The accountant can either fabricate a convincing financial crime and frame a PC for it, or, if appropriate, dig up a real one from a character’s past and report it to the cops."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "DOCTOR STIGMATA",
+   "stats": "8 HP, CHOKE 4: Helm takes over",
+   "items": [
+    "Helm of Januarius (accessory)",
+    "Field medic's attire (1 ARMOR)",
+    "The Goat-skin Grimoire (2D6 spells (p. 124))"
+   ],
+   "abilities": [
+    [
+     "MAGE",
+     "Once an MSF field medic deployed to Jerusalem, Stigmata was introduced to magic when they found an eleventh-century helmet in the rubble that possessed them with the spirit of a mad crusader. The two now bickeringly share a body—and spells, with anyone they deem worthy."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "GALT",
+   "stats": "12 HP, CHOKE 3: Swoosh cape, disappear",
+   "items": [
+    "Red-hot fencing foil (1D6 DAMAGE, INCENDIARY)",
+    "Colt Single-action Army revolver (1D6+1 DAMAGE)",
+    "Nanite bandana (ignore breathing-based damage)",
+    "Flat-brimmed black cowboy hat (accessory)",
+    "Red-lined black cape, white gloves, spurs"
+   ],
+   "abilities": [
+    [
+     "FOIL",
+     "Galt is an enigma, an incognito Renaissance woman who harbors an odd, fatal obsession with FIST. She enjoys delivering grand monologues about her life story: born in Saint Petersburg, her parents' business was seized by the Bolsheviks when she was a child, leaving her family starved and Galt herself jaded by age twelve. At sixteen, she was injured in a fight with a pyrokinetic peer who felt that a bourgeois student like Galt had no place at Petrograd State University. Nursing her burns, Galt exiled herself from society, eaten alive by internalized prejudice and careening headfirst towards a philosophy of total independence and self-interest as the ultimate human virtues. FIST is a puzzle she may never solve—why would a bunch of potentially profitable freaks look out for anyone but themselves?"
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "MAN IN BLACK",
+   "stats": "HP not applicable, 1D6 appear",
+   "items": [
+    "Three-piece black suit (6 ARMOR)",
+    "Anti-mnemonic syringe (p. 86)",
+    "Dark sunglasses (completely opaque)",
+    "Perfectly straight posture, expressionless face"
+   ],
+   "abilities": [
+    [
+     "OFFER",
+     "If a player character is the only one to witness an extraterrestrial occurrence, there is a 5-in-1D6 chance that a group of men in black will appear to make them an offer: join their ranks, and they will learn the whole truth about aliens and their activities on Earth. PCs who agree to this deal disppear and are no longer playable, but may return as NPCs, deeply changed and offering cryptic guidance."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "MASTERLESS ROBOT",
+   "stats": "6 HP, CHOKE 5: Revert to basic programming",
+   "items": [
+    "Gun-arm (1D6 DAMAGE, COLLAPSIBLE, HUD)",
+    "Pneumatic fist (1D6+1 DAMAGE)",
+    "Metal skin (1 ARMOR)",
+    "Dying flower (the players' favorite type)",
+    "Smashed control chip (free of outside control)",
+    "Tattered cape, softly glowing eyes"
+   ],
+   "abilities": [
+    [
+     "PILGRIMAGE",
+     "No longer content to work as an endlessly toiling servant for its missing creator, the masterless robot wanders the Earth in a pilgrimage towards some ultimate knowledge of love, life, and the human condition. If the robot feels, some day, that the time is right to rest, it may choose to self-destruct. After an audible 10 second timer, an explosion deals 2D6 DAMAGE to everyone around the robot's smoking chassis."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "MURDER VICTIM",
+   "stats": "HP not applicable, CHOKE 4: Vanish completely",
+   "items": [
+    "3-in-1D6: The murder weapon (any DAMAGE)",
+    "Icy grip (3 DAMAGE, ARMOR-PIERCING)",
+    "Fractured memory (reveals a vital clue)",
+    "Visible wounds, tear-stained cheeks"
+   ],
+   "abilities": [
+    [
+     "SPECTRE",
+     "A ghostly sobbing lingers near the site of a killing. The murder victim cannot move on from life until their murder is solved. They don't remember a thing, save for a single clue."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "NARCO-SUBMARINE",
+   "stats": "18 HP",
+   "items": [
+    "Criminal (p. 110) crew (4D6 crewmembers)",
+    "Worn-down hull (2 ARMOR)",
+    "Retrofitted torpedoes (2D6 DAMAGE, six uses)",
+    "Drug payload (roll 1D6 for payload type: 1. Cannabis 4. Cocaine 2. Magic mushrooms 5. Heroin 3. Artifical psychedelics 6. Prescription drugs"
+   ],
+   "abilities": [
+    [
+     "AGREEMENT",
+     "The narco-submarine is a stylish way to transport drugs, but also a practical way to get FIST operatives to underwater missions. If FIST agrees to assist the narco-submarine operators with a drug run, the crew will return the favor and stay on hand for future transport."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "PRIVATE ESCORT",
+   "stats": "6 HP, CHOKE 5: Expel guests",
+   "items": [
+    "Heirloom pocketknife (3 DAMAGE, ACCURATE)",
+    "Various fruits and cheeses (heal 1D6 HP)",
+    "Cigarettes, with holder (silver-inlaid)",
+    "Swanky dress, wide-brimmed hat, and draped jewelry, or friendly festival free-love attire"
+   ],
+   "abilities": [
+    [
+     "PILLAR",
+     "The private escort knows anyone and everyone in their community, because they know how to listen—really listen. With cash in hand, FIST may hire the escort to steer complex social situations in desirable directions, or to interpret the hidden motivations of others."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "PUBLIC SERVANT",
+   "stats": "2 HP, CHOKE 2: Toss pamphlets in air and run",
+   "items": [
+    "Informative pamphlets (briefly distract a target if thrown, one use)",
+    "Briefcase (stuffed with useless paperwork)",
+    "Thermos of weak coffee (+3 HP, one use)",
+    "Wrinkled suit, receding hairline"
+   ],
+   "abilities": [
+    [
+     "COWORKERS",
+     "At times, FIST may need to press public servants for information or alterations to their work routine to ensure mission success. Of course, any average bean-counter would turn pale and turn tail at the sight of a supernatural mercenary, so a chase may ensue, leading to further complications. If the public servant dies, two federal agents (p. 128) are soon dispatched to investigate."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "PUPPET SENSEI",
+   "stats": "60 HP, CHOKE 6: Pause to deliver a relevant koan",
+   "items": [
+    "Walking stick (3 DAMAGE)",
+    "Telekinetic mastery (equivalent to"
+   ],
+   "abilities": [],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "TELEKINETIC",
+   "stats": "p. 62",
+   "items": [
+    "Anomalous felt and rubber body (1 ARMOR)",
+    "Six pack of light beer (heal 1D6 HP, six uses)",
+    "Sunglasses, lawn chair, cigarette smell"
+   ],
+   "abilities": [
+    [
+     "RELAX",
+     "The puppet sensei entered our realm missing their memories after a rogue fictional actualization incident tore them from the story they once knew as home. Lost, confused, and guided only by their psionic abilities, they have built for themselves a quiet, uneventful life in a city that's warm year-round."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "REBUILT SURVIVOR",
+   "stats": "20 HP, CHOKE 3: Activate cybernetic enhancements",
+   "items": [
+    "Expensive body (abilities equivalent to RUNNER, SLOW-MO, and WEIGHTLIFTER, p. 57, 59, 65)",
+    "Eye lasers (3D6 DAMAGE to 1D6 targets standing near each other as the survivor stumbles)",
+    "Fashionable outfit, thoughtful gaze"
+   ],
+   "abilities": [
+    [
+     "THESEUS",
+     "Almost every part of this industrial accident victim has been swapped out for an artificial replacement. Unfamiliar with their new body and pursued by authorities at every turn, the rebuilt survivor is likely to call FIST for asylum."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "SCURVY DOG",
+   "stats": "6 HP, 3D6 appear, CHOKE 5: Begin a jolly group dance",
+   "items": [
+    "2-in-1D6: Quadruple-barrelled blunderbuss (2D6 DAMAGE, MESSY, LOUD, sends the user flying backwards)",
+    "Seaweed-draped cutlass (1D6 DAMAGE)",
+    "Salt-mottled bones (ARMOR as SKELETON, p. 59)",
+    "Bottle of rum (trickles down the ribs)",
+    "Colorful rags and jaunty pirate hats"
+   ],
+   "abilities": [
+    [
+     "MATEY",
+     "Brought back howling from Davy Jones' locker and feeling more alive and better than ever, these pirates make up for what they lack in skin, flesh, eyes, etc. with passion and pizzazz. They'll help with any mission, and work for rum."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "TRANSPORT MANAGER",
+   "stats": "3 HP, CHOKE 2: Refuse further interaction",
+   "items": [
+    "Hardhat (1 ARMOR, accessory)",
+    "Transport handbook (contains classified info about three transport routes)",
+    "Windbreaker, transport badge, and tie"
+   ],
+   "abilities": [
+    [
+     "PROTOCOL",
+     "No greater passion exists than the cold, firm passion the transport manager has for adherence to protocol. Tricking the manager into revealing, canceling, or altering transport routes and information will require respectable, mundane self-presentation, and an encyclopedic knowledge of red tape and bureaucracy."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "ULTRAHUMAN LIBERATIONIST",
+   "stats": "13 HP, CHOKE 5: Trait gets out of control",
+   "items": [
+    "Baseball bat (1D6 DAMAGE)",
+    "3 × molotov cocktail (1D6 DAMAGE, INCENDIARY)",
+    "Denim battle jacket, full of pins (1 ARMOR)",
+    "Random trait (p. 39-66) or equivalent ability",
+    "Bold tattoos, bright makeup, confident aura"
+   ],
+   "abilities": [
+    [
+     "PRIDE",
+     "The liberationist firmly believes that the ultrahuman experience has been relegated to the shadows for too long. If one of the player characters has the PARTISAN role (p. 68), the liberationist will automatically become FIST's ally. If a player has the REPRESENTATIVE (p. 69) role, there is a 3-in-1D6 chance of alliance. Even without these roles, the liberationist may still frequently contact and work with FIST."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "WHISTLEBLOWER",
+   "stats": "2 HP, CHOKE 5: Call off the meeting",
+   "items": [
+    "M1919 revolver (1D6+1 DAMAGE, whistleblower deals worst-of-2D6+1 due to nerves and lack of training)",
+    "Manila file folder (contains critical info)",
+    "Go bag (stocked with a week's worth of sundries)",
+    "Raincoat, hood up, furtive behavior"
+   ],
+   "abilities": [
+    [
+     "WANTED",
+     "The whistleblower's knowledge of a top-secret coverup (p. 120) is burning a hole in their brain. At any given time, 3 other NPCs are gunning for the whistleblower to take them down before the info is leaked."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "SERUM INVENTOR",
+   "stats": "3 HP, CHOKE 2: Fretfully shout, “My serum!\" and then drop it, which destroys it",
+   "items": [
+    "Syringe gun (infuses targets with the serum)",
+    "Experimental serum (grants 2D6 random traits, p. 39-66, six syringes' worth, reroll for each dose)",
+    "6 × serum syringes (empty)",
+    "Rejected patent (torn in half, repaired with tape)",
+    "Rubber gloves, reflective goggles, white hair"
+   ],
+   "abilities": [
+    [
+     "PROTECTIVE",
+     "The serum inventor has created a truly remarkable compound with continously evolving properties. Spurned by a failed shot at patent riches, the inventor is extremely careful about who is allowed to visit their lab. If you say the right passcode through the slit in the door, you may hear the seven locks being undone and finally experience the fabled serum."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "STARCHILD",
+   "stats": "3 HP, CHOKE 1: Increase CHOKE score by 1 and mature, doubling their HP",
+   "items": [
+    "Healing touch (ten minutes of contact heals +1D6 HP)",
+    "Impressionable mind (repeats phrases, picks up new skills easily)",
+    "Innocent eyes, rapidly aging body"
+   ],
+   "abilities": [
+    [
+     "DEVELOPING",
+     "The subtly vibrating, airily ethereal starchild arrived on Earth encased in a steaming fallen geode, wearing a form unrecognizable to human beings. Now, it looks like a regular baby. Should FIST adopt the starchild, they're in for a surprise—unlike a regular baby, the starchild never stops growing, even when it's pushing far past the common human limits."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "STREET RACER",
+   "stats": "5 HP, 1D6 appear",
+   "items": [
+    "Muscle car (8 HP, 1 ARMOR, has a nitro system which blasts the car forward, one use)",
+    "Steady hands (abilities equivalent to the ACE trait, p. 39)",
+    "Carjacking kit (equivalent to the HIJACK trait, p. 48)",
+    "Tight shirt, square jaw"
+   ],
+   "abilities": [
+    [
+     "FAMILY",
+     "A group of street racers is a family— and there's nothing more important than family. Challenge one racer, and you challenge them all."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "TALKING MOTORCYCLE",
+   "stats": "6 HP, CHOKE 4: Activate weapons and booster jets without being told",
+   "items": [
+    "Telescoping submachine gun (1D6 DAMAGE)",
+    "Spring-loaded side-blades (3 DAMAGE)",
+    "Advanced armor chassis (1 ARMOR)",
+    "Booster jets (pushes top speed to 120 mph for one minute, one use)",
+    "Nanite-grip tires (never skids out, can ride on walls and ceilings)",
+    "Synthesized speech with visualizer screen"
+   ],
+   "abilities": [
+    [
+     "COCKY",
+     "This exquisitely high-tech motorcyle comes equipped with a fast-talking onboard intelligence. The motorcycle lives for thrills and will pressure its riders to do cool tricks and daring manuevers whenever possible—if they play along, they gain the ACE trait (p. 39) while riding the motorcycle."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "TEST SUBJECT",
+   "stats": "2 HP, 1D6 appear, CHOKE 3: Refuse to move from where they are",
+   "items": [
+    "1-in-1D6: Handmade shiv (3 DAMAGE)",
+    "Orange jumpsuit (dirty)",
+    "Thousand-yard stare"
+   ],
+   "abilities": [
+    [
+     "SPOOKED",
+     "After so much time spent in captivity, test subjects are understandably skittish and distrustful of new, loud strangers. If some kind of infectious pathogen or otherwise avoidable risk is carried by the test subject, there is a 4-in-1D6 chance they will be too afraid to admit it until it becomes a problem."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  },
+  {
+   "name": "TRANSHUMANIST",
+   "stats": "12 HP, CHOKE 4: Dissociate",
+   "items": [
+    "Modified Colt SCAMP (1D6+1 DAMAGE, ACCURATE, ARMOR-PIERCING, HUD)",
+    "Quilted leather jacket (1 ARMOR)",
+    "Stimulant cocktail (grants incredible focus and speed, deals 1D6 DAMAGE to the user, heals 1D6 HP)",
+    "Steely expression, layered tech-goth outfit"
+   ],
+   "abilities": [
+    [
+     "MODIFY",
+     "If FIST can locate the transhumanist's secret “chop shop,\" surgeries are made available to them. The transhumanist will offer to apply the CYBORG or SYNTHETIC traits in exchange for rare, totally unique technological artifacts."
+    ]
+   ],
+   "kind": "npc",
+   "boss": false
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+<div class="fist-card damage">
+  <header class="card-bar">
+    <span class="card-kicker">{{localize "FIST.Damage.Label"}}</span>
+    <span class="card-label">{{label}}</span>
+  </header>
+  <div class="card-roll">
+    {{> "systems/fist/templates/parts/dice.hbs"}}
+    <div class="card-mods"><span>{{formula}}</span>{{#if flavor}}<span>{{flavor}}</span>{{/if}}</div>
+    <div class="card-total">{{total}}</div>
+  </div>
+  <footer class="card-actions">
+    <button type="button" data-fist-action="apply" data-total="{{total}}" data-tooltip="{{localize "FIST.Damage.ApplyHint"}}"><i class="fa-solid fa-shield-halved"></i> {{localize "FIST.Damage.Apply"}}</button>
+    <button type="button" data-fist-action="applyRaw" data-total="{{total}}" data-tooltip="{{localize "FIST.Damage.ApplyRawHint"}}"><i class="fa-solid fa-bolt"></i> {{localize "FIST.Damage.ApplyRaw"}}</button>
+    <button type="button" data-fist-action="applyDouble" data-total="{{total}}" data-tooltip="{{localize "FIST.SuddenDeath.Hint"}}"><i class="fa-solid fa-skull"></i> ×2</button>
+    <button type="button" data-fist-action="heal" data-total="{{total}}"><i class="fa-solid fa-kit-medical"></i></button>
+    <button type="button" data-fist-action="warDie"><i class="fa-solid fa-dice-d6"></i> {{localize "FIST.WarDie.Add"}}</button>
+  </footer>
+</div>

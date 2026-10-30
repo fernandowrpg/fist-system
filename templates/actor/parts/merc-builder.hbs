@@ -1,0 +1,146 @@
+<div class="builder-wrap">
+  <header class="builder-head">
+    <div class="builder-title">
+      <span class="kicker">{{localize "FIST.Builder.Kicker"}}</span>
+      <h2>{{localize "FIST.Builder.Title"}}</h2>
+    </div>
+    <button type="button" class="random-merc" data-action="randomMerc" {{#unless editable}}disabled{{/unless}}>
+      <i class="fa-solid fa-shuffle"></i> {{localize "FIST.Builder.RandomMerc"}}
+    </button>
+  </header>
+
+  <ol class="builder-steps">
+    {{#each builder.steps}}
+    <li class="step-pill {{#if active}}active{{/if}} {{#if done}}done{{/if}}" data-action="builderStep" data-step="{{index}}">
+      <span class="step-no">{{#if done}}<i class="fa-solid fa-check"></i>{{else}}{{number}}{{/if}}</span>
+      <span class="step-label">{{localize label}}</span>
+    </li>
+    {{/each}}
+  </ol>
+  <div class="builder-progress"><span style="width: {{builder.progress}}%"></span></div>
+
+  <div class="builder-panel">
+    {{#if (eq builder.step 0)}}
+    {{!-- STEP 1: procure a sheet --}}
+    <h3><span class="step-tag">01</span> {{localize "FIST.Builder.Step.sheet"}}</h3>
+    <p>{{localize "FIST.Builder.SheetIntro"}}</p>
+    <div class="baseline">
+      <div><span class="big">0</span><span>FRC · TAC · CRE · RFX</span></div>
+      <div><span class="big">0</span><span>{{localize "FIST.Armor.Label"}}</span></div>
+      <div><span class="big">0</span><span>{{localize "FIST.WarDie.Label"}}</span></div>
+      <div><span class="big">6</span><span>{{localize "FIST.HP.Max"}}</span></div>
+    </div>
+    <p class="hint">{{localize "FIST.Builder.SheetHint"}}</p>
+    {{/if}}
+
+    {{#if (eq builder.step 1)}}
+    {{!-- STEP 2: two traits --}}
+    <h3><span class="step-tag">02</span> {{localize "FIST.Builder.Step.traits"}} <span class="counter">{{builder.traitCount}}/2</span></h3>
+    <p>{{localize "FIST.Builder.TraitsIntro"}}</p>
+    <div class="builder-drop drop-zone">
+      <i class="fa-solid fa-dna"></i>
+      <span>{{#if builder.traitsNeeded}}{{localize "FIST.Builder.TraitsDrop"}}{{else}}{{localize "FIST.Builder.TraitsReady"}}{{/if}}</span>
+      <div class="drop-actions">
+        <button type="button" data-action="openPack" data-pack="fist.traits"><i class="fa-solid fa-book-open"></i> {{localize "FIST.Trait.Index"}}</button>
+        <button type="button" data-action="randomTrait" {{#unless editable}}disabled{{/unless}}><i class="fa-solid fa-dice"></i> {{localize "FIST.Builder.RollTrait"}}</button>
+      </div>
+    </div>
+    <ol class="item-list traits compact">
+      {{#each traits}}{{> "systems/fist/templates/parts/item-row.hbs"}}{{/each}}
+    </ol>
+    {{/if}}
+
+    {{#if (eq builder.step 2)}}
+    {{!-- STEP 3: starting bonus --}}
+    <h3><span class="step-tag">03</span> {{localize "FIST.Builder.Step.bonus"}}</h3>
+    <p>{{localize "FIST.Builder.BonusIntro"}}</p>
+    {{#if builder.bonus}}
+    <div class="bonus-locked">
+      <i class="fa-solid fa-lock"></i>
+      <span>{{localize "FIST.Builder.BonusChosen"}}: <strong>{{builder.bonusResult}}</strong></span>
+    </div>
+    {{else}}
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <h4><i class="fa-solid fa-box-open"></i> {{localize "FIST.Builder.StandardIssue"}}</h4>
+        <ol class="issue-list">
+          {{#each builder.standardIssue}}
+          <li><a data-action="standardIssue" data-index="{{index}}"><span class="num">{{number}}.</span> {{name}}</a></li>
+          {{/each}}
+        </ol>
+        <button type="button" data-action="standardIssue" data-index="roll"><i class="fa-solid fa-dice-one"></i> {{localize "FIST.Builder.Roll1D6"}}</button>
+      </div>
+      <div class="bonus-card">
+        <h4><i class="fa-solid fa-heart-pulse"></i> +1D6 {{localize "FIST.HP.Max"}}</h4>
+        <p>{{localize "FIST.Builder.BonusHp"}}</p>
+        <button type="button" data-action="chooseBonus" data-choice="hp"><i class="fa-solid fa-dice"></i> {{localize "FIST.Builder.Take"}}</button>
+      </div>
+      <div class="bonus-card">
+        <h4><i class="fa-solid fa-dice-d6"></i> +1D6 {{localize "FIST.WarDie.Label"}}</h4>
+        <p>{{localize "FIST.Builder.BonusWar"}}</p>
+        <button type="button" data-action="chooseBonus" data-choice="warDice"><i class="fa-solid fa-dice"></i> {{localize "FIST.Builder.Take"}}</button>
+      </div>
+    </div>
+    {{/if}}
+    {{/if}}
+
+    {{#if (eq builder.step 3)}}
+    {{!-- STEP 4: role --}}
+    <h3><span class="step-tag">04</span> {{localize "FIST.Builder.Step.role"}}</h3>
+    <p>{{localize "FIST.Builder.RoleIntro"}}</p>
+    <div class="builder-drop drop-zone">
+      <i class="fa-solid fa-mask"></i>
+      <span>{{localize "FIST.Role.DropHint"}}</span>
+      <div class="drop-actions">
+        <button type="button" data-action="openPack" data-pack="fist.roles"><i class="fa-solid fa-book-open"></i> {{localize "FIST.Role.Index"}}</button>
+        <button type="button" data-action="randomRole" {{#unless editable}}disabled{{/unless}}><i class="fa-solid fa-dice"></i> {{localize "FIST.Builder.RollRole"}}</button>
+      </div>
+    </div>
+    {{#if role}}
+    <article class="role-card" data-item-id="{{role.id}}">
+      <header><span class="num">{{role.system.number}}.</span><h4>{{role.name}}</h4></header>
+      <p class="describe"><strong>{{localize "FIST.Role.Describe"}}</strong> {{role.system.describe}}</p>
+      <p class="advance"><strong>{{localize "FIST.Role.Advance"}}</strong> {{role.system.advance}}</p>
+      <label class="role-answer">
+        <span>{{localize "FIST.Role.Answer"}}</span>
+        <textarea data-item-field="system.answer" rows="3" {{#unless editable}}disabled{{/unless}}>{{role.system.answer}}</textarea>
+      </label>
+    </article>
+    {{/if}}
+    {{/if}}
+
+    {{#if (eq builder.step 4)}}
+    {{!-- STEP 5: codename --}}
+    <h3><span class="step-tag">05</span> {{localize "FIST.Builder.Step.codename"}}</h3>
+    <p>{{localize "FIST.Builder.CodenameIntro"}}</p>
+    <div class="codename-row">
+      <input type="text" class="codename-input" data-actor-field="system.codename" value="{{system.codename}}" placeholder="{{localize "FIST.CodenamePlaceholder"}}" {{#unless editable}}disabled{{/unless}}>
+      <button type="button" data-action="randomCodename" {{#unless editable}}disabled{{/unless}}><i class="fa-solid fa-shuffle"></i> {{localize "FIST.Builder.RandomCodename"}}</button>
+    </div>
+    <div class="codename-extra">
+      <label><span>{{localize "FIST.Pronouns"}}</span><input type="text" data-actor-field="system.pronouns" value="{{system.pronouns}}"></label>
+      <label><span>{{localize "FIST.RealName"}} <i class="fa-solid fa-user-secret"></i></span><input type="password" data-actor-field="system.realName" value="{{system.realName}}" placeholder="{{localize "FIST.RealNameHint"}}" autocomplete="off"></label>
+    </div>
+
+    <div class="checklist">
+      <h4>{{localize "FIST.Builder.Checklist"}}</h4>
+      <ul>
+        <li class="{{#if builder.done.traits}}ok{{/if}}"><i class="fa-solid {{#if builder.done.traits}}fa-square-check{{else}}fa-square{{/if}}"></i> {{localize "FIST.Builder.Step.traits"}} ({{builder.traitCount}}/2)</li>
+        <li class="{{#if builder.done.bonus}}ok{{/if}}"><i class="fa-solid {{#if builder.done.bonus}}fa-square-check{{else}}fa-square{{/if}}"></i> {{localize "FIST.Builder.Step.bonus"}}{{#if builder.bonusResult}}: {{builder.bonusResult}}{{/if}}</li>
+        <li class="{{#if builder.done.role}}ok{{/if}}"><i class="fa-solid {{#if builder.done.role}}fa-square-check{{else}}fa-square{{/if}}"></i> {{localize "FIST.Builder.Step.role"}}{{#if role}}: {{role.name}}{{/if}}</li>
+        <li class="{{#if builder.done.codename}}ok{{/if}}"><i class="fa-solid {{#if builder.done.codename}}fa-square-check{{else}}fa-square{{/if}}"></i> {{localize "FIST.Builder.Step.codename"}}{{#if system.codename}}: {{system.codename}}{{/if}}</li>
+      </ul>
+    </div>
+    <button type="button" class="deploy" data-action="finishBuilder" {{#unless builder.allDone}}disabled{{/unless}}>
+      <i class="fa-solid fa-parachute-box"></i> {{localize "FIST.Builder.Finish"}}
+    </button>
+    {{#unless builder.allDone}}<p class="hint center">{{localize "FIST.Builder.FinishHint"}}</p>{{/unless}}
+    {{/if}}
+  </div>
+
+  <footer class="builder-nav">
+    <button type="button" data-action="builderPrev" {{#if builder.isFirst}}disabled{{/if}}><i class="fa-solid fa-chevron-left"></i> {{localize "FIST.Builder.Prev"}}</button>
+    <span class="step-of">{{localize "FIST.Builder.StepOf" n=builder.current.number}}</span>
+    <button type="button" data-action="builderNext" {{#if builder.isLast}}disabled{{/if}}>{{localize "FIST.Builder.Next"}} <i class="fa-solid fa-chevron-right"></i></button>
+  </footer>
+</div>

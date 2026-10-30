@@ -1,0 +1,15 @@
+FIST: Ultra Edition — unofficial Foundry VTT system
+
+Rules text (compendium content in packs/ and src/) is adapted from FIST: Ultra Edition
+by CLAYMORE (B. Everett Dutton, Ripley Caldwell, T.H. Cochlin, Back-Alley Coalition, Max Danley),
+licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):
+https://creativecommons.org/licenses/by-sa/4.0/
+This adapted content is shared under the same license.
+
+Codename list and structured trait/role data: FIST REF (https://fistref.com).
+Book illustrations are not included.
+
+Fonts: Michroma, Space Grotesk and Special Elite — SIL Open Font License 1.1.
+
+System code (fist.mjs, module/, templates/, styles/, tools/): MIT License.
+This system is not affiliated with or endorsed by CLAYMORE.

@@ -1,0 +1,256 @@
+{
+  "id": "fist",
+  "title": "FIST: Ultra Edition",
+  "description": "Unofficial system for FIST: Ultra Edition (Freelance Infantry Strike Team), the paranormal mercenary RPG by CLAYMORE. Draggable traits, roles, gear and enemies that update the operative profile automatically, plus a step-by-step merc builder.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "FIST system contributors"
+    }
+  ],
+  "license": "LICENSE.txt",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "esmodules": [
+    "fist.mjs"
+  ],
+  "styles": [
+    "styles/fist.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "merc": {
+        "htmlFields": [
+          "system.info",
+          "system.notes"
+        ]
+      },
+      "npc": {
+        "htmlFields": [
+          "system.description"
+        ]
+      },
+      "vehicle": {
+        "htmlFields": [
+          "system.description"
+        ]
+      }
+    },
+    "Item": {
+      "trait": {
+        "htmlFields": [
+          "system.effect"
+        ]
+      },
+      "role": {
+        "htmlFields": [
+          "system.answer"
+        ]
+      },
+      "weapon": {
+        "htmlFields": [
+          "system.description"
+        ]
+      },
+      "armor": {
+        "htmlFields": [
+          "system.description"
+        ]
+      },
+      "gear": {
+        "htmlFields": [
+          "system.description"
+        ]
+      },
+      "tag": {
+        "htmlFields": [
+          "system.description"
+        ]
+      },
+      "ability": {
+        "htmlFields": [
+          "system.description"
+        ]
+      }
+    }
+  },
+  "packs": [
+    {
+      "name": "traits",
+      "label": "Traits Index",
+      "path": "packs/traits",
+      "type": "Item",
+      "system": "fist",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "roles",
+      "label": "Roles Index",
+      "path": "packs/roles",
+      "type": "Item",
+      "system": "fist",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "weapons",
+      "label": "Weapons & Armor",
+      "path": "packs/weapons",
+      "type": "Item",
+      "system": "fist",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "tags",
+      "label": "Weapon Tags",
+      "path": "packs/tags",
+      "type": "Item",
+      "system": "fist",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "gear",
+      "label": "Items & Gadgets",
+      "path": "packs/gear",
+      "type": "Item",
+      "system": "fist",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "mercs",
+      "label": "Example Operatives",
+      "path": "packs/mercs",
+      "type": "Actor",
+      "system": "fist",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "enemies",
+      "label": "Enemies & NPCs",
+      "path": "packs/enemies",
+      "type": "Actor",
+      "system": "fist",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "vehicles",
+      "label": "Vehicles",
+      "path": "packs/vehicles",
+      "type": "Actor",
+      "system": "fist",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "tables",
+      "label": "Intelligence Matrix Tables",
+      "path": "packs/tables",
+      "type": "RollTable",
+      "system": "fist",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "rules",
+      "label": "Field Manual",
+      "path": "packs/rules",
+      "type": "JournalEntry",
+      "system": "fist",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "FIST: Ultra Edition",
+      "sorting": "m",
+      "color": "#111111",
+      "packs": [
+        "rules",
+        "traits",
+        "roles",
+        "weapons",
+        "tags",
+        "gear",
+        "tables"
+      ],
+      "folders": [
+        {
+          "name": "Dossiers",
+          "sorting": "m",
+          "color": "#2a2a2a",
+          "packs": [
+            "mercs",
+            "enemies",
+            "vehicles"
+          ]
+        }
+      ]
+    }
+  ],
+  "grid": {
+    "distance": 5,
+    "units": "ft"
+  },
+  "primaryTokenAttribute": "hp",
+  "secondaryTokenAttribute": "warDice",
+  "background": "systems/fist/assets/fist-background.svg",
+  "url": "https://github.com/fernandowrpg/fist-system",
+  "manifest": "https://github.com/fernandowrpg/fist-system/releases/latest/download/system.json",
+  "download": "https://github.com/fernandowrpg/fist-system/releases/download/v1.0.0/fist.zip",
+  "bugs": "https://github.com/fernandowrpg/fist-system/issues",
+  "flags": {
+    "hotReload": {
+      "extensions": [
+        "css",
+        "hbs",
+        "json"
+      ],
+      "paths": [
+        "styles",
+        "templates",
+        "lang"
+      ]
+    }
+  }
+}

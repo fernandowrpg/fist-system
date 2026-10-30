@@ -1,0 +1,58 @@
+<div class="fist-threat fist-vehicle">
+  <header class="threat-header">
+    <img class="threat-img" src="{{actor.img}}" alt="" data-action="editImage">
+    <div class="threat-title">
+      <span class="kicker">{{localize "FIST.Vehicle.File"}}</span>
+      <input class="threat-name" type="text" name="name" value="{{actor.name}}" {{#unless editable}}disabled{{/unless}}>
+      <div class="threat-meta">
+        <label><span>{{localize "FIST.Vehicle.Occupants"}}</span><input type="text" name="system.occupants" value="{{system.occupants}}"></label>
+        <label class="boss-toggle"><input type="checkbox" name="system.usesFuel" {{checked system.usesFuel}}> {{localize "FIST.Vehicle.Fuel"}}</label>
+      </div>
+    </div>
+  </header>
+
+  <div class="sheet-scroll">
+    <section class="threat-stats">
+      <div class="tstat hp">
+        <span class="tlabel">HP</span>
+        <div class="tval">
+          <a class="adj" data-action="adjust" data-delta="-1"><i class="fa-solid fa-minus"></i></a>
+          <input type="number" name="system.hp.value" value="{{system.hp.value}}" min="0">
+          <span class="sep">/</span>
+          <input type="number" name="system.hp.max" value="{{system.hp.max}}" min="0">
+          <a class="adj" data-action="adjust" data-delta="1"><i class="fa-solid fa-plus"></i></a>
+        </div>
+      </div>
+      <div class="tstat">
+        <span class="tlabel">{{localize "FIST.Armor.Label"}}</span>
+        <div class="tval"><input type="number" name="system.armor" value="{{system.armor}}" min="0"></div>
+      </div>
+      <div class="tstat dmg">
+        <a class="tlabel" data-action="crash"><i class="fa-solid fa-car-burst"></i> {{localize "FIST.Vehicle.Crash"}}</a>
+        <div class="tval"><input type="text" name="system.crash" value="{{system.crash}}"></div>
+      </div>
+      {{#if system.usesFuel}}
+      <div class="tstat">
+        <a class="tlabel" data-action="explode" data-tooltip="{{localize "FIST.Vehicle.ExplosionHint"}}"><i class="fa-solid fa-fire"></i> {{localize "FIST.Vehicle.Explosion"}}</a>
+        <div class="tval"><span>{{system.armor}}-in-1D6 · {{system.armor}}D6</span></div>
+      </div>
+      {{/if}}
+    </section>
+
+    <div class="hp-track">{{#each hpSegments}}<span class="seg {{#if filled}}filled{{/if}}"></span>{{/each}}</div>
+
+    <div class="section-head"><h3>{{localize "FIST.Vehicle.Weapons"}}</h3>{{#if editable}}<a class="head-btn" data-action="itemCreate" data-type="weapon"><i class="fa-solid fa-plus"></i></a>{{/if}}</div>
+    <ol class="item-list weapons drop-zone">
+      {{#each weapons}}{{> "systems/fist/templates/parts/item-row.hbs"}}{{/each}}
+      {{#unless weapons.length}}<li class="empty-drop">{{localize "FIST.Weapon.DropHint"}}</li>{{/unless}}
+    </ol>
+    {{#if other.length}}
+    <ol class="item-list">
+      {{#each other}}{{> "systems/fist/templates/parts/item-row.hbs"}}{{/each}}
+    </ol>
+    {{/if}}
+
+    <div class="section-head"><h3>{{localize "FIST.Npc.Intel"}}</h3></div>
+    {{formInput fields.description value=source.description enriched=enrichedDescription toggled=true}}
+  </div>
+</div>

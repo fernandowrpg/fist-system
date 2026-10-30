@@ -1,0 +1,39 @@
+<div class="fist-roll-dialog">
+  <fieldset class="attr-pick">
+    <legend>{{localize "FIST.Roll.Attribute"}}</legend>
+    {{#each attributes}}
+    <label class="attr-opt">
+      <input type="radio" name="attribute" value="{{key}}" {{#if checked}}checked{{/if}}>
+      <span class="abbr">{{abbr}}</span>
+      <span class="val">{{fistSigned value}}</span>
+    </label>
+    {{/each}}
+  </fieldset>
+  <fieldset class="mode-pick">
+    <legend>{{localize "FIST.Roll.Dice"}}</legend>
+    {{#each modes}}
+    <label class="mode-opt"><input type="radio" name="mode" value="{{key}}" {{#if checked}}checked{{/if}}> <span>{{label}}</span></label>
+    {{/each}}
+  </fieldset>
+  <div class="roll-grid">
+    <label>
+      <span>{{localize "FIST.Roll.Situational"}}</span>
+      <select name="situational">
+        <option value="-2">{{localize "FIST.Roll.Disadvantage"}} (−2)</option>
+        <option value="0" selected>—</option>
+        <option value="2">{{localize "FIST.Roll.Advantage"}} (+2)</option>
+      </select>
+    </label>
+    <label>
+      <span>{{localize "FIST.Roll.Assist"}}</span>
+      <input type="number" name="assist" value="0" min="0" max="6" step="1">
+    </label>
+    {{#if hasWarDice}}
+    <label>
+      <span>{{localize "FIST.WarDie.Label"}} ({{warDice}})</span>
+      <input type="number" name="warDice" value="0" min="0" max="{{warDice}}" step="1" {{#unless warDice}}disabled{{/unless}}>
+    </label>
+    {{/if}}
+  </div>
+  <p class="hint">{{localize "FIST.Roll.Bands"}}</p>
+</div>

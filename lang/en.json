@@ -1,0 +1,297 @@
+{
+  "TYPES": {
+    "Actor": { "merc": "Operative", "npc": "Enemy / NPC", "vehicle": "Vehicle" },
+    "Item": { "trait": "Trait", "role": "Role", "weapon": "Weapon", "armor": "Armor", "gear": "Item", "tag": "Weapon Tag", "ability": "Special Ability" }
+  },
+  "FIST": {
+    "Codename": "Codename",
+    "CodenamePlaceholder": "UNASSIGNED",
+    "Pronouns": "Pronouns",
+    "RealName": "Real name",
+    "RealNameHint": "Only you know this. Reveal it at the perfect dramatic moment.",
+    "RealNameReveal": "Click to unmask (only you can see it)",
+    "RealNameEmpty": "[NOT ON FILE]",
+    "Info": "Info",
+    "Notes": "Field notes",
+    "Inventory": "Inventory",
+    "Encumbrance": "Carried / limit",
+    "Attr": {
+      "frc": "Forceful", "frcHint": "Strength, brute force, intimidation",
+      "tac": "Tactical", "tacHint": "Knowledge, skill, intellect",
+      "cre": "Creative", "creHint": "Diplomacy, deceit, psionics",
+      "rfx": "Reflexive", "rfxHint": "Precision, dexterity, aim"
+    },
+    "Sheet": {
+      "Merc": "FIST Operative Profile", "Npc": "FIST Threat File", "Vehicle": "FIST Vehicle File", "Item": "FIST File Card",
+      "OperativeProfile": "Operative Profile",
+      "Classified": "CLASSIFIED",
+      "Portrait": "PORTRAIT",
+      "EditPortrait": "Change portrait"
+    },
+    "Tab": { "builder": "Builder", "dossier": "Dossier", "arsenal": "Arsenal", "file": "File" },
+    "HP": { "Label": "HP", "Hint": "Operative death occurs at 0 HP", "Max": "Max HP", "MaxHint": "Capacity to take damage" },
+    "Armor": {
+      "Label": "Armor", "Plural": "Armor & accessories", "Hint": "Subtract from damage taken",
+      "Breakdown": "Body / accessories / traits",
+      "Accessory": "Accessory", "Shield": "Equip as weapon (shield)", "Locked": "Cannot be unequipped",
+      "Shatter": "Shatter accessory",
+      "ShatterHint": "Destroy {name} to ignore the damage of one attack?",
+      "Shattered": "{name} shatters, negating the damage!",
+      "DropHint": "Drop armor or accessories here"
+    },
+    "WarDie": {
+      "Label": "War dice",
+      "Hint": "Luck and grit, spend for +1D6",
+      "Spend": "War die spent",
+      "SpendHint": "Spend a WAR DIE: roll +1D6 and add it to any roll (anyone's).",
+      "Add": "+1D6 War die",
+      "SpentOn": "{name} spends a WAR DIE on {target}'s roll",
+      "Bust": "An explosion die showed 1 — the roll becomes 0!"
+    },
+    "Mission": {
+      "Start": "New mission",
+      "Short": "mission",
+      "StartHint": "Start a new mission: restore full HP, refill limited-use items and AMMO, and gain per-mission WAR DICE from traits.",
+      "Started": "{name} is deployed. Full HP, gear restocked (+{wd} WAR DICE)."
+    },
+    "Rendezvous": {
+      "Title": "Rendezvous",
+      "Hint": "Once per mission the team may send a rendezvous signal. At the safe point, choose one:",
+      "rest": "Rest (heal 1D6)", "restHint": "Recover 1D6 HP.",
+      "restock": "Restock", "restockHint": "Refill one limited-use item or one weapon's AMMO.",
+      "intel": "Intel", "intelHint": "Receive one useful fact about the mission.",
+      "NothingToRestock": "Nothing to restock.",
+      "Restocked": "{name} restocks {item}.",
+      "IntelRequest": "{name} requests INTEL: the referee shares one useful fact about the mission."
+    },
+    "Advance": {
+      "Title": "Advance",
+      "Hint": "You acted according to your role. Choose one reward:",
+      "DropTrait": "Drag a new trait from the Traits Index onto the sheet."
+    },
+    "Reward": { "item": "Standard issue item", "trait": "New trait", "hp": "+1D6 MAX HP", "warDice": "+1D6 WAR DICE" },
+    "Insertion": {
+      "Title": "Insertion",
+      "wrong": "6 or less: deployment goes wrong somehow.",
+      "normal": "7-9: deploy normally.",
+      "extra": "10+: deploy with an extra standard issue item.",
+      "sixes": "Double sixes: deploy with an extra standard issue item, and +3 to your first roll."
+    },
+    "Death": { "Message": "{name} has fallen. Log them in the character graveyard and prepare an emergency insertion." },
+    "Roll": {
+      "Risky": "Risky action",
+      "Roll": "Roll",
+      "Attribute": "Attribute",
+      "Dice": "Dice",
+      "AttrRoll": "Roll +{attr}",
+      "ClickToRoll": "Click to roll 2D6 + attribute (Shift: skip dialog)",
+      "Mode": { "normal": "2D6", "best": "3D6, best two", "worst": "3D6, worst two" },
+      "Situational": "Situational",
+      "Advantage": "Advantage",
+      "Disadvantage": "Disadvantage",
+      "Assist": "Assists",
+      "Bands": "6- failure · 7-9 partial · 10+ success · double sixes ultra"
+    },
+    "Outcome": {
+      "failure": "Failure", "failureText": "You don't do what you wanted, and things go wrong somehow.",
+      "partial": "Partial success", "partialText": "You do it, but with a cost, compromise, or complication.",
+      "success": "Success", "successText": "You do exactly what you wanted, without additional headaches.",
+      "ultra": "Ultra success!", "ultraText": "You do exactly what you wanted, with some spectacular added bonus."
+    },
+    "Damage": {
+      "Label": "Damage",
+      "Roll": "Roll damage",
+      "Apply": "Apply",
+      "ApplyHint": "Apply to selected tokens, subtracting ARMOR",
+      "ApplyRaw": "Ignore armor",
+      "ApplyRawHint": "Apply to selected tokens, ignoring ARMOR",
+      "Taken": "{name} takes {dealt} damage (ARMOR {armor}). HP: {hp}",
+      "Killed": "{name} takes {dealt} damage (ARMOR {armor}) and goes down!",
+      "Healed": "{name} recovers {amount} HP. HP: {hp}"
+    },
+    "SuddenDeath": {
+      "Triggered": "Snake eyes! Sudden death: all damage doubled, armor useless, until someone dies.",
+      "Hint": "Sudden death: double damage, ignore armor"
+    },
+    "Ammo": {
+      "Empty": "{name}: rolled {roll} — out of ammo!",
+      "Lower": "{name}: rolled {roll} — AMMO drops to {ammo}.",
+      "Same": "{name}: rolled {roll} — AMMO holds at {ammo}."
+    },
+    "Choke": {
+      "Hint": "Roll 1D6: on a result equal to or higher than the CHOKE score, the NPC performs the listed action.",
+      "Behavior": "Choke action",
+      "Choked": "CHOKES! {behavior}",
+      "Holds": "Holds their nerve."
+    },
+    "Threat": {
+      "Guidelines": "Threat guidelines",
+      "1": "Easy", "2": "Medium", "3": "Hard", "4": "Extreme", "5": "Impossible", "6": "Nightmare"
+    },
+    "Npc": {
+      "ThreatFile": "THREAT FILE",
+      "BossFile": "BOSS FILE // PRIORITY TARGET",
+      "Appear": "Appear",
+      "RollAppear": "Roll how many appear",
+      "AppearRoll": "{name}: how many appear",
+      "AttributesHint": "Attributes (only if the NPC must roll like a player):",
+      "Intel": "Intel"
+    },
+    "Vehicle": {
+      "File": "VEHICLE FILE",
+      "Occupants": "Occupants",
+      "Fuel": "Uses fuel",
+      "Crash": "Crash",
+      "Weapons": "Vehicle weapons",
+      "Explosion": "Explosion check",
+      "ExplosionHint": "When destroyed: X-in-1D6 chance to explode for XD6 DAMAGE (X = ARMOR).",
+      "ExplosionChance": "Explodes on {x} or less.",
+      "NoExplosion": "No armor, no explosion.",
+      "Explodes": "The vehicle explodes!"
+    },
+    "Trait": {
+      "Plural": "Traits",
+      "Index": "Traits index",
+      "DropHint": "Drag traits from the Traits Index here",
+      "Gained": "{actor} gains {name}.",
+      "ChooseAttribute": "{name}: choose an attribute",
+      "ChooseAttributeHint": "This trait grants +{bonus} to an attribute of your choice.",
+      "StatText": "Stat modification (as written)",
+      "Mods": "Automatic modifiers",
+      "WarPerMission": "War dice / mission",
+      "WarBonus": "+ per war die",
+      "HpFormula": "MAX HP rolled",
+      "RolledHp": "MAX HP result",
+      "ChosenBonus": "Chosen attr. bonus",
+      "ChosenAttr": "Chosen attribute",
+      "Conditional": "Situational modifier (not automated)",
+      "Grants": "Granted items",
+      "GrantsHint": "Created on the operative when this trait is gained; removed with it. Drop weapons, armor or items here to add.",
+      "ItemText": "Item (as written)",
+      "NewGrant": "New item"
+    },
+    "Role": {
+      "Label": "Role",
+      "Index": "Roles index",
+      "None": "Drop a role here",
+      "DropHint": "Drag a role from the Roles Index here",
+      "Describe": "Describe:",
+      "Advance": "Advance:",
+      "Answer": "Your answer",
+      "Taken": "Role already taken",
+      "TakenHint": "{name} already has the {role} role. You can't choose a role someone else already has. Take it anyway?"
+    },
+    "Weapon": {
+      "Plural": "Weapons",
+      "Equipped": "Equipped weapon",
+      "Unarmed": "Unarmed",
+      "UnarmedAttack": "Unarmed attack",
+      "Attack": "Attack (risky roll)",
+      "AttackWith": "Attack with {name}",
+      "Attribute": "Attack attribute",
+      "Ranged": "Ranged",
+      "FreeSlot": "Doesn't count as equipped",
+      "DropHint": "Drop weapons here. Only one can be equipped at a time."
+    },
+    "Gear": {
+      "Plural": "Items",
+      "Heal": "Heals (formula)",
+      "Heals": "HP recovered",
+      "WarDice": "War dice granted",
+      "DropHint": "Drop items here"
+    },
+    "Ability": { "Plural": "Special abilities", "DropHint": "Special mechanics for this character" },
+    "Tag": {
+      "Plural": "Weapon tags",
+      "Choose": "Attach {tag} to which weapon?",
+      "ChooseHint": "Weapon tags modify a weapon. Pick one:",
+      "Added": "{tag} attached to {weapon}.",
+      "DropHint": "Drop weapon tags here",
+      "DamageBonus": "Damage bonus",
+      "AttributeBonus": "Attribute bonus (while equipped)",
+      "UsageHint": "Drop this tag on an operative's weapon (or on a weapon sheet) to attach it."
+    },
+    "Item": {
+      "Number": "Number",
+      "Uses": "Uses",
+      "Consumable": "Consumable (gone when used)",
+      "Equip": "Equip / unequip",
+      "Equipped": "Equipped",
+      "Use": "Use",
+      "ToChat": "Send to chat",
+      "Edit": "Edit",
+      "Delete": "Delete",
+      "GrantedBy": "Granted by",
+      "DeleteGranted": "Delete trait item?",
+      "DeleteGrantedHint": "{name} was granted by a trait and is replaced between missions. Delete it anyway?"
+    },
+    "Record": { "Missions": "Missions", "Advancements": "Advancements" },
+    "Adjust": {
+      "Title": "Manual adjustments",
+      "Hint": "Attributes, MAX HP and ARMOR are calculated from traits and gear. Use these only for special cases.",
+      "Base": "base",
+      "BaseHp": "Base MAX HP",
+      "BonusHp": "MAX HP from rewards",
+      "Armor": "Extra ARMOR"
+    },
+    "Builder": {
+      "Kicker": "// RECRUITMENT PROTOCOL",
+      "Title": "Making mercs",
+      "RandomMerc": "Random merc",
+      "RandomMercHint": "Roll a random codename, role and two traits? Current traits and role will be replaced.",
+      "Step": { "sheet": "Procure a sheet", "traits": "Two traits", "bonus": "Starting bonus", "role": "Role", "codename": "Codename" },
+      "StepOf": "Step {n} of 5",
+      "Prev": "Back",
+      "Next": "Next",
+      "SheetIntro": "You belong to FIST, a legendary rogue mercenary unit. Every operative starts from the same baseline; traits are the building blocks that make you unique.",
+      "SheetHint": "Attributes, ARMOR and MAX HP on this sheet update automatically as you add traits and gear.",
+      "TraitsIntro": "Choose two traits from the Traits Index, or roll 2D666. Each trait grants a special skill, an item and a stat modification — all applied automatically.",
+      "TraitsDrop": "Drag two traits here",
+      "TraitsReady": "Two traits on file. You can add more later by advancing.",
+      "RollTrait": "Roll D666",
+      "BonusIntro": "Take one: a standard issue item, +1D6 MAX HP, or +1D6 WAR DICE.",
+      "StandardIssue": "Standard issue",
+      "Roll1D6": "Roll 1D6",
+      "BonusHp": "Roll 1D6 and add it to your MAX HP.",
+      "BonusWar": "Roll 1D6 and start with that many WAR DICE.",
+      "Take": "Take it",
+      "BonusChosen": "Starting bonus",
+      "RoleIntro": "Your role is what your character always wants to do — doing it lets them advance. You can't choose a role someone else already has.",
+      "RollRole": "Roll D66",
+      "CodenameIntro": "Pick a codename that fits who you are and what you do. Also pick a real name, but don't tell anyone — not even the referee — until the perfect dramatic opportunity.",
+      "RandomCodename": "Random",
+      "Checklist": "Deployment checklist",
+      "Finish": "Deploy operative",
+      "FinishHint": "Complete every step to deploy.",
+      "Deployed": "Operative {name} has joined FIST.",
+      "Reopen": "Reopen the builder"
+    },
+    "Terminal": {
+      "Title": "FIST R.E.F. Terminal",
+      "Open": "FIST R.E.F.",
+      "RerollAll": "Reroll all",
+      "Reroll": "Reroll",
+      "Create": "Create this operative",
+      "Tables": "Intelligence matrix tables"
+    },
+    "Warn": {
+      "NoOperative": "Select or assign your operative first.",
+      "NoWarDice": "No WAR DICE left.",
+      "NoTokens": "Select (or target) at least one token.",
+      "NotOwner": "You don't control {name}.",
+      "Depleted": "No uses left.",
+      "NoAmmo": "Out of ammo. Restock at a rendezvous or find more.",
+      "Locked": "This item cannot be unequipped.",
+      "NoWeapon": "This character has no weapon to attach the tag to.",
+      "TagExists": "That weapon already has this tag.",
+      "CannotHold": "This sheet doesn't accept {type} items.",
+      "NoChoke": "This NPC has no CHOKE score."
+    },
+    "Setting": {
+      "ammoTracking": { "name": "Optional rule: abstract ammo tracking", "hint": "Ranged weapons have AMMO 6; after each attack roll 1D6 to see if it drops (p. 73)." },
+      "explodingWarDice": { "name": "Optional rule: exploding war dice", "hint": "War dice explode on 6; if an explosion die shows 1, the roll becomes 0 (p. 73)." },
+      "suddenDeath": { "name": "Optional rule: sudden death", "hint": "Snake eyes during combat trigger sudden death: double damage, armor useless (p. 74)." },
+      "encumbrance": { "name": "Optional rule: encumbrance", "hint": "Show carried items against MAX HP + FRC or RFX (p. 73)." }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<div class="fist-card check outcome-{{outcome}}">
+  <header class="card-bar">
+    <span class="card-kicker">{{#if item}}{{item.name}}{{else}}{{attrLabel}}{{/if}}</span>
+    <span class="card-label">{{label}}</span>
+  </header>
+  <div class="card-roll">
+    {{> "systems/fist/templates/parts/dice.hbs"}}
+    <div class="card-mods">
+      <span>2D6{{#if modeLabel}} ({{modeLabel}}){{/if}}</span>
+      <span>{{attrValue}} {{attrLabel}}</span>
+      {{#if situational}}<span>{{situational}} {{localize "FIST.Roll.Situational"}}</span>{{/if}}
+      {{#if assist}}<span>{{assist}} {{localize "FIST.Roll.Assist"}}</span>{{/if}}
+      {{#if warDice}}<span class="war">+{{warDice}}D6 {{localize "FIST.WarDie.Label"}}{{#if warBonus}} (+{{warBonus}}){{/if}}</span>{{/if}}
+    </div>
+    <div class="card-total">{{total}}</div>
+  </div>
+  {{#if bust}}<div class="card-alert">{{localize "FIST.WarDie.Bust"}}</div>{{/if}}
+  <div class="card-outcome">
+    <strong>{{outcomeLabel}}</strong>
+    <span>{{outcomeText}}</span>
+  </div>
+  {{#if snakeEyes}}<div class="card-alert sudden">{{localize "FIST.SuddenDeath.Triggered"}}</div>{{/if}}
+  <footer class="card-actions">
+    {{#if canDamage}}<button type="button" data-fist-action="damage" data-item-uuid="{{itemUuid}}"><i class="fa-solid fa-burst"></i> {{localize "FIST.Damage.Roll"}}</button>{{/if}}
+    <button type="button" data-fist-action="warDie"><i class="fa-solid fa-dice-d6"></i> {{localize "FIST.WarDie.Add"}}</button>
+  </footer>
+</div>

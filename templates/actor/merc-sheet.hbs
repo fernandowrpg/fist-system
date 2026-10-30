@@ -1,0 +1,268 @@
+<div class="fist-profile {{#if isDead}}is-dead{{/if}}">
+
+  {{!-- ================= HEADER ================= --}}
+  <header class="profile-header">
+    <div class="fist-logo" aria-hidden="true">
+      <span class="logo-word">FIST</span>
+      <span class="logo-sub">FREELANCE INFANTRY STRIKE TEAM</span>
+    </div>
+    <div class="profile-title">
+      <div class="title-bar">
+        <span>{{localize "FIST.Sheet.OperativeProfile"}}</span>
+        <span class="file-no">FILE #{{fileNumber}}</span>
+      </div>
+      <div class="ident-grid">
+        <label class="ident codename">
+          <span class="ident-label">{{localize "FIST.Codename"}}:</span>
+          <input type="text" name="system.codename" value="{{system.codename}}" placeholder="{{localize "FIST.CodenamePlaceholder"}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label class="ident pronouns">
+          <span class="ident-label">{{localize "FIST.Pronouns"}}:</span>
+          <input type="text" name="system.pronouns" value="{{system.pronouns}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <div class="ident role drop-zone" data-tooltip="{{localize "FIST.Role.DropHint"}}">
+          <span class="ident-label">{{localize "FIST.Role.Label"}}:</span>
+          {{#if role}}
+          <a class="role-link" data-action="itemEdit" data-item-id="{{role.id}}">{{role.name}}</a>
+          {{else}}
+          <span class="placeholder">{{localize "FIST.Role.None"}}</span>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    <div class="stamp {{#if isDead}}kia{{/if}}">{{#if isDead}}K.I.A.{{else}}{{localize "FIST.Sheet.Classified"}}{{/if}}</div>
+  </header>
+
+  <div class="profile-body">
+
+    {{!-- ================= SIDE COLUMN ================= --}}
+    <aside class="profile-side">
+      <figure class="portrait">
+        <img src="{{actor.img}}" alt="{{actor.name}}" data-action="editImage" data-tooltip="{{localize "FIST.Sheet.EditPortrait"}}">
+        <figcaption>{{localize "FIST.Sheet.Portrait"}}</figcaption>
+      </figure>
+
+      <section class="stat-panel attributes">
+        {{#each attributes}}
+        <div class="stat-cell">
+          <div class="stat-text">
+            <a class="stat-name" data-action="roll" data-attribute="{{key}}" data-tooltip="{{localize "FIST.Roll.ClickToRoll"}}">{{label}}</a>
+            <span class="stat-hint">{{hint}}</span>
+          </div>
+          <a class="stat-box rollable" data-action="roll" data-attribute="{{key}}" {{#if sources}}data-tooltip="{{sources}}"{{/if}}>{{signed}}</a>
+        </div>
+        {{/each}}
+      </section>
+
+      <section class="stat-panel vitals">
+        <div class="stat-cell">
+          <div class="stat-text">
+            <span class="stat-name">{{localize "FIST.Armor.Label"}}</span>
+            <span class="stat-hint">{{localize "FIST.Armor.Hint"}}</span>
+          </div>
+          <span class="stat-box" data-tooltip="{{localize "FIST.Armor.Breakdown"}}: {{system.armor.body}} / {{system.armor.accessories}} / {{system.armor.traits}}">{{system.armor.value}}</span>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-text">
+            <span class="stat-name">{{localize "FIST.HP.Max"}}</span>
+            <span class="stat-hint">{{localize "FIST.HP.MaxHint"}}</span>
+          </div>
+          <span class="stat-box" data-tooltip="{{system.hp.base}} + {{system.hp.bonus}} + {{system.hp.traitBonus}}">{{system.hp.max}}</span>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-text">
+            <a class="stat-name" data-action="spendWarDie" data-tooltip="{{localize "FIST.WarDie.SpendHint"}}">{{localize "FIST.WarDie.Label"}}</a>
+            <span class="stat-hint">{{localize "FIST.WarDie.Hint"}}{{#if system.warDice.perMission}} · +{{system.warDice.perMission}}/{{localize "FIST.Mission.Short"}}{{/if}}</span>
+          </div>
+          <div class="stat-box adjustable">
+            <a class="adj minus" data-action="adjust" data-path="system.warDice.value" data-delta="-1"><i class="fa-solid fa-minus"></i></a>
+            <input type="number" name="system.warDice.value" value="{{system.warDice.value}}" min="0" step="1" {{#unless editable}}disabled{{/unless}}>
+            <a class="adj plus" data-action="adjust" data-path="system.warDice.value" data-delta="1"><i class="fa-solid fa-plus"></i></a>
+          </div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-text">
+            <span class="stat-name">{{localize "FIST.HP.Label"}}</span>
+            <span class="stat-hint">{{localize "FIST.HP.Hint"}}</span>
+          </div>
+          <div class="stat-box adjustable hp">
+            <a class="adj minus" data-action="adjust" data-path="system.hp.value" data-delta="-1"><i class="fa-solid fa-minus"></i></a>
+            <input type="number" name="system.hp.value" value="{{system.hp.value}}" min="0" step="1" {{#unless editable}}disabled{{/unless}}>
+            <a class="adj plus" data-action="adjust" data-path="system.hp.value" data-delta="1"><i class="fa-solid fa-plus"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <div class="hp-track" data-tooltip="{{system.hp.value}} / {{system.hp.max}} HP">
+        {{#each hpSegments}}<span class="seg {{#if filled}}filled{{/if}}"></span>{{/each}}
+      </div>
+
+      <section class="ops">
+        <button type="button" data-action="startMission"><i class="fa-solid fa-helicopter"></i> {{localize "FIST.Mission.Start"}}</button>
+        <button type="button" data-action="rendezvous"><i class="fa-solid fa-campground"></i> {{localize "FIST.Rendezvous.Title"}}</button>
+        <button type="button" data-action="advance"><i class="fa-solid fa-angles-up"></i> {{localize "FIST.Advance.Title"}}</button>
+        <button type="button" data-action="insertion"><i class="fa-solid fa-parachute-box"></i> {{localize "FIST.Insertion.Title"}}</button>
+      </section>
+    </aside>
+
+    {{!-- ================= MAIN COLUMN ================= --}}
+    <section class="profile-main">
+      <nav class="sheet-tabs tabs fist-tabs" data-group="primary">
+        {{#each tabs as |tab|}}
+        <a data-action="tab" data-group="{{tab.group}}" data-tab="{{tab.id}}" class="{{tab.cssClass}}">
+          <i class="{{tab.icon}}" inert></i> <span>{{localize tab.label}}</span>
+        </a>
+        {{/each}}
+      </nav>
+
+      <div class="tab-body">
+
+        {{!-- ---------- BUILDER ---------- --}}
+        <section class="tab builder {{tabs.builder.cssClass}}" data-group="primary" data-tab="builder">
+          {{> "systems/fist/templates/actor/parts/merc-builder.hbs"}}
+        </section>
+
+        {{!-- ---------- DOSSIER ---------- --}}
+        <section class="tab dossier {{tabs.dossier.cssClass}}" data-group="primary" data-tab="dossier">
+          <div class="section-head">
+            <h3>{{localize "FIST.Trait.Plural"}}</h3>
+            <span class="count">{{traits.length}}</span>
+            <a class="head-btn" data-action="openPack" data-pack="fist.traits"><i class="fa-solid fa-book-open"></i> {{localize "FIST.Trait.Index"}}</a>
+          </div>
+          <ol class="item-list traits drop-zone">
+            {{#each traits}}{{> "systems/fist/templates/parts/item-row.hbs"}}{{/each}}
+            {{#unless traits.length}}<li class="empty-drop">{{localize "FIST.Trait.DropHint"}}</li>{{/unless}}
+          </ol>
+
+          <div class="section-head">
+            <h3>{{localize "FIST.Role.Label"}}</h3>
+            <a class="head-btn" data-action="openPack" data-pack="fist.roles"><i class="fa-solid fa-book-open"></i> {{localize "FIST.Role.Index"}}</a>
+          </div>
+          {{#if role}}
+          <article class="role-card draggable" data-item-id="{{role.id}}">
+            <header>
+              <span class="num">{{role.system.number}}.</span>
+              <h4>{{role.name}}</h4>
+              <span class="controls">
+                <a data-action="itemChat" data-tooltip="{{localize "FIST.Item.ToChat"}}"><i class="fa-solid fa-comment"></i></a>
+                <a data-action="itemEdit" data-tooltip="{{localize "FIST.Item.Edit"}}"><i class="fa-solid fa-pen"></i></a>
+                {{#if @root.editable}}<a data-action="itemDelete" data-tooltip="{{localize "FIST.Item.Delete"}}"><i class="fa-solid fa-trash"></i></a>{{/if}}
+              </span>
+            </header>
+            <p class="describe"><strong>{{localize "FIST.Role.Describe"}}</strong> {{role.system.describe}}</p>
+            <p class="advance"><strong>{{localize "FIST.Role.Advance"}}</strong> {{role.system.advance}}</p>
+            <label class="role-answer">
+              <span>{{localize "FIST.Role.Answer"}}</span>
+              <textarea data-item-field="system.answer" rows="3" {{#unless editable}}disabled{{/unless}}>{{role.system.answer}}</textarea>
+            </label>
+          </article>
+          {{else}}
+          <div class="empty-drop drop-zone">{{localize "FIST.Role.DropHint"}}</div>
+          {{/if}}
+
+          {{#if abilities.length}}
+          <div class="section-head"><h3>{{localize "FIST.Ability.Plural"}}</h3></div>
+          <ol class="item-list abilities">
+            {{#each abilities}}{{> "systems/fist/templates/parts/item-row.hbs"}}{{/each}}
+          </ol>
+          {{/if}}
+        </section>
+
+        {{!-- ---------- ARSENAL ---------- --}}
+        <section class="tab arsenal {{tabs.arsenal.cssClass}}" data-group="primary" data-tab="arsenal">
+          <div class="equip-strip">
+            <div class="equip-slot">
+              <span class="slot-label">{{localize "FIST.Weapon.Equipped"}}</span>
+              <span class="slot-value">{{#if equippedWeapon}}{{equippedWeapon.name}} <em>{{equippedWeapon.system.damageLabel}}</em>{{else}}{{localize "FIST.Weapon.Unarmed"}} <em>WORST 2D6</em>{{/if}}</span>
+            </div>
+            <button type="button" data-action="unarmed"><i class="fa-solid fa-hand-fist"></i> {{localize "FIST.Weapon.UnarmedAttack"}}</button>
+            {{#if encumbrance}}
+            <div class="equip-slot {{#if (gt encumbrance.count encumbrance.limit)}}over{{/if}}">
+              <span class="slot-label">{{localize "FIST.Encumbrance"}}</span>
+              <span class="slot-value">{{encumbrance.count}} / {{encumbrance.limit}}</span>
+            </div>
+            {{/if}}
+          </div>
+
+          <div class="section-head">
+            <h3>{{localize "FIST.Weapon.Plural"}}</h3>
+            <a class="head-btn" data-action="openPack" data-pack="fist.weapons"><i class="fa-solid fa-book-open"></i></a>
+            <a class="head-btn" data-action="openPack" data-pack="fist.tags" data-tooltip="{{localize "FIST.Tag.Plural"}}"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+            {{#if editable}}<a class="head-btn" data-action="itemCreate" data-type="weapon"><i class="fa-solid fa-plus"></i></a>{{/if}}
+          </div>
+          <ol class="item-list weapons drop-zone">
+            {{#each weapons}}{{> "systems/fist/templates/parts/item-row.hbs"}}{{/each}}
+            {{#unless weapons.length}}<li class="empty-drop">{{localize "FIST.Weapon.DropHint"}}</li>{{/unless}}
+          </ol>
+
+          <div class="section-head">
+            <h3>{{localize "FIST.Armor.Plural"}}</h3>
+            {{#if editable}}<a class="head-btn" data-action="itemCreate" data-type="armor"><i class="fa-solid fa-plus"></i></a>{{/if}}
+          </div>
+          <ol class="item-list armor drop-zone">
+            {{#each armors}}{{> "systems/fist/templates/parts/item-row.hbs"}}{{/each}}
+            {{#unless armors.length}}<li class="empty-drop">{{localize "FIST.Armor.DropHint"}}</li>{{/unless}}
+          </ol>
+
+          <div class="section-head">
+            <h3>{{localize "FIST.Gear.Plural"}}</h3>
+            <a class="head-btn" data-action="openPack" data-pack="fist.gear"><i class="fa-solid fa-book-open"></i></a>
+            {{#if editable}}<a class="head-btn" data-action="itemCreate" data-type="gear"><i class="fa-solid fa-plus"></i></a>{{/if}}
+          </div>
+          <ol class="item-list gear drop-zone">
+            {{#each gear}}{{> "systems/fist/templates/parts/item-row.hbs"}}{{/each}}
+            {{#unless gear.length}}<li class="empty-drop">{{localize "FIST.Gear.DropHint"}}</li>{{/unless}}
+          </ol>
+        </section>
+
+        {{!-- ---------- FILE ---------- --}}
+        <section class="tab file {{tabs.file.cssClass}}" data-group="primary" data-tab="file">
+          <div class="file-grid">
+            <div class="real-name">
+              <span class="ident-label">{{localize "FIST.RealName"}}</span>
+              {{#if canSeeRealName}}
+                {{#if showRealName}}
+                <input type="text" name="system.realName" value="{{system.realName}}" placeholder="{{localize "FIST.RealNameHint"}}">
+                {{else}}
+                <span class="redacted" data-action="toggleRealName" data-tooltip="{{localize "FIST.RealNameReveal"}}">{{#if system.realName}}████████████{{else}}{{localize "FIST.RealNameEmpty"}}{{/if}}</span>
+                {{/if}}
+                <a class="head-btn" data-action="toggleRealName"><i class="fa-solid {{#if showRealName}}fa-eye-slash{{else}}fa-eye{{/if}}"></i></a>
+              {{else}}
+                <span class="redacted">████████████</span>
+              {{/if}}
+            </div>
+
+            <div class="record">
+              <label><span>{{localize "FIST.Record.Missions"}}</span><input type="number" name="system.missions" value="{{system.missions}}" min="0"></label>
+              <label><span>{{localize "FIST.Record.Advancements"}}</span><input type="number" name="system.advancements" value="{{system.advancements}}" min="0"></label>
+              <label><span>XP</span><input type="number" name="system.xp" value="{{system.xp}}" min="0"></label>
+            </div>
+
+            <details class="adjustments">
+              <summary><i class="fa-solid fa-sliders"></i> {{localize "FIST.Adjust.Title"}}</summary>
+              <p class="hint">{{localize "FIST.Adjust.Hint"}}</p>
+              <div class="adjust-grid">
+                {{#each attributes}}
+                <label><span>{{abbr}} {{localize "FIST.Adjust.Base"}}</span><input type="number" name="system.attributes.{{key}}.base" value="{{base}}" step="1"></label>
+                {{/each}}
+                <label><span>{{localize "FIST.Adjust.BaseHp"}}</span><input type="number" name="system.hp.base" value="{{system.hp.base}}" step="1"></label>
+                <label><span>{{localize "FIST.Adjust.BonusHp"}}</span><input type="number" name="system.hp.bonus" value="{{system.hp.bonus}}" step="1"></label>
+                <label><span>{{localize "FIST.Adjust.Armor"}}</span><input type="number" name="system.armorBonus" value="{{system.armorBonus}}" step="1"></label>
+              </div>
+            </details>
+          </div>
+
+          <div class="section-head"><h3>{{localize "FIST.Info"}}</h3></div>
+          {{formInput fields.info value=source.info enriched=enrichedInfo toggled=true}}
+
+          <div class="section-head"><h3>{{localize "FIST.Notes"}}</h3></div>
+          {{formInput fields.notes value=source.notes enriched=enrichedNotes toggled=true}}
+
+          {{#if builder.complete}}
+          <button type="button" class="reopen" data-action="reopenBuilder"><i class="fa-solid fa-list-check"></i> {{localize "FIST.Builder.Reopen"}}</button>
+          {{/if}}
+        </section>
+      </div>
+    </section>
+  </div>
+</div>

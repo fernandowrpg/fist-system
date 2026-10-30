@@ -1,0 +1,172 @@
+{
+ "gadgets": [
+  {
+   "number": 2,
+   "name": "Anti-mnemonic syringe",
+   "text": "The anti-mnemonic syringe can easily be mistaken for an oddly dense steel ballpoint pen. When used on a major artery, the victim's bloodstream is flooded with a chemical compound that induces a several hour blackout, followed by general amnesia. The syringe is wondrously effective for memory wipes, leaving the afflicted with no recollection of the past day and a feeling of “lost time.\""
+  },
+  {
+   "number": 3,
+   "name": "Appearance scrambler",
+   "text": "CYCLOPS employs compact, belt-mounted appearance scramblers to hide obviously ultrahuman operatives. Push a button and the scrambler will project a combination hologram-psionic shell which fools onlookers into perceiving an unremarkable civilian. The scrambler is thorough down to the user’s voice and mannerisms, but cannot simulate any existing person due to quantum interference. The holographic shell has only 3 HP and takes DAMAGE alongside the user, so the device must remain well-protected for its entire 12-hour battery life."
+  },
+  {
+   "number": 4,
+   "name": "Comms wire",
+   "text": "Most CROs communicate with their team using state of the art, credit card-sized transistor radios tucked away in a pocket or strapped to strategic points along the torso and limbs. These radios are unlike anything available on the consumer market, allowing for simultaneous twoway communication and multi-user “conference calls.” Instead of a microphone and speaker, CYCLOPS has developed a rubberized flesh-toned wire with a micromotor tip for vibrating in- and out-going audio through the wearer’s cartilage."
+  },
+  {
+   "number": 5,
+   "name": "Containment pylons",
+   "text": "One CYCLOPS containment kit includes three telescoping black pylons (ten inches long collapsed and about five feet tall with spring-loaded tripod feet when extended) and a two-button remote which fits in the user’s palm. When the pylons are placed in a triangle and activated, a pyramid-shaped forcefield (6 ARMOR, 40 HP) forms between them. The containment pylons nullify most of the movement-based abilities known to CYCLOPS, have a maximum volume roughly equal to a gymnasium, and can be switched to “neutralize,” turning the forcefield bright red and dealing 6D6 DAMAGE to anything inside."
+  },
+  {
+   "number": 6,
+   "name": "False death implant",
+   "text": "The false death implant is a time-honored trick: a molarimplanted pill which, when ingested, perfectly simulates death (in fact cadaverous sleep) for twenty-four hours."
+  },
+  {
+   "number": 7,
+   "name": "Dynamic ID",
+   "text": "Dynamic IDs are blank plastic ID cards mass produced by captive magicians, outfitted with a simple glamour that responds to the user's whims. The glamour will show a set of believable credentials to anyone who isn't looking too closely. All CYCLOPS personnel, even desk jockeys and janitors, are trained early on to spot dynamic IDs."
+  },
+  {
+   "number": 8,
+   "name": "Fingerprint neutralizer",
+   "text": "Although CYCLOPS has at least indirect control over all law enforcement agencies, covering one's tracks is still a constant concern. The fingerprint neutralizer is a bulky, pistol-shaped device which projects a short-range cone of sebum-disturbing sonic vibration. Once used, prints on any surface become distorted and illegible."
+  },
+  {
+   "number": 9,
+   "name": "Dissolving ammunition",
+   "text": "For high-profile assassinations or missions which require leaving no trace of an agent's presence, CYCLOPS uses proprietary “dissolving ammunition\" which contains a strain of specially-cultivated alien bacteria capable of rapidly metabolizing lead (as well as flesh, to a certain extent—dissolving ammo deals an additonal 1 DAMAGE). Dissolving ammo is a finite resource, so you should either track your shots directly (dissolving ammo clips have 6 shots), or use the abstract ammo tracking rules (p. 73)."
+  },
+  {
+   "number": 10,
+   "name": "Portable fusion generator",
+   "text": "Despite the ensuing stable time loop, CYCLOPS Command has deemed their decision to build miniaturized cold fusion reactors based upon their own blueprints from the distant future “an acceptable risk.\" The briefcasesized generator can supply a city grid's worth of power for 24 hours—if pushed beyond this point, it will erupt in a small nuclear explosion which deals 10D6 DAMAGE."
+  },
+  {
+   "number": 11,
+   "name": "Teleporter relay",
+   "text": "The chest-mounted teleporter relay instantly transports the user to the nearest CYCLOPS facility when the cord is pulled. CYCLOPS has no way to identify who is using a relay until target-site atomic reconstruction is complete, which can lead to major confusion if the incoming user turns out to be an enemy operative."
+  },
+  {
+   "number": 12,
+   "name": "Thought disruptor",
+   "text": "Also frequently referred to as a “Schrödinger disruptor\" in official documentation, the thought disruptor is used when the outcome of a quantum event needs to be changed. The disruptor self-destructs upon use and renders a target temporarily unable to perceive anything."
+  }
+ ],
+ "summary": [
+  {
+   "heading": "Premise",
+   "paragraphs": [
+    "In FIST, you portray a team of paranormal mercenaries doing the jobs that no one else can (or that no one else wants) in the military-espionage ecosystem of the Cold War. You are an unconventional kind of mercenary who cares more about being true to yourself, your community, or your ideals than turning a profit, and you may have been forced into this line of work due to incompatibility with non-violent, non-paranormal society. Gameplay involves deploying your mercenary character on missions with other players, where you will talk to people, solve problems, and engage in espionage and combat. Between missions, you may contribute facts or make choices about the direction of the game world at large. The story and reality of your FIST game exists as an ongoing conversation between the players and the referee, and it's everyone's job to treat this game world like it actually exists, then act accordingly."
+   ]
+  },
+  {
+   "heading": "Character creation",
+   "paragraphs": [
+    "FIST characters begin play with the following:",
+    "• 0 FRC, TAC, CRE, and RFX attributes",
+    "• 0 ARMOR",
+    "• 0 WAR DICE",
+    "• 6 MAX HP",
+    "• Two traits (p. 39), including modifiers and item",
+    "• A role not already in use (p. 67)",
+    "• One of the following: 1D6 additional MAX HP, 1D6 WAR DICE, or a standard issue item (p. 2) like a knife, a pistol, or a serving of rations",
+    "• An appropriate codename, and a real name only the player knows You are encouraged to reflavor traits and items. Some characters may call themselves ultrahuman—voyagers beyond the “standard\" human experience—but your relationship to this term is yours to define. Note that the term may also be derogatory, othering, or misunderstood."
+   ]
+  },
+  {
+   "heading": "Traits and roles",
+   "paragraphs": [
+    "Traits are snippets of special rules for individual characters which cover a unique talent, ability, or advantage, usually accompanied by a downside, boundary, or caveat if the trait's beneficial aspects are particularly powerful. Traits may offer narrative background, add new mechanics, alter pre-existing mechanics, or involve entire minigames. Traits come pre-packaged with an item (like a weapon, tool, or piece of clothing) and a modification to your base stats (usually -2 to +2 in FRC, TAC, CRE, or RFX, but sometimes an irregular alteration to HP or ARMOR, or some unique situational modifier). Trait-granted items are always repaired, returned, or replaced between missions. Roles define your character's narrative archetype, which they advance by playing into. Roles come with a relevant backstory prompt (usually beginning with “Describe…\") and a difficult condition which must be fulfilled to advance (e.g. a pacifist cannot be violent, a wildcard must behave unpredictably)."
+   ]
+  },
+  {
+   "heading": "Playing the game",
+   "paragraphs": [
+    "Players and the referee take turns talking. The referee describes the scene the players are in (along with portraying people and providing background info when needed), and the players respond by describing their actions within the game world. If an action would be risky or the outcome is otherwise uncertain, the player rolls 2D6 and adds their most relevant attribute score (FORCEFUL, TACTICAL, CREATIVE, or REFLEXIVE). Don't roll the dice if the action described is easily accomplished or totally impossible. The referee interprets the dice and narrates how the fictional situation changes, as follows (it never stays the same):",
+    "• 6- / FAILURE: Things go wrong somehow",
+    "• 7-9 / PARTIAL: Things go right but with a downside",
+    "• 10 / SUCCESS: Things go right with no downside",
+    "• DOUBLE 6s / ULTRA: Things go right with a bonus The referee never uses this system to roll the dice for non-player characters (but may roll the dice to determine damage, random behavior, content, and stats). Referee controlled characters simply take action, and the players are given a chance to react or respond by roleplaying and/or rolling the dice. Players can also spend one WAR DIE to add +1D6 to any type of dice roll in the game, no matter who makes it, including the referee."
+   ]
+  },
+  {
+   "heading": "Combat and death",
+   "paragraphs": [
+    "Attacking someone, or dealing with being attacked, is the same as any other risky action and should be handled accordingly with a 2D6 roll. Characters deal their weapon's DAMAGE (if rolling to attack) on a success and may take DAMAGE from their target on a failure. If the players are engaged in active combat (i.e. two or more parties actively, openly attempting to harm each other), rolling a failure always incurs DAMAGE. Using stealth, tricks, and tactical retreats to avoid active combat leads to better chances of survival. Players do not take regimented turns but should avoid hogging the spotlight with combat actions. Enemies controlled by the ref never roll to attack, but telegraph attacks for the players to respond to (e.g. “the guard aims a rifle at you,\" or “the vampire bares her fangs\"). DAMAGE is subtracted from the victim's HP. ARMOR is subtracted from DAMAGE taken (e.g. 6 DAMAGE vs. 2 ARMOR subtracts 4 HP). Reaching 0 HP means a character has died, and players are encouraged to insert a new one as soon as the story allows. Some characters may be revived through complex science/magic."
+   ]
+  },
+  {
+   "heading": "Items",
+   "paragraphs": [
+    "FIST has no money system, as FIST operatives often work for no pay and/or can't engage with financial institutions. Wealth comes in the form of capital, primarily by collecting powerful and valuable items. Characters may deal with monetary items from time to time, like “a briefcase full of cash,\" “a gold bar,\" or “a blank check.\" Baseline FIST characters can wield one weapon at a time. Holdout weapons (shivs, slingshots) are easily concealable and deal 3 DAMAGE. Light weapons (pistols, knives) deal 1D6 DAMAGE and can be concealed by the skilled. Medium weapons (rifles, swords) deal 1D6+1 DAMAGE, heavy weapons (machine guns, RPGs) deal 1D6+2 DAMAGE, and anomalous, experimental, magical, or otherwise unique weapons can deal 2D6 or more DAMAGE. Unarmed/non-weapon attacks deal the worst of 2D6 DAMAGE. Baseline FIST characters can wear one piece of bodysized armor at a time, in addition to an unlimited amount of non-armoring clothes and accessories that grant armor (like helmets or shields). Clothing grants 0 ARMOR, but certain outfits may have useful effects. Light armor (bulletproof vest, thick leather) grants 1 ARMOR, and heavy armor (ceramic plate, power armor) grants 2 ARMOR. Unusual or paranormal pieces may grant 3 ARMOR or more. Some wearable items (capes, helmets, small shields) are accessories, which can be voluntarily destroyed to negate DAMAGE once. Items marked with a number of uses are unavailable when depleted, but replenish between missions; they are common and easily replaceable. Items marked consumable never return once used, and are uncommon, irreplaceable, or unique. Some items can be used indefinitely, like simple tools or trinkets. All items carry over from mission to mission, but items not granted by traits or standard issue are lost if left behind or destroyed."
+   ]
+  },
+  {
+   "heading": "Rendezvous points",
+   "paragraphs": [
+    "Once per mission, the players may request a rendezvous point, and the referee will describe a nearby but difficultto-reach safe location where the players can recuperate. At the rendezvous point, each player may choose one: REST (heal 1D6 HP), RESTOCK (replenish one item or resource), or INTEL (one useful fact about the mission)."
+   ]
+  },
+  {
+   "heading": "Character advancement",
+   "paragraphs": [
+    "Characters advance once a mission is complete if they acted according to their role. The referee, alone or with the players, decides when missions are complete (usually, but not always, upon completion of the original objective), and if role criteria has been met. Upon advancing, characters can choose one reward: a new trait, +1D6 MAX HP, or +1D6 WAR DICE. Some traits may introduce alternative rewards for advancing, or change the criteria for being allowed to advance."
+   ]
+  },
+  {
+   "heading": "Running the game",
+   "paragraphs": [
+    "As the referee, you are the game's host and facilitator. You are fair and impartial, and your main job is to ensure that everything makes sense, and that everyone has fun. You portray the world beyond the player characters, like their surroundings, their enemies and allies, and the geopolitical goings-on behind the scenes."
+   ]
+  },
+  {
+   "heading": "Making missions",
+   "paragraphs": [
+    "Don't plan a mission beat-by-beat, set up situations with moving parts for the players to interact with. Prepare in broad strokes; use shorthand notes to remember key information and leave the rest up to chance. Missions should have these components:",
+    "• OBJECTIVE: One clear thing that needs to be done to complete the mission, established beforehand; also secondary, optional objectives if desired",
+    "• REWARD: A valuable item or fortunate event, literally given as a reward or physically attainable on-site",
+    "• CONSEQUENCE: Something major that will happen and affect the PCs and/or the world if a) the mission is failed, or b) if it is ignored when choosing between multiple missions."
+   ]
+  },
+  {
+   "heading": "Enemies and NPCs",
+   "paragraphs": [
+    "Enemies and NPCs (non-player characters) should have clear motivations and behave in realistic ways (including unpredictable behavior). “Enemy\" and “NPC\" are labels that can be switched between based on context. Some enemies and NPCs should have small special mechanics, like rolling to see if they lose their nerve, or a special ability that changes combat scenes they partake in. These are the loose guidelines for their stats:",
+    "• 1. EASY, e.g. civilians, animals, federal agents: 3 HP, 0 ARMOR, 3 DAMAGE",
+    "• 2. MEDIUM, e.g. soldiers, cops, security guards: 3 HP, 1 ARMOR, 1D6 DAMAGE",
+    "• 3. HARD, e.g. combat androids, elite soldiers: 6 HP, 1 ARMOR, 1D6+1 DAMAGE",
+    "• 4. EXTREME, e.g. evil spirits, alien monsters: 9 HP, 2 ARMOR, 1D6+2 DAMAGE",
+    "• 5. IMPOSSIBLE, e.g. cyborg agents, demigods: 12 HP, 2 ARMOR, 2D6 DAMAGE",
+    "• 6. NIGHTMARE, e.g. mutant hulks, arch-demons: 18 HP, 3 ARMOR, 3D6 DAMAGE"
+   ]
+  },
+  {
+   "heading": "CYCLOPS",
+   "paragraphs": [
+    "FIST is set during a version of the twentieth century where sci-fi, fantasy, and horror concepts are real, commonplace, and a natural part of the world; however, this “other world\" of the strange and impossible is largely kept unknown, suppressed, or falsely debunked. The world is secretly overseen by CYCLOPS, a sprawling, totalitarian intelligence agency and apparatus of control which will stop at nothing to preserve the status quo. Exploring any mission with a supernatural or conspiracy element can attract unwanted CYCLOPS attention. You might think of CYCLOPS as a Sisyphean force of Law, and FIST as Promethean agents of Chaos. CYCLOPS has their own paramilitary teams with special powers equivalent to or more powerful than those of FIST operatives. This branch is called CYCLOPS Recon Operations, or the CROs for short. CRO Teams (or individual CROs) may be dropped into a mission as evil counterparts to FIST, pursuing opposing objectives."
+   ]
+  }
+ ],
+ "bios": {
+  "GATE": {
+   "bio": "GATE never asked to be born different. Even at a young age, the veil between this world and the Other was thin wherever she walked, and so her parents, aware of the Big Soup Prophecy, took to training her in the back of the family restaurant. After a magical altercation with local police that left her an orphan, Gate was rescued by FIST, and now looks forward to a promising career in the paranormal mercenary game.",
+   "interview": "[PAN SIZZLING, PLATES CLATTERING] Listen, I can't talk for long. I've got this fried rice going, these— these collard greens, eyeballs, Jesus— [CLANGING, BURNERS FWOOSH] Splice alone could eat us bankrupt with that mutant metabolism— [SUDDEN SIZZLING] Fucking milk's boiling over— [AUDIO ENDS]"
+  },
+  "WHIPLASH": {
+   "bio": "WHIPLASH claims to be on their second excursion to Earth, with their first beginning \"roughly around the year 0.\" After their holographic human disguise failed and some all-ingood-fun preaching to ancient Romans went awry, Whiplash took a long vacation, avoiding Earth until the mid-'60s.",
+   "interview": "[CHAIR LEGS CREAKING] I told 'em I was the second coming, they said- they said, \"No, you're a bum and you're crazy.\" I told 'em, well, you sound just like Pontius did. They didn't like that, tried to put me in an institution. So, I'm done with preaching: I race cars now. [CLEARS THROAT] You got any water? [GLASS CLINKING, HISSING THROUGH TEETH] Damn, a cheap Merlot. I must be off my game today. [AUDIO ENDS]"
+  },
+  "ZERO": {
+   "bio": "ZERO was an up-and-coming U.S. Army Corporal who defected when his superiors ordered him to execute POWs in Vietnam. After escaping to the Hanoi underground and whiling away a few years doing odd jobs (and dodging the CIA), Zero has joined FIST, where he hopes to put his talents to good use.",
+   "interview": "[ZIPPO FLICKING OPEN, LONG INHALE] There is no place for men like us in the world. We are soldiers, killers, instruments of war. When I wouldn't kill for them, they didn't want me anymore — but killing is all I know. [CONTEMPLATIVE PAUSE] I refuse to be the pawn of some nation. What a sick joke. Good men don't follow orders. They use their heads. [AUDIO ENDS]"
+  },
+  "SPLICE": {
+   "bio": "SPLICE is the result of the GENOME MI6 supersoldier research program, involving the abduction of homeless subjects \"whom no one would miss.\" Aside from their perpetually randomized genetic code and amplified skill with MI6's prototype photonic-filament blade, Splice is also an amateur bassist, abstract sculptor, and underground literature enthusiast.",
+   "interview": "[FINGERTIPS DRUMMING, \"DESTROYER\" — THE KINKS PLAYS FAINTLY] Oi, oi, what's that you wrote in my file there? \"Mutant\"? That's a bit derogatory, don't you think, mate? [PENCIL TAPPING ON PAPER] I think I prefer \"ultrahuman.\" Doesn't that have a certain ring to it? Heh. Say, have we got anything to eat? Could order something, no...? [AUDIO ENDS]"
+  }
+ }
+}

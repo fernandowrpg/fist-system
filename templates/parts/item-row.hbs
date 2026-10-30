@@ -1,0 +1,67 @@
+<li class="item-row draggable type-{{type}} {{#if expanded}}expanded{{/if}} {{#if system.equipped}}equipped{{/if}} {{#if system.depleted}}depleted{{/if}}" data-item-id="{{id}}">
+  <div class="row-main">
+    <img class="row-img" src="{{img}}" alt="" data-action="itemToggle">
+    <div class="row-name" data-action="itemToggle">
+      <span class="name">{{#if system.number}}<span class="num">{{system.number}}.</span>{{/if}}{{name}}</span>
+      <span class="chips">
+        {{#if (eq type "weapon")}}
+          <span class="chip dmg">{{system.damageLabel}} DMG</span>
+          {{#if system.ranged}}<span class="chip">RANGED</span>{{/if}}
+          {{#if system.freeSlot}}<span class="chip">FREE SLOT</span>{{/if}}
+          {{#each system.tags}}<span class="chip tag" data-tooltip="{{description}}">{{name}}{{#if @root.editable}}<a class="chip-x" data-action="removeTag" data-index="{{@index}}"><i class="fa-solid fa-xmark"></i></a>{{/if}}</span>{{/each}}
+        {{/if}}
+        {{#if (eq type "armor")}}
+          <span class="chip">{{system.armor}} ARMOR</span>
+          {{#if system.accessory}}<span class="chip">ACCESSORY</span>{{/if}}
+          {{#if system.equipAsWeapon}}<span class="chip">SHIELD</span>{{/if}}
+          {{#if system.locked}}<span class="chip">LOCKED</span>{{/if}}
+        {{/if}}
+        {{#if (eq type "gear")}}{{#if system.heal}}<span class="chip heal">+{{fistUpper system.heal}} HP</span>{{/if}}{{/if}}
+        {{#if (eq type "trait")}}
+          {{#if system.statText}}<span class="chip stat">{{system.statText}}</span>{{/if}}
+          {{#if system.chosenAttribute}}<span class="chip stat">+{{system.chosenBonus}} {{fistUpper system.chosenAttribute}}</span>{{/if}}
+          {{#if system.rolledHp}}<span class="chip stat">+{{system.rolledHp}} MAX HP</span>{{/if}}
+        {{/if}}
+        {{#if system.consumable}}<span class="chip">CONSUMABLE</span>{{/if}}
+        {{#if granted}}<span class="chip granted" data-tooltip="{{localize "FIST.Item.GrantedBy"}} {{grantedBy}}"><i class="fa-solid fa-link"></i> {{grantedBy}}</span>{{/if}}
+      </span>
+    </div>
+
+    {{#if usesPips}}
+    <span class="uses" data-tooltip="{{localize "FIST.Item.Uses"}}">
+      {{#each usesPips}}<span class="pip {{#if filled}}filled{{/if}}"></span>{{/each}}
+    </span>
+    {{else if system.uses.max}}
+    <span class="uses"><input type="number" data-item-field="system.uses.value" data-dtype="Number" value="{{system.uses.value}}" min="0"> / {{system.uses.max}}</span>
+    {{/if}}
+
+    {{#if (eq type "weapon")}}{{#if system.ranged}}{{#if @root.ammoTracking}}
+    <span class="ammo" data-tooltip="AMMO"><i class="fa-solid fa-bullseye"></i><input type="number" data-item-field="system.ammo.value" data-dtype="Number" value="{{system.ammo.value}}" min="0" max="6"></span>
+    {{/if}}{{/if}}{{/if}}
+
+    <span class="controls">
+      {{#if (eq type "weapon")}}
+        <a class="ctl-strong" data-action="itemAttack" data-tooltip="{{localize "FIST.Weapon.Attack"}}"><i class="fa-solid fa-crosshairs"></i></a>
+        <a class="ctl-strong" data-action="itemDamage" data-tooltip="{{localize "FIST.Damage.Roll"}}"><i class="fa-solid fa-burst"></i></a>
+        {{#if @root.editable}}<a class="equip {{#if system.equipped}}on{{/if}}" data-action="itemEquip" data-tooltip="{{localize "FIST.Item.Equip"}}"><i class="fa-solid fa-hand-fist"></i></a>{{/if}}
+      {{/if}}
+      {{#if (eq type "armor")}}
+        {{#if @root.editable}}<a class="equip {{#if system.equipped}}on{{/if}}" data-action="itemEquip" data-tooltip="{{localize "FIST.Item.Equip"}}"><i class="fa-solid fa-shirt"></i></a>{{/if}}
+        {{#if system.accessory}}<a data-action="itemShatter" data-tooltip="{{localize "FIST.Armor.Shatter"}}"><i class="fa-solid fa-heart-crack"></i></a>{{/if}}
+      {{/if}}
+      {{#if (eq type "gear")}}
+        <a class="ctl-strong" data-action="itemUse" data-tooltip="{{localize "FIST.Item.Use"}}"><i class="fa-solid fa-hand-pointer"></i></a>
+      {{/if}}
+      <a data-action="itemChat" data-tooltip="{{localize "FIST.Item.ToChat"}}"><i class="fa-solid fa-comment"></i></a>
+      <a data-action="itemEdit" data-tooltip="{{localize "FIST.Item.Edit"}}"><i class="fa-solid fa-pen"></i></a>
+      {{#if @root.editable}}<a data-action="itemDelete" data-tooltip="{{localize "FIST.Item.Delete"}}"><i class="fa-solid fa-trash"></i></a>{{/if}}
+    </span>
+  </div>
+  <div class="row-body">
+    {{{enriched}}}
+    {{#if (eq type "trait")}}
+      {{#if system.itemText}}<p class="trait-item"><i class="fa-solid fa-box"></i> {{system.itemText}}</p>{{/if}}
+      {{#if system.conditional}}<p class="trait-cond"><i class="fa-solid fa-triangle-exclamation"></i> {{system.conditional}}</p>{{/if}}
+    {{/if}}
+  </div>
+</li>

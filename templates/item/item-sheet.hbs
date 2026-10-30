@@ -1,0 +1,130 @@
+<div class="fist-file-card type-{{type}} fist-item-drop">
+  <header class="card-header">
+    <img class="card-img" src="{{item.img}}" alt="" data-action="editImage">
+    <div class="card-title">
+      <span class="kicker">{{typeLabel}}{{#if system.number}} · {{system.number}}{{/if}}</span>
+      <input class="card-name" type="text" name="name" value="{{item.name}}" {{#unless editable}}disabled{{/unless}}>
+      {{#if grantedBy}}<span class="granted"><i class="fa-solid fa-link"></i> {{localize "FIST.Item.GrantedBy"}} {{grantedBy}}</span>{{/if}}
+    </div>
+    <a class="card-chat" data-action="toChat" data-tooltip="{{localize "FIST.Item.ToChat"}}"><i class="fa-solid fa-comment"></i></a>
+  </header>
+
+  <div class="sheet-scroll">
+    {{!-- ---------- TRAIT ---------- --}}
+    {{#if isType.trait}}
+    <section class="card-grid">
+      <label><span>{{localize "FIST.Item.Number"}} (D666)</span><input type="number" name="system.number" value="{{system.number}}"></label>
+      <label class="wide"><span>{{localize "FIST.Trait.StatText"}}</span><input type="text" name="system.statText" value="{{system.statText}}"></label>
+    </section>
+    <fieldset class="mods">
+      <legend>{{localize "FIST.Trait.Mods"}}</legend>
+      <div class="mod-grid">
+        <label><span>FRC</span><input type="number" name="system.mods.frc" value="{{system.mods.frc}}"></label>
+        <label><span>TAC</span><input type="number" name="system.mods.tac" value="{{system.mods.tac}}"></label>
+        <label><span>CRE</span><input type="number" name="system.mods.cre" value="{{system.mods.cre}}"></label>
+        <label><span>RFX</span><input type="number" name="system.mods.rfx" value="{{system.mods.rfx}}"></label>
+        <label><span>MAX HP</span><input type="number" name="system.mods.maxHp" value="{{system.mods.maxHp}}"></label>
+        <label><span>ARMOR</span><input type="number" name="system.mods.armor" value="{{system.mods.armor}}"></label>
+        <label><span>{{localize "FIST.Trait.WarPerMission"}}</span><input type="number" name="system.mods.warDicePerMission" value="{{system.mods.warDicePerMission}}"></label>
+        <label><span>{{localize "FIST.Trait.WarBonus"}}</span><input type="number" name="system.mods.warDieBonus" value="{{system.mods.warDieBonus}}"></label>
+      </div>
+      <div class="mod-grid">
+        <label><span>{{localize "FIST.Trait.HpFormula"}}</span><input type="text" name="system.maxHpFormula" value="{{system.maxHpFormula}}" placeholder="1d6"></label>
+        <label><span>{{localize "FIST.Trait.RolledHp"}}</span><input type="number" name="system.rolledHp" value="{{system.rolledHp}}"></label>
+        <label><span>{{localize "FIST.Trait.ChosenBonus"}}</span><input type="number" name="system.chosenBonus" value="{{system.chosenBonus}}"></label>
+        <label><span>{{localize "FIST.Trait.ChosenAttr"}}</span>
+          <select name="system.chosenAttribute">{{selectOptions attributeChoices selected=system.chosenAttribute}}</select>
+        </label>
+      </div>
+      <label class="wide"><span>{{localize "FIST.Trait.Conditional"}}</span><input type="text" name="system.conditional" value="{{system.conditional}}"></label>
+    </fieldset>
+    <fieldset class="grants">
+      <legend>{{localize "FIST.Trait.Grants"}}</legend>
+      <p class="hint">{{localize "FIST.Trait.GrantsHint"}}</p>
+      <label class="wide"><span>{{localize "FIST.Trait.ItemText"}}</span><input type="text" name="system.itemText" value="{{system.itemText}}"></label>
+      <ul class="grant-list">
+        {{#each grants}}
+        <li><img src="{{img}}" alt=""><span>{{name}}</span><em>{{type}}</em>{{#if @root.editable}}<a data-action="removeGrant" data-index="{{index}}"><i class="fa-solid fa-xmark"></i></a>{{/if}}</li>
+        {{/each}}
+      </ul>
+    </fieldset>
+    {{/if}}
+
+    {{!-- ---------- ROLE ---------- --}}
+    {{#if isType.role}}
+    <section class="card-grid">
+      <label><span>{{localize "FIST.Item.Number"}} (D66)</span><input type="number" name="system.number" value="{{system.number}}"></label>
+    </section>
+    <label class="block"><span>{{localize "FIST.Role.Describe"}}</span><textarea name="system.describe" rows="3">{{system.describe}}</textarea></label>
+    <label class="block"><span>{{localize "FIST.Role.Advance"}}</span><textarea name="system.advance" rows="3">{{system.advance}}</textarea></label>
+    {{/if}}
+
+    {{!-- ---------- WEAPON ---------- --}}
+    {{#if isType.weapon}}
+    <section class="card-grid">
+      <label><span>{{localize "FIST.Damage.Label"}}</span><input type="text" name="system.damage" value="{{system.damage}}" placeholder="1d6+1"></label>
+      <label><span>{{localize "FIST.Weapon.Attribute"}}</span><select name="system.attribute">{{selectOptions attributeChoices selected=system.attribute}}</select></label>
+      <label class="check"><input type="checkbox" name="system.ranged" {{checked system.ranged}}> {{localize "FIST.Weapon.Ranged"}}</label>
+      <label class="check"><input type="checkbox" name="system.freeSlot" {{checked system.freeSlot}}> {{localize "FIST.Weapon.FreeSlot"}}</label>
+      <label class="check"><input type="checkbox" name="system.equipped" {{checked system.equipped}}> {{localize "FIST.Item.Equipped"}}</label>
+      <label><span>AMMO</span><input type="number" name="system.ammo.value" value="{{system.ammo.value}}" min="0" max="6"></label>
+    </section>
+    <fieldset class="tags">
+      <legend>{{localize "FIST.Tag.Plural"}}</legend>
+      <p class="hint">{{localize "FIST.Tag.DropHint"}}</p>
+      <ul class="tag-list">
+        {{#each system.tags}}
+        <li><strong>{{name}}</strong> <span>{{description}}</span>{{#if @root.editable}}<a data-action="removeTag" data-index="{{@index}}"><i class="fa-solid fa-xmark"></i></a>{{/if}}</li>
+        {{/each}}
+      </ul>
+    </fieldset>
+    {{/if}}
+
+    {{!-- ---------- ARMOR ---------- --}}
+    {{#if isType.armor}}
+    <section class="card-grid">
+      <label><span>{{localize "FIST.Armor.Label"}}</span><input type="number" name="system.armor" value="{{system.armor}}"></label>
+      <label class="check"><input type="checkbox" name="system.accessory" {{checked system.accessory}}> {{localize "FIST.Armor.Accessory"}}</label>
+      <label class="check"><input type="checkbox" name="system.equipAsWeapon" {{checked system.equipAsWeapon}}> {{localize "FIST.Armor.Shield"}}</label>
+      <label class="check"><input type="checkbox" name="system.locked" {{checked system.locked}}> {{localize "FIST.Armor.Locked"}}</label>
+      <label class="check"><input type="checkbox" name="system.equipped" {{checked system.equipped}}> {{localize "FIST.Item.Equipped"}}</label>
+    </section>
+    {{/if}}
+
+    {{!-- ---------- GEAR ---------- --}}
+    {{#if isType.gear}}
+    <section class="card-grid">
+      <label><span>{{localize "FIST.Gear.Heal"}}</span><input type="text" name="system.heal" value="{{system.heal}}" placeholder="1d6"></label>
+      <label><span>{{localize "FIST.Gear.WarDice"}}</span><input type="number" name="system.warDice" value="{{system.warDice}}"></label>
+    </section>
+    {{/if}}
+
+    {{!-- ---------- TAG ---------- --}}
+    {{#if isType.tag}}
+    <section class="card-grid">
+      <label><span>{{localize "FIST.Item.Number"}} (D66)</span><input type="number" name="system.number" value="{{system.number}}"></label>
+      <label><span>{{localize "FIST.Tag.DamageBonus"}}</span><input type="number" name="system.damageBonus" value="{{system.damageBonus}}"></label>
+      <label><span>{{localize "FIST.Weapon.Attribute"}}</span><select name="system.attribute">{{selectOptions attributeChoices selected=system.attribute}}</select></label>
+      <label><span>{{localize "FIST.Tag.AttributeBonus"}}</span><input type="number" name="system.attributeBonus" value="{{system.attributeBonus}}"></label>
+    </section>
+    <p class="hint">{{localize "FIST.Tag.UsageHint"}}</p>
+    {{/if}}
+
+    {{!-- ---------- SHARED: uses ---------- --}}
+    {{#if (or isType.weapon isType.armor isType.gear)}}
+    <section class="card-grid">
+      <label><span>{{localize "FIST.Item.Uses"}}</span>
+        <span class="pair"><input type="number" name="system.uses.value" value="{{system.uses.value}}" min="0"> / <input type="number" name="system.uses.max" value="{{system.uses.max}}" min="0"></span>
+      </label>
+      <label class="check"><input type="checkbox" name="system.consumable" {{checked system.consumable}}> {{localize "FIST.Item.Consumable"}}</label>
+    </section>
+    {{/if}}
+
+    <div class="card-body">
+      {{#if (eq htmlField "effect")}}{{formInput fields.effect value=source.effect enriched=enriched toggled=true}}{{/if}}
+      {{#if (eq htmlField "answer")}}<span class="field-label">{{localize "FIST.Role.Answer"}}</span>{{formInput fields.answer value=source.answer enriched=enriched toggled=true}}{{/if}}
+      {{#if (eq htmlField "description")}}{{formInput fields.description value=source.description enriched=enriched toggled=true}}{{/if}}
+    </div>
+  </div>
+  <footer class="card-footer">FIST: ULTRA EDITION · CC BY-SA 4.0</footer>
+</div>

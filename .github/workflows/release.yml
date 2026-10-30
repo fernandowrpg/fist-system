@@ -1,0 +1,71 @@
+name: Release
+
+# Publishes a release whenever the version in system.json changes on main
+# (or on demand). Bump "version" in system.json and push: the workflow builds
+# the compendium packs, zips the system and attaches fist.zip + system.json.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read version
+        id: version
+        run: echo "version=$(jq -r .version system.json)" >> "$GITHUB_OUTPUT"
+
+      - name: Check for existing release
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "v${{ steps.version.outputs.version }}" > /dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Release v${{ steps.version.outputs.version }} already exists; nothing to do."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.check.outputs.exists == 'false'
+        with:
+          node-version: 20
+
+      - name: Build compendium packs
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          npm install --no-audit --no-fund
+          npm run build:packs
+
+      - name: Set manifest and download URLs
+        if: steps.check.outputs.exists == 'false'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          REPO: ${{ github.repository }}
+        run: |
+          jq --arg v "$VERSION" --arg r "$REPO" '
+            .manifest = "https://github.com/\($r)/releases/latest/download/system.json" |
+            .download = "https://github.com/\($r)/releases/download/v\($v)/fist.zip"
+          ' system.json > system.tmp && mv system.tmp system.json
+
+      - name: Package system
+        if: steps.check.outputs.exists == 'false'
+        run: zip -r fist.zip system.json fist.mjs module templates styles lang assets fonts packs LICENSE.txt README.md
+
+      - name: Create release
+        if: steps.check.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          gh release create "v$VERSION" fist.zip system.json \
+            --target "$GITHUB_SHA" \
+            --title "FIST: Ultra Edition v$VERSION" \
+            --generate-notes
