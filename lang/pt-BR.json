@@ -291,6 +291,7 @@
       "NoWarDice": "Sem WAR DICE.",
       "NoTokens": "Mire (ou selecione) pelo menos um token.",
       "NotOwner": "Você não controla {name}.",
+      "NoGM": "Nenhum mestre conectado para aplicar isso em {name}.",
       "Depleted": "Sem usos restantes.",
       "NoAmmo": "Sem munição. Reabasteça em um rendezvous ou encontre mais.",
       "Locked": "Este item não pode ser desequipado.",

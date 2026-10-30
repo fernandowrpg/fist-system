@@ -81,6 +81,7 @@ function registerHelpers() {
 
 /* -------------------------------------------- */
 
+Hooks.once("ready", () => Rolls.registerSocket());
 Hooks.on("renderChatMessageHTML", (message, html) => Rolls.onRenderChatMessage(message, html));
 
 /** Add the FIST REF terminal button to the actors directory. */
