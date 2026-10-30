@@ -291,6 +291,7 @@
       "NoWarDice": "No WAR DICE left.",
       "NoTokens": "Target (or select) at least one token.",
       "NotOwner": "You don't control {name}.",
+      "NoGM": "No GM is connected to apply this to {name}.",
       "Depleted": "No uses left.",
       "NoAmmo": "Out of ammo. Restock at a rendezvous or find more.",
       "Locked": "This item cannot be unequipped.",

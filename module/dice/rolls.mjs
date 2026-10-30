@@ -291,17 +291,33 @@ async function onChatAction(event, message) {
   }
 }
 
+const SOCKET = "system.fist";
+const APPLY_ACTIONS = new Set(["apply", "applyRaw", "applyDouble", "heal"]);
+
 /** Apply damage or healing to targeted tokens (or controlled ones if nothing is targeted). */
 async function applyToTargets(action, amount) {
   let actors = Array.from(game.user.targets).map(t => t.actor).filter(a => a);
   if ( !actors.length ) actors = canvas?.tokens?.controlled.map(t => t.actor).filter(a => a) ?? [];
   if ( !actors.length ) return ui.notifications.warn("FIST.Warn.NoTokens", { localize: true });
   for ( const actor of actors ) {
-    if ( !actor.isOwner ) {
-      ui.notifications.warn(game.i18n.format("FIST.Warn.NotOwner", { name: actor.name }));
-      continue;
-    }
-    if ( action === "heal" ) await actor.applyHealing(amount);
-    else await actor.applyDamage(amount, { ignoreArmor: action !== "apply", double: action === "applyDouble" });
+    if ( actor.isOwner ) await applyAction(actor, action, amount);
+    else if ( game.users.activeGM ) game.socket.emit(SOCKET, { type: "applyToActor", uuid: actor.uuid, action, amount });
+    else ui.notifications.warn(game.i18n.format("FIST.Warn.NoGM", { name: actor.name }));
   }
+}
+
+async function applyAction(actor, action, amount) {
+  if ( action === "heal" ) return actor.applyHealing(amount);
+  return actor.applyDamage(amount, { ignoreArmor: action !== "apply", double: action === "applyDouble" });
+}
+
+/** Let the active GM apply damage or healing that players request on actors they don't own. */
+export function registerSocket() {
+  game.socket.on(SOCKET, async data => {
+    if ( !game.user.isActiveGM || data?.type !== "applyToActor" ) return;
+    const amount = Number(data.amount);
+    if ( !APPLY_ACTIONS.has(data.action) || !Number.isFinite(amount) ) return;
+    const actor = await fromUuid(data.uuid);
+    if ( actor instanceof Actor ) await applyAction(actor, data.action, amount);
+  });
 }
