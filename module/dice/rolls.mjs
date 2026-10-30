@@ -291,16 +291,10 @@ async function onChatAction(event, message) {
   }
 }
 
-/**
- * Apply damage to targeted tokens (or controlled ones if nothing is targeted).
- * Healing prefers controlled tokens, falling back to targets.
- */
+/** Apply damage or healing to targeted tokens (or controlled ones if nothing is targeted). */
 async function applyToTargets(action, amount) {
-  const targeted = Array.from(game.user.targets).map(t => t.actor);
-  const controlled = canvas?.tokens?.controlled.map(t => t.actor) ?? [];
-  const [first, fallback] = action === "heal" ? [controlled, targeted] : [targeted, controlled];
-  let actors = first.filter(a => a);
-  if ( !actors.length ) actors = fallback.filter(a => a);
+  let actors = Array.from(game.user.targets).map(t => t.actor).filter(a => a);
+  if ( !actors.length ) actors = canvas?.tokens?.controlled.map(t => t.actor).filter(a => a) ?? [];
   if ( !actors.length ) return ui.notifications.warn("FIST.Warn.NoTokens", { localize: true });
   for ( const actor of actors ) {
     if ( !actor.isOwner ) {
