@@ -1,0 +1,17 @@
+<div class="fist-card partial outcome-partial">
+  <header class="card-bar">
+    <span class="card-kicker">{{localize "FIST.Partial.Kicker"}}{{#if formula}} · {{formula}}{{/if}}</span>
+    <span class="card-label">{{localize "FIST.Partial.Title"}}{{#if target}} — {{target}}{{/if}}</span>
+  </header>
+  {{#if faces.length}}
+  <div class="card-roll">
+    {{> "systems/fist/templates/parts/dice.hbs"}}
+    <div class="card-mods"><span><i class="{{icon}}"></i> {{categoryLabel}}</span></div>
+    <div class="card-total">{{code}}</div>
+  </div>
+  {{/if}}
+  <div class="card-outcome">
+    <strong><i class="{{icon}}"></i> {{code}} · {{categoryLabel}}</strong>
+    <span>{{text}}</span>
+  </div>
+</div>

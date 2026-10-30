@@ -98,6 +98,18 @@
       "success": "Sucesso", "successText": "Você faz exatamente o que queria, sem dor de cabeça extra.",
       "ultra": "Ultra sucesso!", "ultraText": "Você faz exatamente o que queria, com um bônus espetacular."
     },
+    "Partial": {
+      "Title": "Sim, mas...", "Open": "Sim, mas...", "ButtonHint": "Referee: escolha ou role uma complicação para este sucesso parcial",
+      "Hint": "Sucesso parcial: consegue, mas com um custo. Role D66 na tabela inteira, role 1D6 na categoria que combina com a cena, ou simplesmente clique em uma complicação.",
+      "RollD66": "Rolar D66", "RollD6": "1D6", "Whisper": "Sussurrar só para o referee", "Kicker": "Sucesso parcial", "For": "Para {name}",
+      "Category": { "combat": "Combate", "general": "Geral", "mental": "Mental", "movement": "Movimento", "social": "Social", "weird": "Estranho" },
+      "combat": { "1": "O inimigo redobra a aposta", "2": "O inimigo te flanqueia", "3": "Você causa metade do DANO", "4": "Você também fere um colega", "5": "Vocês trocam DANO", "6": "Sua arma para de funcionar" },
+      "general": { "1": "Você não pode se mover agora", "2": "Você não consegue terminar sozinho(a)", "3": "Você esgota um recurso", "4": "Você deixa outra coisa de lado", "5": "Você precisa de mais tempo", "6": "Você vai precisar descansar um momento" },
+      "mental": { "1": "Só cálculos aproximados", "2": "É preciso pesquisar mais", "3": "Parte da informação se perde", "4": "Você não lembra exatamente", "5": "Você não sabe por que está certo(a)", "6": "Você não levou em conta..." },
+      "movement": { "1": "Você deixa cair um item importante", "2": "Você sai parcialmente da rota", "3": "Você se machuca um pouco", "4": "Você precisa pegar um caminho mais longo", "5": "Agora você está na linha de fogo", "6": "Você é detido(a) no meio do caminho" },
+      "social": { "1": "Desarme-se imediatamente", "2": "Isso não vai funcionar de novo", "3": "Você precisa provar seu valor", "4": "Você precisa oferecer uma compensação", "5": "Vai ser difícil convencer", "6": "Você será vigiado(a) o tempo todo" },
+      "weird": { "1": "Um trait se comporta de forma errática", "2": "Volte-se contra seus colegas", "3": "Você começa a perder o controle", "4": "Você tem um forte sangramento no nariz", "5": "Você desenvolve lentamente um novo trait", "6": "Você é atingido(a) por um raio" }
+    },
     "Damage": {
       "Label": "Dano",
       "Roll": "Rolar dano",

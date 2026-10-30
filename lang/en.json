@@ -98,6 +98,18 @@
       "success": "Success", "successText": "You do exactly what you wanted, without additional headaches.",
       "ultra": "Ultra success!", "ultraText": "You do exactly what you wanted, with some spectacular added bonus."
     },
+    "Partial": {
+      "Title": "Yes, but...", "Open": "Yes, but...", "ButtonHint": "Referee: pick or roll a complication for this partial success",
+      "Hint": "Partial success: they get it, with a cost. Roll D66 on the whole table, roll 1D6 in the category that fits the scene, or just click a complication.",
+      "RollD66": "Roll D66", "RollD6": "1D6", "Whisper": "Whisper to the referee only", "Kicker": "Partial success", "For": "For {name}",
+      "Category": { "combat": "Combat", "general": "General", "mental": "Mental", "movement": "Movement", "social": "Social", "weird": "Weird" },
+      "combat": { "1": "The enemy doubles down", "2": "The enemy flanks you", "3": "You deal half DAMAGE", "4": "You hurt a teammate too", "5": "You trade DAMAGE", "6": "Your weapon stops working" },
+      "general": { "1": "You can't move right now", "2": "You cannot finish it alone", "3": "You deplete a resource", "4": "You ignore something else", "5": "You need more time", "6": "You'll need to rest a moment" },
+      "mental": { "1": "Approximate calculations only", "2": "More research is required", "3": "Some information is lost", "4": "You can't remember exactly", "5": "You don't know why you're right", "6": "You failed to account for..." },
+      "movement": { "1": "You drop an important item", "2": "You go partially off-course", "3": "You hurt yourself a little", "4": "You must take a longer route", "5": "You're now in harm's way", "6": "You're stopped halfway" },
+      "social": { "1": "Disarm yourself immediately", "2": "That won't work again", "3": "You must prove yourself", "4": "You must provide compensation", "5": "You need to make a hard sell", "6": "You'll be watched constantly" },
+      "weird": { "1": "A trait behaves erratically", "2": "Turn on your teammates", "3": "You begin losing your grip", "4": "You get a bad nosebleed", "5": "You slowly develop a new trait", "6": "You're struck by lightning" }
+    },
     "Damage": {
       "Label": "Damage",
       "Roll": "Roll damage",

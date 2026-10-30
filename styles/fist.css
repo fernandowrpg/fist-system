@@ -852,6 +852,30 @@
 .fist-note.intel { border-style: dashed; font-family: var(--fist-font-type); }
 .fist-note strong { display: block; font-family: var(--fist-font-display); font-size: 0.75rem; text-transform: uppercase; }
 
+/* ---------------------------------------------------------------------- */
+/*  "Yes, but..." partial success picker                                   */
+/* ---------------------------------------------------------------------- */
+
+.application.fist-partial .window-content { padding: 10px 12px; background: var(--fist-paper); }
+.fist-partial-picker { display: flex; flex-direction: column; gap: 10px; }
+.fist-partial-picker .partial-head { display: flex; gap: 10px; align-items: flex-start; justify-content: space-between; padding: 8px 10px; border-radius: 8px; background: repeating-linear-gradient(-45deg, #f3d45c 0 10px, #f7e08a 10px 20px); border: 2px solid var(--fist-ink); }
+.fist-partial-picker .partial-intro strong { font-family: var(--fist-font-display); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.fist-partial-picker .partial-intro .hint { margin: 2px 0 0; font-size: 0.8rem; line-height: 1.3; }
+.fist-partial-picker .partial-controls { display: flex; flex-direction: column; gap: 4px; flex: 0 0 auto; }
+.fist-partial-picker .partial-controls button { font-family: var(--fist-font-display); font-size: 0.66rem; text-transform: uppercase; min-height: 32px; }
+.fist-partial-picker .partial-whisper { display: flex; align-items: center; gap: 4px; font-size: 0.72rem; }
+.fist-partial-picker .partial-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.fist-partial-picker .partial-cat { border: 1.5px solid var(--fist-ink); border-radius: 8px; background: var(--fist-white); overflow: hidden; }
+.fist-partial-picker .partial-cat h4 { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin: 0; padding: 4px 6px 4px 8px; background: var(--fist-ink); color: var(--fist-white); font-family: var(--fist-font-display); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; border: none; }
+.fist-partial-picker .partial-cat h4 button { flex: 0 0 auto; width: auto; font-family: var(--fist-font-display); font-size: 0.56rem; line-height: 20px; min-height: 0; padding: 0 6px; background: var(--fist-white); color: var(--fist-ink); border-radius: 5px; }
+.fist-partial-picker .partial-cat h4 button:hover { background: var(--fist-amber); }
+.fist-partial-picker .partial-cat ol { list-style: none; margin: 0; padding: 2px 0; }
+.fist-partial-picker .partial-cat li a { display: flex; gap: 6px; align-items: baseline; padding: 2px 8px; font-size: 0.8rem; line-height: 1.3; cursor: pointer; color: var(--fist-ink); }
+.fist-partial-picker .partial-cat li a:hover { background: #f7e08a; text-shadow: none; }
+.fist-partial-picker .partial-cat .code { font-family: var(--fist-font-display); font-size: 0.62rem; color: var(--fist-mute); flex: 0 0 auto; }
+.fist-card.partial .card-outcome strong { font-size: 0.72rem; }
+.fist-card.partial .card-outcome span { font-size: 0.95rem; font-weight: 700; }
+
 /* Compendium browser rows for FIST packs */
 .compendium.directory [data-pack^="fist."] .directory-item .entry-name,
 .compendium-sidebar .directory-item[data-pack^="fist."] .entry-name { font-family: var(--fist-font-display); letter-spacing: 0.03em; }

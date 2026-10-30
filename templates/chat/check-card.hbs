@@ -22,6 +22,7 @@
   {{#if snakeEyes}}<div class="card-alert sudden">{{localize "FIST.SuddenDeath.Triggered"}}</div>{{/if}}
   <footer class="card-actions">
     {{#if canDamage}}<button type="button" data-fist-action="damage" data-item-uuid="{{itemUuid}}"><i class="fa-solid fa-burst"></i> {{localize "FIST.Damage.Roll"}}</button>{{/if}}
+    {{#if isPartial}}<button type="button" data-fist-action="partial" data-gm-only data-tooltip="{{localize "FIST.Partial.ButtonHint"}}"><i class="fa-solid fa-scale-unbalanced"></i> {{localize "FIST.Partial.Open"}}</button>{{/if}}
     <button type="button" data-fist-action="warDie"><i class="fa-solid fa-dice-d6"></i> {{localize "FIST.WarDie.Add"}}</button>
   </footer>
 </div>
