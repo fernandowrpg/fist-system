@@ -65,6 +65,7 @@
   min-height: 0;
   font-size: var(--font-size-14, 0.875rem);
   letter-spacing: normal;
+  text-transform: none;
 }
 .application.fist .window-header button:hover:not(:disabled),
 .application.fist .window-header .header-control:hover {
@@ -101,7 +102,9 @@
 }
 .application.fist input:disabled { background: transparent; border-color: transparent; }
 
-.application.fist button {
+/* :where() keeps specificity low and skips icon buttons (e.g. Foundry's window
+   header controls), whose glyph comes from Font Awesome classes on the button. */
+.application.fist button:where(:not(.header-control, .icon, [class*="fa-"])) {
   font-family: var(--fist-font-display);
   font-size: 0.66rem;
   letter-spacing: 0.06em;
@@ -113,7 +116,7 @@
   min-height: 30px;
   transition: background 0.12s, color 0.12s;
 }
-.application.fist button:hover:not(:disabled) { background: var(--fist-ink); color: var(--fist-white); }
+.application.fist button:where(:not(.header-control, .icon, [class*="fa-"])):hover:not(:disabled) { background: var(--fist-ink); color: var(--fist-white); }
 .application.fist button:disabled { opacity: 0.4; cursor: not-allowed; }
 
 .application.fist a { color: inherit; }
