@@ -1,0 +1,27 @@
+<div class="fist-partial-picker">
+  <header class="partial-head">
+    <div class="partial-intro">
+      {{#if target}}<strong>{{target}}</strong>{{/if}}
+      <p class="hint">{{localize "FIST.Partial.Hint"}}</p>
+    </div>
+    <div class="partial-controls">
+      <button type="button" data-action="rollAll"><i class="fa-solid fa-dice"></i> {{localize "FIST.Partial.RollD66"}}</button>
+      <label class="partial-whisper"><input type="checkbox" name="whisper"> {{localize "FIST.Partial.Whisper"}}</label>
+    </div>
+  </header>
+  <div class="partial-grid">
+    {{#each categories}}
+    <section class="partial-cat">
+      <h4>
+        <span><i class="{{icon}}"></i> {{number}}. {{label}}</span>
+        <button type="button" data-action="rollCategory" data-category="{{key}}" data-tooltip="{{label}}"><i class="fa-solid fa-dice-d6"></i> {{localize "FIST.Partial.RollD6"}}</button>
+      </h4>
+      <ol>
+        {{#each entries}}
+        <li><a data-action="choose" data-category="{{../key}}" data-index="{{index}}"><span class="code">{{code}}</span> {{text}}</a></li>
+        {{/each}}
+      </ol>
+    </section>
+    {{/each}}
+  </div>
+</div>

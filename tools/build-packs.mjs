@@ -508,6 +508,16 @@ function table(name, formula, rows, description = "") {
 
 const d66Range = (i) => [i + 1, i + 1];
 
+/** "Yes, but..." partial successes (FIST bookmark), in D66 order. */
+const PARTIAL_SUCCESSES = [
+  ["COMBAT", ["The enemy doubles down", "The enemy flanks you", "You deal half DAMAGE", "You hurt a teammate too", "You trade DAMAGE", "Your weapon stops working"]],
+  ["GENERAL", ["You can't move right now", "You cannot finish it alone", "You deplete a resource", "You ignore something else", "You need more time", "You'll need to rest a moment"]],
+  ["MENTAL", ["Approximate calculations only", "More research is required", "Some information is lost", "You can't remember exactly", "You don't know why you're right", "You failed to account for..."]],
+  ["MOVEMENT", ["You drop an important item", "You go partially off-course", "You hurt yourself a little", "You must take a longer route", "You're now in harm's way", "You're stopped halfway"]],
+  ["SOCIAL", ["Disarm yourself immediately", "That won't work again", "You must prove yourself", "You must provide compensation", "You need to make a hard sell", "You'll be watched constantly"]],
+  ["WEIRD", ["A trait behaves erratically", "Turn on your teammates", "You begin losing your grip", "You get a bad nosebleed", "You slowly develop a new trait", "You're struck by lightning"]]
+];
+
 function buildTables(packs) {
   const uuid = (pack, doc) => `Compendium.fist.${pack}.${pack === "mercs" || pack === "enemies" || pack === "vehicles" ? "Actor" : "Item"}.${doc._id}`;
   const tables = [];
@@ -539,6 +549,9 @@ function buildTables(packs) {
     { range: [10, 11], name: "10 or above: deploy with an extra standard issue item." },
     { range: [12, 12], name: "Double sixes: deploy with an extra standard issue item, and +3 to your first roll." }
   ]));
+  tables.push(table("Partial successes: Yes, but... (D66)", "1d36", PARTIAL_SUCCESSES.flatMap(([category, entries], c) =>
+    entries.map((text, i) => ({ range: d66Range((c * 6) + i), name: `${D66[(c * 6) + i]}. ${category}: ${text}` }))),
+    "Complications for a 7-9 partial success (FIST bookmark). Roll D66, roll 1D6 inside the category that fits, or pick one."));
   tables.push(table("Enemy threat level (1D6)", "1d6", THREATS.map(([name, hp, armor, dmg], i) => ({ range: [i + 1, i + 1], name: `${i + 1}. ${name}: ${hp} HP, ${armor} ARMOR, ${dmg.toUpperCase()} DAMAGE` }))));
   tables.push(table("Codenames", `1d${read("codenames.json").length}`, read("codenames.json").map((c, i) => ({ range: [i + 1, i + 1], name: c })),
     "Codename pool from the FIST REF random merc generator."));
@@ -568,7 +581,8 @@ function buildJournal(book) {
 <h2>Between missions</h2>
 <p><strong>New mission</strong> restores HP, uses and AMMO and grants per-mission WAR DICE. <strong>Rendezvous</strong> offers REST, RESTOCK or INTEL. <strong>Advance</strong> grants a trait, +1D6 MAX HP or +1D6 WAR DICE. <strong>Insertion</strong> rolls emergency insertion.</p>
 <h2>Referee tools</h2>
-<p>The <strong>FIST R.E.F.</strong> button in the Actors tab opens the random generator terminal and the Intelligence Matrix tables. Enemy files have threat-level presets, CHOKE rolls and "how many appear" rolls.</p>`;
+<p>The <strong>FIST R.E.F.</strong> button in the Actors tab opens the random generator terminal and the Intelligence Matrix tables. Enemy files have threat-level presets, CHOKE rolls and "how many appear" rolls.</p>
+<p>On a 7-9 partial success the roll card shows the referee a <strong>Yes, but...</strong> button (also in the Actors tab). It opens the partial success table from the FIST bookmark: roll D66 on the whole table, roll 1D6 in the category that fits the scene (combat, general, mental, movement, social, weird), or click a complication to pick it. The result can be whispered to the referee only.</p>`;
   const guidePt = `
 <h1>Como usar o sistema FIST</h1>
 <h2>Criando um merc</h2>
@@ -586,7 +600,8 @@ function buildJournal(book) {
 <h2>Entre missões</h2>
 <p><strong>Nova missão</strong> restaura HP, usos e AMMO e dá os WAR DICE por missão. <strong>Rendezvous</strong> oferece REST, RESTOCK ou INTEL. <strong>Avançar</strong> dá um trait, +1D6 MAX HP ou +1D6 WAR DICE. <strong>Inserção</strong> rola a inserção de emergência.</p>
 <h2>Ferramentas do referee</h2>
-<p>O botão <strong>FIST R.E.F.</strong> na aba de Atores abre o terminal gerador e as tabelas da Intelligence Matrix. As fichas de inimigo têm presets de nível de ameaça, rolagem de CHOKE e "quantos aparecem".</p>`;
+<p>O botão <strong>FIST R.E.F.</strong> na aba de Atores abre o terminal gerador e as tabelas da Intelligence Matrix. As fichas de inimigo têm presets de nível de ameaça, rolagem de CHOKE e "quantos aparecem".</p>
+<p>Num sucesso parcial (7-9) o cartão de rolagem mostra ao referee o botão <strong>Sim, mas...</strong> (também na aba de Atores). Ele abre a tabela de sucessos parciais do marcador de página do FIST: role D66 na tabela inteira, role 1D6 na categoria que combina com a cena (combate, geral, mental, movimento, social, estranho) ou clique numa complicação para escolhê-la. O resultado pode ser sussurrado só para o referee.</p>`;
   const license = `<h1>Credits &amp; license</h1>
 <p><strong>FIST: Ultra Edition</strong> is a paranormal mercenary roleplaying game by CLAYMORE (B. Everett Dutton, Ripley Caldwell, T.H. Cochlin, Back-Alley Coalition, Max Danley). The text of FIST: Ultra Edition is licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; the rules text in these compendiums is adapted from it and shared under the same license.</p>
 <p>Book illustrations are not included. Codename list and structured trait data courtesy of <a href="https://fistref.com">FIST REF</a>.</p>

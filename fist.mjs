@@ -13,6 +13,7 @@ import { FistItemSheet } from "./module/sheets/item-sheet.mjs";
 import { FistTerminal } from "./module/apps/generator.mjs";
 import * as Generator from "./module/apps/generator.mjs";
 import * as Rolls from "./module/dice/rolls.mjs";
+import * as Partial from "./module/apps/partial.mjs";
 
 Hooks.once("init", () => {
   console.log("FIST | Freelance Infantry Strike Team online.");
@@ -45,7 +46,11 @@ Hooks.once("init", () => {
     "systems/fist/templates/actor/parts/merc-builder.hbs"
   ]);
 
-  game.fist = { FIST, Rolls, Generator, terminal: () => new FistTerminal().render(true) };
+  game.fist = {
+    FIST, Rolls, Generator, Partial,
+    terminal: () => new FistTerminal().render(true),
+    partialSuccess: (options = {}) => new Partial.PartialSuccessPicker(options).render(true)
+  };
 });
 
 /* -------------------------------------------- */
@@ -89,6 +94,15 @@ Hooks.on("renderActorDirectory", (app, html) => {
   button.addEventListener("click", () => game.fist.terminal());
   const target = element.querySelector(".header-actions") ?? element.querySelector(".directory-header");
   target?.append(button);
+  if ( game.user.isGM ) {
+    const partial = document.createElement("button");
+    partial.type = "button";
+    partial.className = "fist-terminal-button fist-partial-button";
+    partial.innerHTML = `<i class="fa-solid fa-scale-unbalanced"></i> ${game.i18n.localize("FIST.Partial.Open")}`;
+    partial.dataset.tooltip = game.i18n.localize("FIST.Partial.Hint");
+    partial.addEventListener("click", () => game.fist.partialSuccess());
+    target?.append(partial);
+  }
 });
 
 /** New operatives start in the builder; new NPCs use the MEDIUM threat guideline. */

@@ -18,6 +18,7 @@ Ou baixe `fist.zip` da [última release](https://github.com/fernandowrpg/fist-sy
 - Rolagens 2D6 + atributo com faixas falha/parcial/sucesso/ultra, vantagem, ajuda, 3D6 melhores/piores dois, WAR DICE (qualquer jogador pode gastar no rolar de outro pelo cartão do chat), dano com/sem ARMOR.
 - Nova missão, Rendezvous, Avanço, Inserção de emergência, CHOKE, regras opcionais (munição, war dice explosivos, sudden death, carga).
 - Terminal **FIST R.E.F.** (botão na aba Atores) com os geradores e as tabelas.
+- **Sim, mas...** para o referee: nos sucessos parciais (7-9) o cartão de rolagem ganha um botão (só o referee vê) que abre a tabela de sucessos parciais do marcador de página (D66, ou 1D6 por categoria, ou escolha direta). Também na aba Atores e via `game.fist.partialSuccess()`; há ainda a RollTable *Partial successes: Yes, but... (D66)* no compêndio de tabelas.
 - Interface em pt-BR e inglês.
 
 ## Desenvolvimento

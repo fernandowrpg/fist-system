@@ -1,4 +1,5 @@
 import { FIST } from "../config.mjs";
+import { PartialSuccessPicker } from "../apps/partial.mjs";
 
 const { renderTemplate } = foundry.applications.handlebars;
 const { DialogV2 } = foundry.applications.api;
@@ -139,6 +140,7 @@ export async function rollCheck(actor, { attribute = "frc", mode = "normal", sit
     outcomeText: game.i18n.localize(FIST.outcomes[outcome].text),
     snakeEyes: snakeEyes && game.settings.get("fist", "suddenDeath"),
     canDamage: item?.type === "weapon" && ["partial", "success", "ultra"].includes(outcome),
+    isPartial: outcome === "partial",
     itemUuid: item?.uuid ?? "",
     flags: { kind: "check", total, ultra }
   };
@@ -228,6 +230,7 @@ export async function spendWarDieOn(message) {
     outcomeLabel: outcome ? game.i18n.localize(FIST.outcomes[outcome].label) : "",
     outcomeText: outcome ? game.i18n.localize(FIST.outcomes[outcome].text) : "",
     canDamage: kind === "check" && ["partial", "success", "ultra"].includes(outcome) && !!data.itemUuid,
+    isPartial: outcome === "partial",
     itemUuid: data.itemUuid ?? "",
     isDamage: kind === "damage",
     flags: { ...data, total, kind }
@@ -259,6 +262,7 @@ async function postCard(template, context, { actor, rolls = [], flags = {} }) {
  * @param {HTMLElement} html
  */
 export function onRenderChatMessage(message, html) {
+  if ( !game.user.isGM ) html.querySelectorAll("[data-gm-only]").forEach(el => el.remove());
   for ( const button of html.querySelectorAll("[data-fist-action]") ) {
     button.addEventListener("click", event => onChatAction(event, message));
   }
@@ -272,6 +276,8 @@ async function onChatAction(event, message) {
   switch ( action ) {
     case "warDie":
       return spendWarDieOn(message);
+    case "partial":
+      return new PartialSuccessPicker({ target: message.speaker?.alias ?? message.alias ?? "" }).render(true);
     case "damage": {
       const item = await fromUuid(button.dataset.itemUuid || message.flags.fist?.itemUuid);
       if ( !item ) return;

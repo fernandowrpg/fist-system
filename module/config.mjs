@@ -28,6 +28,22 @@ FIST.outcomes = {
   ultra: { label: "FIST.Outcome.ultra", text: "FIST.Outcome.ultraText" }
 };
 
+/**
+ * "Yes, but..." partial success complications (FIST bookmark), rolled on D66.
+ * The tens digit picks the category (in this order), the units digit the entry.
+ */
+FIST.partialSuccesses = {
+  combat: { label: "FIST.Partial.Category.combat", icon: "fa-solid fa-crosshairs" },
+  general: { label: "FIST.Partial.Category.general", icon: "fa-solid fa-circle-half-stroke" },
+  mental: { label: "FIST.Partial.Category.mental", icon: "fa-solid fa-brain" },
+  movement: { label: "FIST.Partial.Category.movement", icon: "fa-solid fa-person-running" },
+  social: { label: "FIST.Partial.Category.social", icon: "fa-solid fa-comments" },
+  weird: { label: "FIST.Partial.Category.weird", icon: "fa-solid fa-eye" }
+};
+for ( const key of Object.keys(FIST.partialSuccesses) ) {
+  FIST.partialSuccesses[key].entries = [1, 2, 3, 4, 5, 6].map(n => `FIST.Partial.${key}.${n}`);
+}
+
 /** Unarmed or non-weapon attacks deal the worst of 2D6. */
 FIST.unarmedDamage = "2d6kl1";
 

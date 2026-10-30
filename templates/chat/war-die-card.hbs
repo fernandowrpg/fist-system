@@ -16,6 +16,7 @@
     <button type="button" data-fist-action="apply" data-total="{{total}}"><i class="fa-solid fa-shield-halved"></i> {{localize "FIST.Damage.Apply"}}</button>
     <button type="button" data-fist-action="applyRaw" data-total="{{total}}"><i class="fa-solid fa-bolt"></i> {{localize "FIST.Damage.ApplyRaw"}}</button>
     {{/if}}
+    {{#if isPartial}}<button type="button" data-fist-action="partial" data-gm-only data-tooltip="{{localize "FIST.Partial.ButtonHint"}}"><i class="fa-solid fa-scale-unbalanced"></i> {{localize "FIST.Partial.Open"}}</button>{{/if}}
     <button type="button" data-fist-action="warDie"><i class="fa-solid fa-dice-d6"></i> {{localize "FIST.WarDie.Add"}}</button>
   </footer>
 </div>
