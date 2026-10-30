@@ -114,9 +114,9 @@
       "Label": "Damage",
       "Roll": "Roll damage",
       "Apply": "Apply",
-      "ApplyHint": "Apply to selected tokens, subtracting ARMOR",
+      "ApplyHint": "Apply to targeted tokens, subtracting ARMOR",
       "ApplyRaw": "Ignore armor",
-      "ApplyRawHint": "Apply to selected tokens, ignoring ARMOR",
+      "ApplyRawHint": "Apply to targeted tokens, ignoring ARMOR",
       "Taken": "{name} takes {dealt} damage (ARMOR {armor}). HP: {hp}",
       "Killed": "{name} takes {dealt} damage (ARMOR {armor}) and goes down!",
       "Healed": "{name} recovers {amount} HP. HP: {hp}"
@@ -289,7 +289,7 @@
     "Warn": {
       "NoOperative": "Select or assign your operative first.",
       "NoWarDice": "No WAR DICE left.",
-      "NoTokens": "Select (or target) at least one token.",
+      "NoTokens": "Target (or select) at least one token.",
       "NotOwner": "You don't control {name}.",
       "Depleted": "No uses left.",
       "NoAmmo": "Out of ammo. Restock at a rendezvous or find more.",

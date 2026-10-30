@@ -114,9 +114,9 @@
       "Label": "Dano",
       "Roll": "Rolar dano",
       "Apply": "Aplicar",
-      "ApplyHint": "Aplicar aos tokens selecionados, subtraindo ARMOR",
+      "ApplyHint": "Aplicar aos tokens alvo, subtraindo ARMOR",
       "ApplyRaw": "Ignora armor",
-      "ApplyRawHint": "Aplicar aos tokens selecionados, ignorando ARMOR",
+      "ApplyRawHint": "Aplicar aos tokens alvo, ignorando ARMOR",
       "Taken": "{name} recebe {dealt} de dano (ARMOR {armor}). HP: {hp}",
       "Killed": "{name} recebe {dealt} de dano (ARMOR {armor}) e cai!",
       "Healed": "{name} recupera {amount} HP. HP: {hp}"
@@ -289,7 +289,7 @@
     "Warn": {
       "NoOperative": "Selecione ou atribua seu operativo primeiro.",
       "NoWarDice": "Sem WAR DICE.",
-      "NoTokens": "Selecione (ou mire) pelo menos um token.",
+      "NoTokens": "Mire (ou selecione) pelo menos um token.",
       "NotOwner": "Você não controla {name}.",
       "Depleted": "Sem usos restantes.",
       "NoAmmo": "Sem munição. Reabasteça em um rendezvous ou encontre mais.",
